@@ -15,12 +15,20 @@ GameEntity : "{333A794F0B55C019}Prefabs/Weapons/Attachments/Optics/m8541/Optic_M
 GameEntity : "{36EF773EB236A891}Prefabs/Weapons/Attachments/Optics/ta648mdo/Optic_TA648MDO_rmr.et" {
  coords 0.377 1.906 2.297
 }
+GameEntity : "{380776419F35491E}Prefabs/Weapons/Attachments/Optics/vc18dsco/optic_vc18dsco_base.et" {
+ coords 2.543 1 1.232
+}
 GenericEntity : "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et" {
- coords 2.322 1.053 1.776
+ coords 2.398 1.053 1.704
  angleY 43.517
 }
-GameEntity : "{6DC0EE135013FC47}Prefabs/Weapons/Attachments/Optics/ts30a2/optic_ts30a2_base.et" {
- coords 0.907 1.906 2.189
+$grp GameEntity : "{6DC0EE135013FC47}Prefabs/Weapons/Attachments/Optics/ts30a2/optic_ts30a2_base.et" {
+ {
+  coords 0.907 1.906 2.189
+ }
+ {
+  coords 2.882 1 1.309
+ }
 }
 GenericEntity : "{6FD6C96121905202}Prefabs/Items/Equipment/Watches/Watch_Vostok.et" {
  components {
