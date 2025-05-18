@@ -35,7 +35,7 @@ GenericEntity : "{7CEEC3FF35A201A2}Prefabs/Items/Core/Compass_Base.et" {
       }
      }
      HandAdditiveRotation 0 -5 0
-     HandAdditiveTranslation -0.015 0 0
+     HandAdditiveTranslation -0.015 0.01 0
      AllowInspection 1
     }
     CustomAttributes {
