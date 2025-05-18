@@ -1,0 +1,10 @@
+GameEntity : "{380776419F35491E}Prefabs/Weapons/Attachments/Optics/vc18dsco/optic_vc18dsco_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  RHS_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   SightsFOVInfo SCR_SightsZoomFOVInfo "{64D9380EB622E0A0}" {
+    m_fZoomMax 80
+   }
+  }
+ }
+}

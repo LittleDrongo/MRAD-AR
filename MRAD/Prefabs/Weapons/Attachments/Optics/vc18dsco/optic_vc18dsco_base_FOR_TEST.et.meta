@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{EBED10FFE2ED0CBB}Prefabs/Weapons/Attachments/Optics/vc18dsco/optic_vc18dsco_base_FOR_TEST.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

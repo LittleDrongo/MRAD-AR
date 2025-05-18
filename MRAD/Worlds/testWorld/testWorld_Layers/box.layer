@@ -16,6 +16,3 @@ $grp GenericEntity {
   coords 101 1 0.5
  }
 }
-GameEntity : "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et" {
- coords 1.349 1.906 2.281
-}
