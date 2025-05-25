@@ -1,0 +1,11 @@
+GameEntity : "{ECB61899AFBFC6A2}Prefabs/Weapons/Attachments/Optics/Optic_SB_PM/Optic_SB_PM_L13A1_6x42_SF_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  SCR_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   SightsFOVInfo SCR_SightsZoomFOVInfo "{6514D858526B02C4}" {
+    m_fZoomMax 80
+   }
+   m_fObjectiveFov 20
+  }
+ }
+}

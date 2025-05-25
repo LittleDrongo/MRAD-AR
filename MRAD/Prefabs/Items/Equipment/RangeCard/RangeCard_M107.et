@@ -25,8 +25,8 @@ GenericEntity : "{D30D4FA5A82D6F0D}Prefabs/Items/Equipment/RangeCard/RangeCard_N
   InventoryItemComponent "{5222EB4D0C73006B}" {
    Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
     ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
-     Name "M107A1"
-     Description "M107A1"
+     Name "Rangecard M107A1"
+     Description "Rangecard M107A1"
     }
    }
   }

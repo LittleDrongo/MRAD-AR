@@ -1,36 +1,36 @@
-GameEntity : "{F7592BD37116D7C3}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_base.et" {
- ID "52546DC0E81ECE17"
+GameEntity : "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et" {
+ ID "4BA426CBAED42A14"
  components {
   SCR_2DPIPSightsComponent "{5D0CC83435B55855}" {
    SightsRanges {
-    SightRangeInfo "{5D0CCDD062A62502}" {
+    SightRangeInfo "{615713F5C78863E1}" {
      Range 0 0
     }
-    SightRangeInfo "{5D0CCDD062A62503}" {
+    SightRangeInfo "{615713F5C78863E6}" {
      Range 0.00575 1
     }
-    SightRangeInfo "{5D0CCDD062A62500}" {
+    SightRangeInfo "{615713F5C78863E7}" {
      Range 0.0115 2
     }
-    SightRangeInfo "{5D0CCDD062A62501}" {
+    SightRangeInfo "{615713F5C7888394}" {
      Range 0.01725 3
     }
-    SightRangeInfo "{5D0CCDD062A657C3}" {
+    SightRangeInfo "{615713F5C7888396}" {
      Range 0.023 4
     }
-    SightRangeInfo "{5D0CCDD062A657DC}" {
+    SightRangeInfo "{615713F6A8224877}" {
      Range 0.02875 5
     }
-    SightRangeInfo "{5D0CCDD062A657DD}" {
+    SightRangeInfo "{615713F6A8F3190E}" {
      Range 0.0345 6
     }
-    SightRangeInfo "{61E95427A4839C18}" {
+    SightRangeInfo "{615713F6A8BC5E33}" {
      Range 0.04025 7
     }
-    SightRangeInfo "{61E9542791ED171A}" {
+    SightRangeInfo "{615713F6A979B29C}" {
      Range 0.046 8
     }
-    SightRangeInfo "{61E954279183C8CD}" {
+    SightRangeInfo "{615713F6A932D5ED}" {
      Range 0.05175 9
     }
     SightRangeInfo "{61E9542791BAD053}" {
