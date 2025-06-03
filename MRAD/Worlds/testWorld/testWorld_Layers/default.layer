@@ -1,77 +1,72 @@
+GenericEntity : "{06123770E28E51F6}Prefabs/Weapons/Rifles/L42A1/Rifle_L8T.et" {
+ coords 1.185 1.906 2.331
+ angleY 0
+}
 GenericEntity : "{0CE7514F7E41F893}Prefabs/Items/Equipment/RangeCard/RangeCard_L96A1.et" {
  coords 1.408 1.906 2.258
 }
 GenericEntity : "{1EC2D6189AD265BF}Prefabs/Items/Equipment/RangeCard/RangeCard_M107.et" {
  coords 1.402 1.906 2.617
 }
-GameEntity : "{380776419F35491E}Prefabs/Weapons/Attachments/Optics/vc18dsco/optic_vc18dsco_base.et" {
- coords 0.488 1.906 2.267
-}
-$grp GenericEntity : "{4179CBC7AA8DA6EB}Prefabs/Weapons/Magazines/Magazine_762x51_AIPM_10rnd_Tracer.et" {
+$grp GenericEntity : "{4F4439BAA80A7A66}Prefabs/Weapons/Magazines/Magazine_762x51_L42a1_10rnd_Base.et" {
  {
-  coords 0.47 1.906 2.767
+  coords 0.861 1.906 2.279
  }
  {
-  coords 0.839 1.906 2.614
+  coords 0.763 1.906 2.252
  }
  {
-  coords 0.86 1.906 2.528
+  coords 0.683 1.906 2.286
  }
  {
-  coords 0.906 1.906 2.373
+  coords 0.664 1.906 2.38
  }
  {
-  coords 0.936 1.906 2.335
+  coords 0.715 1.906 2.435
  }
  {
-  coords 0.978 1.906 2.472
+  coords 0.768 1.906 2.404
  }
  {
-  coords 0.894 1.906 2.587
+  coords 0.791 1.906 2.356
  }
  {
-  coords 0.856 1.906 2.393
+  coords 0.885 1.906 2.372
  }
  {
-  coords 0.905 1.906 2.266
+  coords 0.868 1.906 2.439
  }
  {
-  coords 0.999 1.906 2.328
+  coords 0.776 1.906 2.503
  }
  {
-  coords 0.98 1.906 2.514
+  coords 0.664 1.906 2.585
  }
  {
-  coords 0.943 1.906 2.399
+  coords 0.747 1.906 2.61
  }
  {
-  coords 0.923 1.912 2.267
+  coords 0.846 1.906 2.577
  }
  {
-  coords 0.984 1.906 2.332
+  coords 0.849 1.912 2.496
  }
  {
-  coords 0.908 1.906 2.621
+  coords 0.744 1.918 2.529
  }
  {
-  coords 0.814 1.906 2.5
+  coords 0.656 1.906 2.407
  }
  {
-  coords 0.869 1.906 2.304
+  coords 0.964 1.906 2.443
  }
  {
-  coords 0.996 1.916 2.288
- }
- {
-  coords 0.987 1.906 2.586
+  coords 0.956 1.906 2.225
  }
 }
-GameEntity : "{A3571699340DDC77}Prefabs/Weapons/Attachments/Optics/Optic_SB_PM/Optic_SB_PM_L13A1_6x42_SF_FOR_TEST.et" {
- coords 0.727 1.906 2.268
+GameEntity : "{A34161A62AABBC37}Prefabs/Weapons/Attachments/Optics/Optic_No32/Optic_No32_TEST_ZOOM.et" {
+ coords 1.553 1.906 2.204
 }
-GenericEntity : "{B134D5F18864A297}Prefabs/Weapons/Rifles/PM/Rifle_AI_PMSD_PM12x42.et" {
- coords 1.804 1.906 2.426
-}
-GenericEntity : "{D87F9CD3863BF6E4}Prefabs/Weapons/Rifles/PM/Rifle_AI_PMSD_PM6x42.et" {
- coords 2.149 1.906 2.275
+GenericEntity : "{F68EBCB89E1F8FE6}Prefabs/Items/Equipment/RangeCard/RangeCard_L42A1.et" {
+ coords 1.742 1.906 2.172
 }
