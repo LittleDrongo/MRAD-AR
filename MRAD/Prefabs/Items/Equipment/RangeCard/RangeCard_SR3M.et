@@ -1,0 +1,25 @@
+GenericEntity : "{0CE7514F7E41F893}Prefabs/Items/Equipment/RangeCard/RangeCard_L96A1.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  Drg_NotepadRtComponent "{61ECFCAC76676880}" {
+   m_sText ""\
+   "Rifle СР3М Вихрь"\
+   "Ball: СП-5 / СП-6"\
+   "100   -   6.4        6.9 "\
+   "150   -   9.6        10.5"\
+   "200   -   12.8       13.9"\
+   "250   -   16.3       17.9"\
+   "300   -   19.6       21.7"\
+   "350   -   23.2       25.8"\
+   "400   -   26.8       29.9"
+  }
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Name "Rangecard SR3M "
+     Description "Rangecard SR3M "
+    }
+   }
+  }
+ }
+}

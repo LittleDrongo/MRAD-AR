@@ -8,6 +8,31 @@ GenericEntity : "{0CE7514F7E41F893}Prefabs/Items/Equipment/RangeCard/RangeCard_L
 GenericEntity : "{1EC2D6189AD265BF}Prefabs/Items/Equipment/RangeCard/RangeCard_M107.et" {
  coords 1.402 1.906 2.617
 }
+GenericEntity : "{2E7D88E67C933E4F}Prefabs/Items/Equipment/RangeCard/RangeCard_SR3M.et" {
+ coords 2.223 1.906 2.61
+}
+$grp Projectile : "{2F007929B7F8399F}Prefabs/Weapons/Ammo/SmallArms/Ammo_9x39_AP_SP6.et" {
+ {
+  coords 1.479 1.906 2.142
+ }
+ {
+  coords 2.055 1.906 2.197
+ }
+ {
+  coords 1.368 1.906 2.128
+ }
+}
+$grp Projectile : "{43544DC90B3CB6B1}Prefabs/Weapons/Ammo/SmallArms/Ammo_9x39_Ball_SP5.et" {
+ {
+  coords 1.513 1.906 2.488
+ }
+ {
+  coords 1.419 1.906 2.141
+ }
+ {
+  coords 1.439 1.906 2.148
+ }
+}
 $grp GenericEntity : "{4F4439BAA80A7A66}Prefabs/Weapons/Magazines/Magazine_762x51_L42a1_10rnd_Base.et" {
  {
   coords 0.861 1.906 2.279
@@ -64,8 +89,70 @@ $grp GenericEntity : "{4F4439BAA80A7A66}Prefabs/Weapons/Magazines/Magazine_762x5
   coords 0.956 1.906 2.225
  }
 }
+$grp GenericEntity : "{91836E59CE2497BC}Prefabs/Weapons/Magazines/sr3m_magazine_30rnd/Magazine_9x39_SR3M_30rnd_SP5_base.et" {
+ {
+  coords 1.877 1.906 2.234
+ }
+ {
+  coords 1.799 1.906 2.372
+ }
+ {
+  coords 1.788 1.906 2.469
+ }
+ {
+  coords 1.896 1.906 2.568
+ }
+ {
+  coords 2.013 1.906 2.598
+ }
+ {
+  coords 1.895 1.906 2.447
+ }
+ {
+  coords 1.731 1.906 2.421
+ }
+}
+GameEntity : "{A1D5833FF10C6503}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1M2-1.et" {
+ components {
+  SCR_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   SightsRanges {
+    SightRangeInfo "{5D0CCDD0615C5973}" {
+     Range 0.364 100
+    }
+    SightRangeInfo "{5D0CCDD0615C594C}" {
+     Range 0.5478 150
+    }
+    SightRangeInfo "{5D0CCDD0615C594D}" {
+     Range 0.733 200
+    }
+    SightRangeInfo "{5D0CCDD0615C594E}" {
+     Range 0.9356 250
+    }
+    SightRangeInfo "{5D0CCDD0615C594F}" {
+     Range 1.123 300
+    }
+    SightRangeInfo "{5D0CCDD0615C5948}" {
+     Range 1.3286 350
+    }
+    SightRangeInfo "{5D0CCDD0615C594A}" {
+     Range 1.5356 400
+    }
+    SightRangeInfo "{5D0CCDD0615C5945}" {
+     Range 1.9714 800
+    }
+   }
+  }
+ }
+ coords 1.288 1.906 2.188
+}
 GameEntity : "{A34161A62AABBC37}Prefabs/Weapons/Attachments/Optics/Optic_No32/Optic_No32_TEST_ZOOM.et" {
  coords 1.553 1.906 2.204
+}
+GenericEntity : "{B6409D498154656C}Prefabs/Weapons/Rifles/SR3M/Rifle_SR3M_wd_rails_Sniper.et" {
+ coords 1.658 1.906 2.234
+}
+GenericEntity : "{EE239B5D7297A414}Prefabs/Weapons/Rifles/SR3M/Rifle_SR3M_supr.et" {
+ coords 1.891 1.906 2.182
 }
 GenericEntity : "{F68EBCB89E1F8FE6}Prefabs/Items/Equipment/RangeCard/RangeCard_L42A1.et" {
  coords 1.742 1.906 2.172
