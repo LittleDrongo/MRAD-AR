@@ -1,0 +1,51 @@
+StaticModelEntity : "{6EB81BD60DCA3AA7}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_Wall_base.et" {
+ ID "1133272B8B185691"
+ components {
+  MeshObject "{56DE7C8DCD0F4E0A}" {
+   Object "{91FDCCEAF907BA6A}Assets/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_right_side_wall.xob"
+  }
+  NavmeshCustomLinkComponent "{5088C72B466E73FA}" {
+   Enabled 0
+  }
+  RigidBody "{56DE7C8DDE282E03}" {
+   ResponseIndex "Normal"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{647E7B7BEF9F9AD6}" {
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{647E7B7C270E4618}" {
+     m_ModelPrefabs {
+      "{9F44FF2868BF43AA}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_01_dbr_01.xob" "{065A46B17558723A}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_01_dbr_02.xob" "{71502E3981FA9D4A}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_01_dbr_03.xob" "{7697D468E77C2789}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_01_dbr_04.xob"
+     }
+    }
+   }
+   m_aDamagePhases {
+    SCR_DamagePhaseData "{647E7B7CD1240756}" {
+     m_PhaseDestroySpawnObjects {
+      SCR_DebrisSpawnable "{647E7B7F13E78EED}" {
+       m_ModelPrefabs {
+        "{9F44FF2868BF43AA}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_01_dbr_01.xob" "{065A46B17558723A}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_01_dbr_02.xob" "{71502E3981FA9D4A}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_01_dbr_03.xob" "{7697D468E77C2789}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_01_dbr_04.xob"
+       }
+      }
+     }
+    }
+    SCR_DamagePhaseData "{64C8972E16A71D08}" {
+     m_PhaseDestroySpawnObjects {
+      SCR_PrefabSpawnable "{64C8972E1968A73B}" {
+       m_Prefabs {
+        "{CE5BEEE37CF117A9}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/Dst/Dst_ShedMetal_02_Wall_side_R.et"
+       }
+      }
+      SCR_DebrisSpawnable "{64C8972E0B324174}" {
+       m_ModelPrefabs {
+        "{609EA27CE84BD3EC}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_02_dbr_01.xob" "{F9801BE5F5ACE27C}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_02_dbr_02.xob" "{8E8A736D010E0D0C}Assets/Structures/Industrial/Sheds/ShedMetal_02/Dst/ShedMetal_02_right_side_wall_dst_02_dbr_03.xob"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ placement none
+}

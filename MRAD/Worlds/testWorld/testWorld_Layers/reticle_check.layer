@@ -1,0 +1,31 @@
+$grp GenericEntity {
+ {
+  components {
+   MeshObject "{65FD13E962D0CA47}" {
+    Object "{2D4E29152C522990}Assets/toxic_test_temp/Artilery_debuger/artilery_debuger.xob"
+   }
+  }
+  coords 1 1 0.5
+ }
+ {
+  components {
+   MeshObject "{65FD13E962D0CA47}" {
+    Object "{2D4E29152C522990}Assets/toxic_test_temp/Artilery_debuger/artilery_debuger.xob"
+   }
+  }
+  coords 1 1 0.5
+  angleX 90
+ }
+ {
+  components {
+   MeshObject "{65FD13E962D0CA47}" {
+    Object "{2D4E29152C522990}Assets/toxic_test_temp/Artilery_debuger/artilery_debuger.xob"
+   }
+  }
+  coords 1 1 14.989
+  angleX 90
+ }
+}
+GenericEntity : "{1828C5C23AE5E4CA}Prefabs/Weapons/GrenadeLaunchers/GM94/GL_GM94.et" {
+ coords 2.332 1 0.665
+}

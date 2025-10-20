@@ -1,0 +1,326 @@
+Projectile : "{01B131367501020F}Prefabs/Weapons/Ammo/Ammo_Grenade_VGM93_Base.et" {
+ coords 8.473 1 3.594
+}
+GenericEntity : "{121F3BC31512DE9A}Prefabs/Weapons/Magazines/GM94/Magazine_43x30mm_GM94_4rnd_Base.et" {
+ coords 8.657 1 2.84
+}
+GenericEntity : "{1828C5C23AE5E4CA}Prefabs/Weapons/GrenadeLaunchers/GM94/GL_GM94.et" {
+ coords 5.949 1 3.076
+}
+GenericEntity : "{188781BE6203A0B0}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_7n22AP.et" {
+ coords 1.748 1.906 2.638
+}
+Projectile : "{33F3FD3662F44BB7}Prefabs/Weapons/Ammo/SmallArms/Ammo_545x39_AP_7N10.et" {
+ coords 1.845 1.906 2.877
+}
+Projectile : "{448CA9AC08B0D7A6}Prefabs/Weapons/Ammo/Ammo_Grenade_VGM93_100.et" {
+ coords 8.338 1 3.211
+}
+$grp SCR_FiringRangeTarget : "{96665DE667E8F908}PrefabsEditable/Auto/Props/Military/Training/E_TargetInfantry_01.et" {
+ {
+  coords 201.5 0.897 12.209
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 301.5 0.897 17.247
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 401.5 0.897 22.235
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 501.5 0.897 27.224
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 601.5 0.897 32.227
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 701.5 0.897 37.288
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 801.5 0.897 42.218
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 901.5 0.897 47.265
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 1001.5 0.897 52.12
+  angleY -90
+  {
+   GenericEntity {
+    components {
+     MeshObject "{61E97428BC0710F2}" {
+      Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+     }
+    }
+    coords 0.788 0.103 -0.242
+    angleY 90
+    {
+     GenericEntity {
+      components {
+       MeshObject "{61E97428BC0710F2}" {
+        Object "{6D71816A6AE6AA66}Assets/Props/CubeMeter/box_1m.xob"
+       }
+      }
+      coords 0 0.7 0
+      angleY -90
+     }
+    }
+   }
+  }
+ }
+}
+$grp GenericEntity : "{9A50B595DDDA7995}Prefabs/Weapons/Rifles/AK74M/Rifle_AK103.et" {
+ {
+  coords 3.028 1.973 2.338
+ }
+ {
+  coords 4.275 1.896 2.402
+ }
+}
+GenericEntity : "{DE52C9A0D60705D9}Prefabs/Weapons/Rifles/AK74M/Rifle_AK103_b30_b31s_b33_pt1_rk3_FDE_rk0.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsRanges {
+      SightRangeInfo "{654EDAF301468A7B}" {
+       Range 0.1 0
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 4.053 1.906 2.348
+}
+Projectile : "{F606179DC6D9E781}Prefabs/Weapons/Ammo/SmallArms/Ammo_545x39_AP_7N22.et" {
+ coords 1.874 1.906 2.891
+}
+$grp GenericEntity : "{F82DF06C1E34128E}Prefabs/Weapons/Rifles/VSS/Rifle_VSS.et" {
+ {
+  coords 2.38 1.906 2.321
+ }
+ {
+  components {
+   WeaponComponent "{CFBAA4B706BA66E8}" {
+    components {
+     SightsComponent "{BB23A637957CFFF8}" {
+      SightsRanges {
+       SightRangeInfo "{65D910248C3E04CD}" {
+        WeaponPosition PointInfo "{584CED329E40145B}" {
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  coords 3.285 1.906 2.321
+ }
+}
+GenericEntity : "{FA5C25BF66A53DCF}Prefabs/Weapons/Rifles/AK74/Rifle_AK74.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0.6252
+     }
+    }
+   }
+  }
+ }
+ coords 3.154 1.906 2.369
+}
+GenericEntity : "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" {
+ coords 1.933 1.906 2.596
+}
+GenericEntity : "{FDACA6E5AEC36BD0}Prefabs/Weapons/Magazines/GM94/Magazine_43x30mm_GM94_4rnd_VGM93100.et" {
+ coords 8.861 1 3.303
+}
+GenericEntity : "{FDF816799D159377}Prefabs/Weapons/Rifles/AK74M/Rifle_AK105_b30_b31s_b33_pt1_rk3_RailCover.et" {
+ coords 2.044 1.906 2.308
+}

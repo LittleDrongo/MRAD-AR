@@ -18,7 +18,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_1 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_1 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -61,7 +61,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_2 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_2 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -104,7 +104,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_3 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_3 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -147,7 +147,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_4 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_4 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -190,7 +190,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_5 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_5 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -233,7 +233,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_6 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_6 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -276,7 +276,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_7 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_7 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -319,7 +319,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_8 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_8 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -362,7 +362,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_9 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_9 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -405,7 +405,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_10 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_10 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -415,7 +415,7 @@ $grp GenericEntity {
     scale 0.418
     {
      CommentEntity {
-      coords 0 4.722 0
+      coords 0 9.142 0
       angleY 90
       scale 2.395
       m_Comment "1000"
@@ -448,7 +448,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_11 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_11 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -491,7 +491,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_12 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_12 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -534,7 +534,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_13 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_13 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -577,7 +577,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_14 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_14 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
@@ -620,7 +620,7 @@ $grp GenericEntity {
     m_TextBackground 1
     m_BackgroundTransparency 0
    }
-   StaticModelEntity targ_15 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/ShedMetal_02_RightWall.et" {
+   StaticModelEntity targ_15 : "{FF3B646DFC1CF5EB}Prefabs/Structures/Industrial/Sheds/ShedMetal_02/HouseAddons/ShedMetal_02_RightWall.et" {
     components {
      MeshObject "{56DE7C8DCD0F4E0A}" {
       PixelSizeScale 10
