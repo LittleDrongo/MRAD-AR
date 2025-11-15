@@ -121,6 +121,33 @@ $grp GenericEntity {
  {
   coords 1.891 1.906 2.182
  }
+ {
+  coords 3.422 1 2.334
+ }
+ {
+  coords 3.602 1 2.314
+ }
+ {
+  coords 3.675 1 2.325
+ }
+ {
+  coords 3.887 1 2.319
+ }
+ {
+  coords 4.036 1 2.302
+ }
+ {
+  coords 4.097 1 2.302
+ }
+ {
+  coords 4.272 1 2.303
+ }
+ {
+  coords 4.442 1 2.326
+ }
+ {
+  coords 4.59 1 2.326
+ }
 }
 $grp GenericEntity : "{03D467E505692C3F}Prefabs/Weapons/Magazines/AK103_magazine/Magazine_762x39_plastic_AK_30rnd_57N231.et" {
  {
@@ -200,34 +227,8 @@ $grp Projectile : "{43544DC90B3CB6B1}Prefabs/Weapons/Ammo/SmallArms/Ammo_9x39_Ba
   coords 1.439 1.906 2.148
  }
 }
-$grp GenericEntity : "{68CFC7B6DE0CC75F}Prefabs/Weapons/Magazines/Magazine_762x51_FAL_Commonwealth_20rnd_Ball.et" {
- {
-  coords 3.422 1 2.334
- }
- {
-  coords 3.602 1 2.314
- }
- {
-  coords 3.675 1 2.325
- }
- {
-  coords 3.887 1 2.319
- }
- {
-  coords 4.036 1 2.302
- }
- {
-  coords 4.097 1 2.302
- }
- {
-  coords 4.272 1 2.303
- }
- {
-  coords 4.442 1 2.326
- }
- {
-  coords 4.59 1 2.326
- }
+GenericEntity : "{6343FDE2D086810C}Prefabs/Items/Equipment/RangeCard/RangeCard_M40A5.et" {
+ coords 1.277 1 34.364
 }
 GenericEntity : "{757FCCE8E756175C}Prefabs/Props/Furniture/MeetingTable_01.et" {
  coords 3.714 1 2.678
@@ -236,6 +237,10 @@ GenericEntity : "{757FCCE8E756175C}Prefabs/Props/Furniture/MeetingTable_01.et" {
    coords 1.036 0.954 0.313
   }
  }
+}
+GenericEntity : "{8909A91CFF369BB3}Prefabs/Weapons/Rifles/M40/Rifle_M40A5_Optic.et" {
+ coords 1.279 1 34.201
+ angles 0 93.13 0
 }
 Projectile : "{A652706B1B37CF93}Prefabs/Weapons/Ammo/Ammo_Rocket_RPOA.et" {
  coords 4.716 1.13 2.333
