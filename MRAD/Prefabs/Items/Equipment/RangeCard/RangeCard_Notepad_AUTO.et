@@ -1,0 +1,16 @@
+GenericEntity : "{D30D4FA5A82D6F0D}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_Base.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  Drg_AutoNotepadRtComponent "{61ECFCAC76676880}" {
+   m_sText "script"
+  }
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Name "Rangecard"
+     Description ""
+    }
+   }
+  }
+ }
+}

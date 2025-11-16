@@ -95,7 +95,8 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		string returnValue;
 		
 		MagazineUIInfo magazineUI = MagazineUIInfo.Cast(magazine.GetUIInfo());
-		returnValue =  string.Format("%1 [ %2 ] \n\n", magazineUI.GetAmmoType(), WidgetManager.Translate(magazineUI.GetAmmoCaliber()));
+
+		returnValue =  string.Format("%1 \n\n", WidgetManager.Translate(magazineUI.GetAmmoCaliber()));
 		
 		for (int i = 1; i <= 15; i++)
 		{
@@ -106,7 +107,7 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 			angleRad = Math.Atan2(aimHeight, distance);
 			angleRad = SCR_Math.ConvertFromRadians(angleRad, SCR_EOpticsAngleUnits.MILLIRADIANS);
 			string roundValue = angleRad.ToString(2, 1); 
-			returnValue += string.Format("%1 m --- %2 mrad\n", distance, roundValue);
+			returnValue += string.Format("%1 m --- %2 Mrad\n", distance, roundValue);
 		}
 			
 		return returnValue;
