@@ -1,7 +1,7 @@
 GenericEntity : "{F68EBCB89E1F8FE6}Prefabs/Items/Equipment/RangeCard/RangeCard_L42A1.et" {
  ID "508AB2013EEE1E00"
  components {
-  Drg_NotepadRtComponent "{61ECFCAC76676880}" {
+  Drg_AutoNotepadRtComponent "{61ECFCAC76676880}" {
    m_sText ""\
    "Rifle L1A1	M80"\
    "Meters	|	up mrad"\

@@ -9,7 +9,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "100"
     m_Size 0.05
@@ -29,7 +29,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "100"
       m_Size 2
@@ -52,7 +52,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "200"
     m_Size 0.05
@@ -72,7 +72,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "200"
       m_Size 2
@@ -95,7 +95,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "300"
     m_Size 0.05
@@ -115,7 +115,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "300"
       m_Size 2
@@ -138,7 +138,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "400"
     m_Size 0.05
@@ -158,7 +158,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "400"
       m_Size 2
@@ -181,7 +181,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "500"
     m_Size 0.05
@@ -201,7 +201,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "500"
       m_Size 2
@@ -224,7 +224,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "600"
     m_Size 0.05
@@ -244,7 +244,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "600"
       m_Size 2
@@ -267,7 +267,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "700"
     m_Size 0.05
@@ -287,7 +287,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "700"
       m_Size 2
@@ -310,7 +310,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "800"
     m_Size 0.05
@@ -330,7 +330,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "800"
       m_Size 2
@@ -353,7 +353,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "900"
     m_Size 0.05
@@ -373,7 +373,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "900"
       m_Size 2
@@ -396,7 +396,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "1000"
     m_Size 0.05
@@ -416,7 +416,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 9.142 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "1000"
       m_Size 2
@@ -439,7 +439,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "1100"
     m_Size 0.05
@@ -459,7 +459,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "1100"
       m_Size 2
@@ -482,7 +482,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "1200"
     m_Size 0.05
@@ -502,7 +502,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "1200"
       m_Size 2
@@ -525,7 +525,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "1300"
     m_Size 0.05
@@ -545,7 +545,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "1300"
       m_Size 2
@@ -568,7 +568,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "1400"
     m_Size 0.05
@@ -588,7 +588,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "1400"
       m_Size 2
@@ -611,7 +611,7 @@ $grp GenericEntity {
   {
    CommentEntity {
     coords 0.5 1.099 0
-    angleY 90
+    angles 0 90 0
     scale 2.395
     m_Comment "1500"
     m_Size 0.05
@@ -631,7 +631,7 @@ $grp GenericEntity {
     {
      CommentEntity {
       coords 0 4.722 0
-      angleY 90
+      angles 0 90 0
       scale 2.395
       m_Comment "1500"
       m_Size 2

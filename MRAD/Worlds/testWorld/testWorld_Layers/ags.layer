@@ -1,35 +1,29 @@
-GameEntity : "{1C8E506A6CAD1D5B}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/PSO-1M2-01.et" {
+GameEntity {
  coords 2.472 1.906 2.214
 }
-Projectile : "{422EC31DDF1DE583}Prefabs/Weapons/Ammo/Ammo_Grenade_HE_VOG17M.et" {
- coords 1.966 1.921 2.993
-}
-Projectile : "{43544DC90B3CB6B1}Prefabs/Weapons/Ammo/SmallArms/Ammo_9x39_Ball_SP5.et" {
- coords 1.652 1.906 2.434
-}
-$grp GenericEntity : "{5B0EC4D381A00605}Prefabs/Weapons/Magazines/VSS/Magazine_9x39mm_VSS_30Rnd.et" {
+$grp GenericEntity {
  {
   coords 2.449 1.906 2.448
-  angleZ 0
  }
  {
   coords 2.374 1.906 2.703
-  angleZ 0
  }
  {
   coords 2.381 1.906 2.655
-  angleZ 0
  }
  {
-  coords 2.444 1.942 2.409
-  angleZ 0
+  coords 2.747 1.942 2.437
  }
  {
   coords 2.452 1.906 2.498
-  angleZ 0
  }
  {
   coords 2.457 1.906 2.56
-  angleZ 0
  }
+}
+Projectile {
+ coords 1.966 1.921 2.993
+}
+Projectile : "{43544DC90B3CB6B1}Prefabs/Weapons/Ammo/Ammo_9x39_Ball_SP5.et" {
+ coords 1.652 1.906 2.434
 }
