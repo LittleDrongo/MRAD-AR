@@ -98,6 +98,9 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 
 		returnValue =  string.Format("%1 \n\n", WidgetManager.Translate(magazineUI.GetAmmoCaliber()));
 		
+		
+		float coef = muzzle.GetBulletInitSpeedCoef();
+		
 		for (int i = 1; i <= 15; i++)
 		{
 			float distance = 100 * i;
@@ -105,7 +108,7 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	
 			aimHeight = BallisticTable.GetAimHeightOfNextProjectile(distance, travelTime, muzzle, false);
 			angleRad = Math.Atan2(aimHeight, distance);
-			angleRad = SCR_Math.ConvertFromRadians(angleRad, SCR_EOpticsAngleUnits.MILLIRADIANS);
+			angleRad = SCR_Math.ConvertFromRadians(angleRad, SCR_EOpticsAngleUnits.MILLIRADIANS) * coef;
 			string roundValue = angleRad.ToString(2, 1); 
 			returnValue += string.Format("%1 m --- %2 Mrad\n", distance, roundValue);
 		}
@@ -126,56 +129,3 @@ modded class SCR_GadgetComponent : ScriptGameComponent
 		notepad.RecalculateWidget();
 	}
 }
-
-/* Статическая версия (не подходит для генерации в игре)
-
-[ComponentEditorProps(category: "GameScripted/Misc", description: "")]
-class Drg_NotepadRtComponentClass : ScriptComponentClass
-{
-}
-
-
-class Drg_NotepadRtComponent : ScriptComponent
-{
-	[Attribute("")]
-	ResourceName m_sPathLayout;
-	Widget m_wRTRoot;
-	
-	[Attribute("", UIWidgets.EditBoxMultiline)]
-	string m_sText;
-	
-	static ref map<ResourceName,RTTextureWidget> m_mStaticWidgets = new map<ResourceName,RTTextureWidget>();
-	
-		
-	//------------------------------------------------------------------------------------------------
-	override void EOnInit(IEntity owner)
-	{
-		ResourceName prefabName = owner.GetPrefabData().GetPrefabName();		
-		RTTextureWidget rtTexture = m_mStaticWidgets.Get(prefabName);
-		
-		if (!rtTexture)
-		{
-			m_wRTRoot = GetGame().GetWorkspace().CreateWidgets(m_sPathLayout);
-			rtTexture = RTTextureWidget.Cast(m_wRTRoot.FindAnyWidget("drg_Main_RTTexture"));
-			RichTextWidget richRextureWidget = RichTextWidget.Cast(m_wRTRoot.FindAnyWidget("drg_Text"));
-			richRextureWidget.SetText(m_sText);
-			m_mStaticWidgets.Insert(prefabName, rtTexture);
-		}
-		
-		rtTexture.SetGUIWidget(owner, 1);
-	}
-
-	//------------------------------------------------------------------------------------------------
-	override void OnPostInit(IEntity owner)
-	{
-		SetEventMask(owner, EntityEvent.INIT);
-	}
-
-	//------------------------------------------------------------------------------------------------
-	override void OnDelete(IEntity owner)
-	{
-		if (m_wRTRoot)
-			m_wRTRoot.RemoveFromHierarchy();
-	}	
-}
-*/
