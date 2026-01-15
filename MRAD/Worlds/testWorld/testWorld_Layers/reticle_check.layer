@@ -14,7 +14,7 @@ $grp GenericEntity {
    }
   }
   coords 1 1 0.5
-  angleX 90
+  angles 90 0 0
  }
  {
   components {
@@ -23,9 +23,47 @@ $grp GenericEntity {
    }
   }
   coords 1 1 14.989
-  angleX 90
+  angles 90 0 0
+ }
+}
+$grp GenericEntity : "{0EC215F0EB3288A6}Prefabs/Weapons/Magazines/Magazine_762x51_M40_5rnd_Base.et" {
+ {
+  coords 4.317 1.906 3.09
+ }
+ {
+  coords 4.296 1.906 3.04
+ }
+ {
+  coords 4.293 1.906 2.988
+ }
+ {
+  coords 4.291 1.906 2.923
+ }
+ {
+  coords 4.286 1.906 2.874
+ }
+ {
+  coords 4.28 1.906 2.837
+ }
+ {
+  coords 4.27 1.906 2.787
+ }
+ {
+  coords 4.251 1.906 2.737
+ }
+ {
+  coords 4.253 1.906 2.661
+ }
+ {
+  coords 4.227 1.906 2.574
+ }
+ {
+  coords 4.179 1.906 2.579
  }
 }
 GenericEntity : "{1828C5C23AE5E4CA}Prefabs/Weapons/GrenadeLaunchers/GM94/GL_GM94.et" {
  coords 2.332 1 0.665
+}
+GenericEntity : "{8909A91CFF369BB3}Prefabs/Weapons/Rifles/M40/Rifle_M40A5_Optic.et" {
+ coords 4.463 1.906 2.911
 }

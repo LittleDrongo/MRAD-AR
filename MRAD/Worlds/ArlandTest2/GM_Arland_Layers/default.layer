@@ -1,33 +1,845 @@
-GenericEntity : "{261AF2DFA11F2801}Prefabs/Items/Equipment/RangeCard/RangeCard_M14_SpecialBall.et" {
- coords 961.321 39.906 2653.847
+GameEntity {
+ coords 627.258 39.481 2564.715
+ angles 0 81.622 0
 }
-Vehicle UAZ452_ambulance1 : "{43C4AF1EEBD001CE}Prefabs/Vehicles/Wheeled/UAZ452/UAZ452_ambulance.et" {
- coords 963.977 39 2653.959
-}
-GenericEntity : "{6343FDE2D086810C}Prefabs/Items/Equipment/RangeCard/RangeCard_M40A5.et" {
- coords 961.455 39.906 2653.842
-}
-GenericEntity : "{757FCCE8E756175C}Prefabs/Props/Furniture/MeetingTable_01.et" {
- coords 960.831 39 2654.237
+$grp GenericEntity {
  {
-  GenericEntity : "{03810BEF182ADA0B}Prefabs/Items/Equipment/Binoculars/Rangefinder_Vector21.et" {
-   coords 0.966 0.906 -0.089
-  }
-  GenericEntity : "{56CE827F9AD5880E}Prefabs/Weapons/Rifles/M40/Rifle_M40A5_Optic_PEQ.et" {
-   coords -0.499 0.955 -0.133
-   angleX 3.354
-   angleY -22.211
-   angleZ 98.154
-  }
-  GameEntity : "{ACC9B43941CE5EA6}Prefabs/Weapons/Attachments/Optics/Optic_leupoldMK4/Optic_leupoldMK4.et" {
-   coords -0.755 0.905 -0.291
-  }
-  GenericEntity : "{BCEA0EB0D764D8DD}Prefabs/Items/Equipment/Binoculars/Rangefinder_PDU4.et" {
-   coords 1.036 0.906 0.313
-  }
+  coords 627.247 39.481 2566.334
+  angles 0 81.622 0
  }
-}
-$grp GenericEntity : "{9C0CD692B40776A9}Prefabs/Items/Equipment/RangeCard/RangeCard_M38.et" {
+ {
+  coords 627.297 39.481 2566.435
+  angles 0 81.622 0
+ }
+ {
+  coords 627.362 39.481 2566.558
+  angles 0 81.622 0
+ }
+ {
+  coords 627.398 39.481 2566.479
+  angles 0 81.622 0
+ }
+ {
+  coords 627.38 39.481 2566.376
+  angles 0 81.622 0
+ }
+ {
+  coords 627.3 39.481 2566.362
+  angles 0 81.622 0
+ }
+ {
+  coords 627.318 39.481 2566.47
+  angles 0 81.622 0
+ }
+ {
+  coords 627.265 39.481 2566.24
+  angles 0 81.622 0
+ }
+ {
+  coords 627.316 39.481 2565.404
+  angles 0 81.622 0
+ }
+ {
+  coords 627.411 39.481 2565.429
+  angles 0 81.622 0
+ }
+ {
+  coords 627.524 39.481 2565.336
+  angles 0 81.622 0
+ }
+ {
+  coords 627.571 39.481 2565.225
+  angles 0 81.622 0
+ }
+ {
+  coords 627.404 39.481 2565.32
+  angles 0 81.622 0
+ }
+ {
+  coords 627.355 39.481 2565.478
+  angles 0 81.622 0
+ }
+ {
+  coords 627.515 39.481 2563.792
+  angles 0 81.622 0
+ }
+ {
+  coords 627.522 39.481 2563.611
+  angles 0 81.622 0
+ }
+ {
+  coords 627.543 39.481 2563.541
+  angles 0 81.622 0
+ }
+ {
+  coords 627.568 39.481 2563.33
+  angles 0 81.622 0
+ }
+ {
+  coords 627.573 39.481 2563.18
+  angles 0 81.622 0
+ }
+ {
+  coords 627.582 39.481 2563.12
+  angles 0 81.622 0
+ }
+ {
+  coords 627.609 39.481 2562.947
+  angles 0 81.622 0
+ }
+ {
+  coords 627.656 39.481 2562.782
+  angles 0 81.622 0
+ }
+ {
+  coords 627.677 39.481 2562.636
+  angles 0 81.622 0
+ }
+ {
+  coords 627.504 39.481 2563.835
+  angles 0 81.622 0
+ }
+ {
+  coords 627.665 39.481 2563.785
+  angles 0 81.622 0
+ }
+ {
+  coords 627.855 39.481 2563.831
+  angles 0 81.622 0
+ }
+ {
+  coords 627.961 39.481 2563.747
+  angles 0 81.622 0
+ }
+ {
+  coords 627.703 39.481 2563.601
+  angles 0 81.622 0
+ }
+ {
+  coords 627.594 39.481 2563.733
+  angles 0 81.622 0
+ }
+ {
+  coords 627.755 39.481 2563.549
+  angles 0 81.622 0
+ }
+ {
+  coords 627.91 39.481 2563.69
+  angles 0 81.622 0
+ }
+ {
+  coords 627.598 39.481 2563.585
+  angles 0 81.622 0
+ }
+ {
+  coords 627.554 39.481 2563.428
+  angles 0 81.622 0
+ }
+ {
+  coords 627.883 39.481 2563.329
+  angles 0 81.622 0
+ }
+ {
+  coords 627.752 39.481 2563.718
+  angles 0 81.622 0
+ }
+ {
+  coords 628.004 39.481 2562.972
+  angles 0 81.622 0
+ }
+ {
+  coords 627.486 39.481 2564.771
+  angles 0 81.622 0
+ }
+ {
+  coords 627.727 39.481 2564.883
+  angles 0 81.622 0
+ }
+ {
+  coords 627.681 39.481 2564.869
+  angles 0 81.622 0
+ }
+ {
+  coords 627.519 39.481 2564.475
+  angles 0 81.622 0
+ }
+ {
+  coords 627.536 39.481 2564.776
+  angles 0 81.622 0
+ }
+ {
+  coords 627.598 39.481 2564.78
+  angles 0 81.622 0
+ }
+ {
+  coords 628.617 39.481 2561.4
+  angles 0 81.622 0
+ }
+ {
+  coords 627.572 39.481 2565.493
+  angles 0 81.622 0
+ }
+ {
+  coords 627.462 39.481 2564.183
+  angles 0 81.622 0
+ }
+ {
+  coords 627.707 39.481 2562.958
+  angles 0 81.622 0
+ }
+ {
+  components {
+   WeaponComponent "{CFBAA4B706BA66E8}" {
+    components {
+     SightsComponent "{BB23A637957CFFF8}" {
+      SightsRanges {
+       SightRangeInfo "{654EDAF301468A7B}" {
+        Range 0.1 0
+       }
+      }
+     }
+    }
+   }
+  }
+  coords 627.621 39.481 2563.17
+  angles 0 81.622 0
+ }
+ {
+  coords 627.35 39.481 2564.821
+  angles 0 81.622 0
+ }
+ {
+  components {
+   WeaponComponent "{CFBAA4B706BA66E8}" {
+    components {
+     SightsComponent "{BB23A637957CFFF8}" {
+      SightsRanges {
+       SightRangeInfo "{65D910248C3E04CD}" {
+        WeaponPosition PointInfo "{584CED329E40145B}" {
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  coords 627.482 39.481 2563.926
+  angles 0 81.622 0
+ }
+ {
+  coords 627.557 39.481 2565.303
+  angles 0 81.622 0
+ }
+ {
+  coords 627.289 39.481 2565.152
+  angles 0 81.622 0
+ }
+ {
+  components {
+   MagazineComponent "{CA6BE4D6B4DAFD69}" {
+    MaxAmmo 1000
+    AmmoMapping {
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+    }
+   }
+  }
+  coords 627.402 39.481 2565.343
+  angles 0 81.622 0
+ }
+ {
+  components {
+   MagazineComponent "{CA6BE4D6B4DAFD69}" {
+    MaxAmmo 1000
+    AmmoMapping {
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+    }
+   }
+  }
+  coords 627.25 39.481 2565.447
+  angles 0 81.622 0
+ }
+ {
+  components {
+   MagazineComponent "{CA6BE4D6B4DAFD69}" {
+    MaxAmmo 1000
+    AmmoMapping {
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+    }
+   }
+  }
+  coords 627.239 39.481 2565.379
+  angles 0 81.622 0
+ }
+ {
+  coords 626.548 39.481 2564.992
+  angles 0 81.622 0
+ }
+ {
+  coords 627.146 39.481 2565.774
+  angles 0 81.622 0
+ }
+ {
+  coords 961.321 39.906 2653.847
+ }
+ {
+  coords 627.614 39.481 2565.019
+  angles 0 81.622 0
+ }
+ {
+  coords 961.455 39.906 2653.842
+ }
  {
   coords 961.183 39.906 2653.861
  }
@@ -1204,7 +2016,161 @@ $grp GenericEntity : "{9C0CD692B40776A9}Prefabs/Items/Equipment/RangeCard/RangeC
  {
   coords 1191.306 39 2715.827
  }
+ {
+  coords 627.11 39.481 2565.431
+  angles 0 81.622 0
+ }
 }
-GenericEntity : "{D30D4FA5A82D6F0D}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_Base.et" {
- coords 960.816 39.906 2654.003
+$grp Projectile {
+ {
+  coords 627.703 39.481 2562.512
+  angles 0 81.622 0
+ }
+ {
+  coords 627.955 39.481 2565.329
+  angles 0 81.622 0
+ }
+}
+$grp GenericEntity : "{0EC215F0EB3288A6}Prefabs/Weapons/Magazines/Magazine_762x51_M40_5rnd_Base.et" {
+ {
+  coords 627.87 39.481 2563.031
+  angles 0 81.622 0
+ }
+ {
+  coords 628.393 39.481 2563.017
+  angles 0 81.622 0
+ }
+ {
+  coords 1464.201 54.091 1165.742
+  angles 0 81.622 0
+ }
+ {
+  coords 1464.445 54.091 1165.787
+  angles 0 81.622 0
+ }
+ {
+  coords 1464.302 54.091 1165.657
+  angles 0 81.622 0
+ }
+ {
+  coords 1464.171 54.091 1165.843
+  angles 0 81.622 0
+ }
+ {
+  coords 1463.98 54.091 1165.734
+  angles 0 81.622 0
+ }
+ {
+  coords 1463.841 54.091 1165.848
+  angles 0 81.622 0
+ }
+ {
+  coords 1463.695 54.091 1165.657
+  angles 0 81.622 0
+ }
+ {
+  coords 628.138 39.481 2563.017
+  angles 0 81.622 0
+ }
+ {
+  coords 627.868 39.481 2563.079
+  angles 0 81.622 0
+ }
+}
+$grp GenericEntity : "{2A7C01B93CC92ACE}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_AUTO.et" {
+ {
+  coords 627.013 39.481 2566.357
+  angles 0 81.622 0
+ }
+ {
+  coords 1462.11 54.091 1165.568
+ }
+ {
+  coords 1461.799 54.091 1165.656
+ }
+}
+Projectile : "{2FBCA0A7CEDDE7B0}Prefabs/Weapons/Ammo/SmallArms/Ammo_762x39_Ball_57N231.et" {
+ coords 627.582 39.481 2563.027
+ angles 0 81.622 0
+}
+Projectile : "{33F3FD3662F44BB7}Prefabs/Weapons/Ammo/SmallArms/Ammo_545x39_AP_7N10.et" {
+ coords 627.823 39.481 2565.432
+ angles 0 81.622 0
+}
+Vehicle UAZ452_ambulance1 : "{43C4AF1EEBD001CE}Prefabs/Vehicles/Wheeled/UAZ452/UAZ452_ambulance.et" {
+ coords 963.977 39 2653.959
+}
+GenericEntity : "{757FCCE8E756175C}Prefabs/Props/Furniture/MeetingTable_01.et" {
+ coords 960.831 39 2654.237
+ {
+  GenericEntity : "{03810BEF182ADA0B}Prefabs/Items/Equipment/Binoculars/Rangefinder_Vector21.et" {
+   coords 0.966 0.906 -0.089
+  }
+  GenericEntity : "{56CE827F9AD5880E}Prefabs/Weapons/Rifles/M40/Rifle_M40A5_Optic_PEQ.et" {
+   coords -0.499 0.955 -0.133
+   angles 3.354 -22.211 98.154
+  }
+  GameEntity : "{ACC9B43941CE5EA6}Prefabs/Weapons/Attachments/Optics/Optic_leupoldMK4/Optic_leupoldMK4.et" {
+   coords -0.755 0.905 -0.291
+  }
+  GenericEntity : "{BCEA0EB0D764D8DD}Prefabs/Items/Equipment/Binoculars/Rangefinder_PDU4.et" {
+   coords 1.036 0.906 0.313
+  }
+ }
+}
+GameEntity : "{792F06155BEBD71D}Prefabs/Items/Equipment/BallisticTable/BallisticTable_US_base.et" {
+ coords 627.165 39.481 2565.875
+ angles 0 81.622 0
+}
+GenericEntity : "{8909A91CFF369BB3}Prefabs/Weapons/Rifles/M40/Rifle_M40A5_Optic.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5E0E3155DB81CDD4}" {
+     AttachmentSlot RHS_SlidingInventoryStorageSlot Scope {
+      Prefab "{ACC9B43941CE5EA6}Prefabs/Weapons/Attachments/Optics/Optic_leupoldMK4/Optic_leupoldMK4.et"
+     }
+    }
+   }
+  }
+ }
+ coords 1462.819 54.091 1165.914
+ angles 0 81.622 0
+}
+GameEntity : "{A1F5E9EE635B7A9E}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_AZS_Template.et" {
+ coords 1463.206 54.091 1165.593
+}
+GameEntity : "{ACC9B43941CE5EA6}Prefabs/Weapons/Attachments/Optics/Optic_leupoldMK4/Optic_leupoldMK4.et" {
+ coords 1461.914 54.091 1165.223
+}
+$grp GenericEntity : "{D30D4FA5A82D6F0D}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_Base.et" {
+ {
+  coords 960.816 39.906 2654.003
+ }
+ {
+  coords 627.223 39.481 2564.881
+  angles 0 81.622 0
+ }
+}
+GenericEntity : "{DD17D4BC320A94C8}Prefabs/Weapons/Rifles/M14/Rifle_M21_ARTII_OliveGreen_Sand_Stripes_Wrapped.et" {
+ coords 1462.452 54.091 1165.68
+}
+Projectile : "{F606179DC6D9E781}Prefabs/Weapons/Ammo/SmallArms/Ammo_545x39_AP_7N22.et" {
+ coords 627.841 39.481 2565.405
+ angles 0 81.622 0
+}
+GenericEntity : "{FA5C25BF66A53DCF}Prefabs/Weapons/Rifles/AK74/Rifle_AK74.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0.6252
+     }
+    }
+   }
+  }
+ }
+ coords 627.511 39.481 2564.063
+ angles 0 81.622 0
 }
