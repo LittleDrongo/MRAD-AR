@@ -101,6 +101,9 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 
 		returnValue =  string.Format("%1 \nRange, Bullet drop, Wind 1ms\n\n", WidgetManager.Translate(magazineUI.GetAmmoCaliber()));
 		
+		
+		float coef = muzzle.GetBulletInitSpeedCoef();
+		
 		for (int i = 1; i <= 15; i++)
 		{
 			float distance = 100 * i;
@@ -108,6 +111,7 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	
 			aimHeight = BallisticTable.GetAimHeightOfNextProjectile(distance, travelTime, muzzle, false);
 			angleRad = Math.Atan2(aimHeight, distance);
+<<<<<<< HEAD
 			angleRad = SCR_Math.ConvertFromRadians(angleRad, SCR_EOpticsAngleUnits.MILLIRADIANS);
 			string roundValue = angleRad.ToString(2, 1);
 			
@@ -117,6 +121,11 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 			string windRoundValue = windAngleMrad.ToString(2, 1);
 			
 			returnValue += string.Format("%1 m --- %2 Mrad --- %3 Mrad\n", distance, roundValue, windRoundValue);
+=======
+			angleRad = SCR_Math.ConvertFromRadians(angleRad, SCR_EOpticsAngleUnits.MILLIRADIANS) * coef;
+			string roundValue = angleRad.ToString(2, 1); 
+			returnValue += string.Format("%1 m --- %2 Mrad\n", distance, roundValue);
+>>>>>>> parent of afad751 (Revert "update")
 		}
 			
 		return returnValue;
@@ -135,6 +144,7 @@ modded class SCR_GadgetComponent : ScriptGameComponent
 		notepad.RecalculateWidget();
 	}
 }
+<<<<<<< HEAD
 
 /* Статическая версия (не подходит для генерации в игре)
 
@@ -188,3 +198,5 @@ class Drg_NotepadRtComponent : ScriptComponent
 	}	
 }
 */
+=======
+>>>>>>> parent of afad751 (Revert "update")
