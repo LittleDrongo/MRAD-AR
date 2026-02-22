@@ -55,9 +55,6 @@ class Drg_AutoNotepadRtComponentClass : Drg_NotepadRtComponentClass
 
 class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 {
-	protected const float WIND_SPEED_MS = 1.0;
-	protected const float WIND_SCALE    = 0.025; // scale to match in‑game table roughly
-	
 	void RecalculateWidget()
 	{
 		m_wRich.SetText(CalculateRadians());
@@ -99,10 +96,7 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		
 		MagazineUIInfo magazineUI = MagazineUIInfo.Cast(magazine.GetUIInfo());
 
-		returnValue =  string.Format("%1 \nRange, Bullet drop, Wind 1ms\n\n", WidgetManager.Translate(magazineUI.GetAmmoCaliber()));
-		
-		
-		float coef = muzzle.GetBulletInitSpeedCoef();
+		returnValue =  string.Format("%1 \n\n", WidgetManager.Translate(magazineUI.GetAmmoCaliber()));
 		
 		for (int i = 1; i <= 15; i++)
 		{
@@ -111,21 +105,9 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	
 			aimHeight = BallisticTable.GetAimHeightOfNextProjectile(distance, travelTime, muzzle, false);
 			angleRad = Math.Atan2(aimHeight, distance);
-<<<<<<< HEAD
 			angleRad = SCR_Math.ConvertFromRadians(angleRad, SCR_EOpticsAngleUnits.MILLIRADIANS);
-			string roundValue = angleRad.ToString(2, 1);
-			
-			float windDrift = WIND_SPEED_MS * travelTime;
-			float windAngleRad = Math.Atan2(windDrift, distance);
-			float windAngleMrad = SCR_Math.ConvertFromRadians(windAngleRad, SCR_EOpticsAngleUnits.MILLIRADIANS) * WIND_SCALE;
-			string windRoundValue = windAngleMrad.ToString(2, 1);
-			
-			returnValue += string.Format("%1 m --- %2 Mrad --- %3 Mrad\n", distance, roundValue, windRoundValue);
-=======
-			angleRad = SCR_Math.ConvertFromRadians(angleRad, SCR_EOpticsAngleUnits.MILLIRADIANS) * coef;
 			string roundValue = angleRad.ToString(2, 1); 
 			returnValue += string.Format("%1 m --- %2 Mrad\n", distance, roundValue);
->>>>>>> parent of afad751 (Revert "update")
 		}
 			
 		return returnValue;
@@ -144,7 +126,6 @@ modded class SCR_GadgetComponent : ScriptGameComponent
 		notepad.RecalculateWidget();
 	}
 }
-<<<<<<< HEAD
 
 /* Статическая версия (не подходит для генерации в игре)
 
@@ -198,5 +179,3 @@ class Drg_NotepadRtComponent : ScriptComponent
 	}	
 }
 */
-=======
->>>>>>> parent of afad751 (Revert "update")
