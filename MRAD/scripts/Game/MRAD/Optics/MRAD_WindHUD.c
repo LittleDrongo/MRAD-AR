@@ -136,6 +136,25 @@ class MRAD_WindHUD
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Direction the player looks at: the camera when available, the body otherwise.
+	protected static vector ViewForward(ChimeraCharacter character)
+	{
+		CameraManager cameraManager = GetGame().GetCameraManager();
+		if (cameraManager)
+		{
+			CameraBase camera = cameraManager.CurrentCamera();
+			if (camera)
+			{
+				vector cameraMatrix[4];
+				camera.GetTransform(cameraMatrix);
+				return cameraMatrix[2];
+			}
+		}
+
+		return character.GetWorldTransformAxis(2);
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! Called every frame for the local player.
 	//! \param character the local shooter
 	//! \param toggleHeld the MRAD_ToggleWindHUD action is held this frame
@@ -198,10 +217,8 @@ class MRAD_WindHUD
 		if (beaufort == 0)
 			return;
 
-		float bearing = RelativeBearing(character.GetWorldTransformAxis(2), weather.GetWindDirection());
-		if (Math.AbsFloat(bearing - m_fBearing) < 0.25)
-			return;
-
+		// Стрелка следует за взглядом каждый кадр: без порогов и без ограничений.
+		float bearing = RelativeBearing(ViewForward(character), weather.GetWindDirection());
 		m_aArrows[beaufort].SetRotation(bearing);
 		m_fBearing = bearing;
 	}
