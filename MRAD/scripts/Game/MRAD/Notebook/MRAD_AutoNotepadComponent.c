@@ -292,11 +292,27 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		SetText("mrad_RangeHeader", WidgetManager.Translate("#MRAD_Range"));
 		SetText("mrad_DropHeader", WidgetManager.Translate("#MRAD_Drop") + "\nMRAD");
 		SetText("mrad_WindHeader", string.Format(WidgetManager.Translate("#MRAD_WindHeader"), MRAD_RangeCardData.FormatNumber(Math.AbsFloat(m_fSignedWind))) + "\nMRAD");
-		string ranges, drops, winds;
-		m_Data.GetPageColumns(m_iPage, m_iRowsPerPage, ranges, drops, winds);
-		SetText("mrad_Ranges", ranges);
-		SetText("mrad_Drops", drops);
-		SetText("mrad_Winds", winds);
+		// Each visible value owns one single-line widget. TextWidget does not
+		// advance multi-line rows reliably on the RTTexture surface.
+		int firstRow = m_Data.WrapPage(m_iPage, m_iRowsPerPage) * m_iRowsPerPage;
+		for (int rowIndex = 0; rowIndex < 12; rowIndex++)
+		{
+			string rangeText, dropText, windText;
+			int dataIndex = firstRow + rowIndex;
+			if (rowIndex < m_iRowsPerPage && dataIndex < m_Data.m_aRows.Count())
+			{
+				MRAD_RangeCardRow dataRow = m_Data.m_aRows[dataIndex];
+				rangeText = dataRow.m_iRange.ToString();
+				dropText = MRAD_RangeCardData.FormatNumber(dataRow.m_fDropMrad);
+				if (dataRow.m_bHasWind)
+					windText = MRAD_RangeCardData.FormatNumber(dataRow.m_fWindMrad);
+				else
+					windText = "вЂ”";
+			}
+			SetText("mrad_Range" + rowIndex.ToString(), rangeText);
+			SetText("mrad_Drop" + rowIndex.ToString(), dropText);
+			SetText("mrad_Wind" + rowIndex.ToString(), windText);
+		}
 		string status;
 		if (!m_Data.m_sError.IsEmpty())
 			status = WidgetManager.Translate(m_Data.m_sError);

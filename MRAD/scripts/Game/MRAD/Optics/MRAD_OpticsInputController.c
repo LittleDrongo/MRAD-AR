@@ -14,8 +14,15 @@ class MRAD_OpticsInputController
 	protected int m_iSyncAttempts;
 	protected float m_fSyncRetryTime;
 	protected Widget m_HUD;
-	protected TextWidget m_HUDValue;
+	protected TextWidget m_HUDElevation;
+	protected TextWidget m_HUDWindage;
 	protected TextWidget m_HUDStatus;
+	protected const float FIRST_REPEAT_DELAY = 0.32;
+	protected const float REPEAT_INTERVAL = 0.13;
+	protected int m_iHeldElevation;
+	protected int m_iHeldWindage;
+	protected float m_fElevationRepeat;
+	protected float m_fWindageRepeat;
 	protected string m_sLastHUDText;
 
 	void MRAD_OpticsInputController(BaseSightsComponent sights)
@@ -98,6 +105,7 @@ class MRAD_OpticsInputController
 
 		// duration=0: контекст существует только в этом кадре.
 		GetGame().GetInputManager().ActivateContext(INPUT_CONTEXT);
+		PollHeldActions(timeSlice);
 		int settingsRevision = MRAD_Settings.Get().GetRevision();
 		if (settingsRevision != m_iSettingsRevision)
 		{
@@ -145,50 +153,122 @@ class MRAD_OpticsInputController
 	{
 		if (enable == m_bListening || !GetGame())
 			return;
-
 		InputManager input = GetGame().GetInputManager();
 		if (!input)
 			return;
-
 		if (enable)
-		{
-			input.AddActionListener("MRAD_ElevationUpFine", EActionTrigger.DOWN, ElevationUpFine);
-			input.AddActionListener("MRAD_ElevationDownFine", EActionTrigger.DOWN, ElevationDownFine);
-			input.AddActionListener("MRAD_WindageLeftFine", EActionTrigger.DOWN, WindageLeftFine);
-			input.AddActionListener("MRAD_WindageRightFine", EActionTrigger.DOWN, WindageRightFine);
-			input.AddActionListener("MRAD_ElevationUpCoarse", EActionTrigger.DOWN, ElevationUpCoarse);
-			input.AddActionListener("MRAD_ElevationDownCoarse", EActionTrigger.DOWN, ElevationDownCoarse);
-			input.AddActionListener("MRAD_WindageLeftCoarse", EActionTrigger.DOWN, WindageLeftCoarse);
-			input.AddActionListener("MRAD_WindageRightCoarse", EActionTrigger.DOWN, WindageRightCoarse);
 			input.AddActionListener("MRAD_ResetZeroing", EActionTrigger.DOWN, ResetZeroing);
+		else
+		{
+			input.RemoveActionListener("MRAD_ResetZeroing", EActionTrigger.DOWN, ResetZeroing);
+			m_iHeldElevation = 0;
+			m_iHeldWindage = 0;
+			m_fElevationRepeat = 0;
+			m_fWindageRepeat = 0;
+		}
+		m_bListening = enable;
+	}
+
+	// InputSourceValue (not Click/Down) stays nonzero for the entire hold.
+	// Coarse always takes precedence over the same direction's fine binding.
+	// This also works with user-remapped bindings; no physical keys are polled.
+	protected void PollHeldActions(float timeSlice)
+	{
+		if (!m_bListening || !IsLocalADS() || IsMenuOpen())
+			return;
+		InputManager input = GetGame().GetInputManager();
+		if (!input)
+			return;
+		int elevation;
+		int windage;
+		bool upCoarse = input.GetActionValue("MRAD_ElevationUpCoarse") > 0.5;
+		bool downCoarse = input.GetActionValue("MRAD_ElevationDownCoarse") > 0.5;
+		bool leftCoarse = input.GetActionValue("MRAD_WindageLeftCoarse") > 0.5;
+		bool rightCoarse = input.GetActionValue("MRAD_WindageRightCoarse") > 0.5;
+		if (upCoarse != downCoarse)
+			if (upCoarse) elevation = 2; else elevation = -2;
+		else if (!upCoarse && !downCoarse)
+		{
+			bool upFine = input.GetActionValue("MRAD_ElevationUpFine") > 0.5;
+			bool downFine = input.GetActionValue("MRAD_ElevationDownFine") > 0.5;
+			if (upFine != downFine)
+				if (upFine) elevation = 1; else elevation = -1;
+		}
+		if (leftCoarse != rightCoarse)
+			if (leftCoarse) windage = -2; else windage = 2;
+		else if (!leftCoarse && !rightCoarse)
+		{
+			bool leftFine = input.GetActionValue("MRAD_WindageLeftFine") > 0.5;
+			bool rightFine = input.GetActionValue("MRAD_WindageRightFine") > 0.5;
+			if (leftFine != rightFine)
+				if (leftFine) windage = -1; else windage = 1;
+		}
+		RepeatAxis(elevation, true, timeSlice);
+		RepeatAxis(windage, false, timeSlice);
+	}
+
+	protected void RepeatAxis(int action, bool elevation, float timeSlice)
+	{
+		int previous = m_iHeldElevation;
+		float remaining = m_fElevationRepeat;
+		if (!elevation)
+		{
+			previous = m_iHeldWindage;
+			remaining = m_fWindageRepeat;
+		}
+		bool shouldStep;
+		if (action != previous)
+		{
+			shouldStep = action != 0;
+			remaining = FIRST_REPEAT_DELAY;
+		}
+		else if (action != 0)
+		{
+			remaining -= Math.Clamp(timeSlice, 0, 0.25);
+			if (remaining <= 0)
+			{
+				shouldStep = true;
+				remaining = REPEAT_INTERVAL;
+			}
+		}
+		if (elevation)
+		{
+			m_iHeldElevation = action;
+			m_fElevationRepeat = remaining;
 		}
 		else
 		{
-			input.RemoveActionListener("MRAD_ElevationUpFine", EActionTrigger.DOWN, ElevationUpFine);
-			input.RemoveActionListener("MRAD_ElevationDownFine", EActionTrigger.DOWN, ElevationDownFine);
-			input.RemoveActionListener("MRAD_WindageLeftFine", EActionTrigger.DOWN, WindageLeftFine);
-			input.RemoveActionListener("MRAD_WindageRightFine", EActionTrigger.DOWN, WindageRightFine);
-			input.RemoveActionListener("MRAD_ElevationUpCoarse", EActionTrigger.DOWN, ElevationUpCoarse);
-			input.RemoveActionListener("MRAD_ElevationDownCoarse", EActionTrigger.DOWN, ElevationDownCoarse);
-			input.RemoveActionListener("MRAD_WindageLeftCoarse", EActionTrigger.DOWN, WindageLeftCoarse);
-			input.RemoveActionListener("MRAD_WindageRightCoarse", EActionTrigger.DOWN, WindageRightCoarse);
-			input.RemoveActionListener("MRAD_ResetZeroing", EActionTrigger.DOWN, ResetZeroing);
+			m_iHeldWindage = action;
+			m_fWindageRepeat = remaining;
 		}
-
-		m_bListening = enable;
+		if (!shouldStep)
+			return;
+		if (elevation)
+			if (action > 0) RequestStep(1, 0, Math.AbsInt(action) == 2); else RequestStep(-1, 0, Math.AbsInt(action) == 2);
+		else
+			if (action > 0) RequestStep(0, 1, Math.AbsInt(action) == 2); else RequestStep(0, -1, Math.AbsInt(action) == 2);
 	}
 
 	protected void RequestStep(int elevationDirection, int windageDirection, bool coarse)
 	{
-		if (!IsLocalADS() || IsMenuOpen())
+		if (!IsLocalADS() || IsMenuOpen() || !m_State)
 			return;
-
 		MRAD_Settings settings = MRAD_Settings.Get();
-		float step = settings.GetFineStepMrad();
-		if (coarse)
-			step = settings.GetCoarseStepMrad();
+		float step = settings.GetFineStepMrad(); if (coarse) step = settings.GetCoarseStepMrad();
 		int ticks = Math.ClampInt(MRAD_ZeroingStateComponent.ToTicks(step), 1, MRAD_ZeroingStateComponent.MAX_STEP_TICKS);
-		SendRequest(elevationDirection * ticks, windageDirection * ticks, false);
+		int elevationDelta = elevationDirection * ticks;
+		int windageDelta = windageDirection * ticks;
+		// Do not play a click for a direction already at its adjustment stop.
+		if (elevationDelta > 0 && m_State.GetElevationTicks() >= m_State.GetElevationLimitTicks())
+			return;
+		if (elevationDelta < 0 && m_State.GetElevationTicks() <= -m_State.GetElevationLimitTicks())
+			return;
+		if (windageDelta > 0 && m_State.GetWindageTicks() >= m_State.GetWindageLimitTicks())
+			return;
+		if (windageDelta < 0 && m_State.GetWindageTicks() <= -m_State.GetWindageLimitTicks())
+			return;
+		if (SendRequest(elevationDelta, windageDelta, false))
+			SCR_UISoundEntity.SoundEvent(SCR_SoundEvent.SOUND_SIGHT_ELEVATION);
 	}
 
 	protected bool SendRequest(int elevationDelta, int windageDelta, bool reset, int syncRequestId = 0)
@@ -202,15 +282,6 @@ class MRAD_OpticsInputController
 		int windageLimit = Math.ClampInt(MRAD_ZeroingStateComponent.ToTicks(settings.GetWindageLimitMrad()), 1, MRAD_ZeroingStateComponent.MAX_LIMIT_TICKS);
 		return player.MRAD_RequestZeroing(m_State, elevationDelta, windageDelta, elevationLimit, windageLimit, reset, syncRequestId);
 	}
-
-	protected void ElevationUpFine(float value, EActionTrigger trigger) { RequestStep(1, 0, false); }
-	protected void ElevationDownFine(float value, EActionTrigger trigger) { RequestStep(-1, 0, false); }
-	protected void WindageLeftFine(float value, EActionTrigger trigger) { RequestStep(0, -1, false); }
-	protected void WindageRightFine(float value, EActionTrigger trigger) { RequestStep(0, 1, false); }
-	protected void ElevationUpCoarse(float value, EActionTrigger trigger) { RequestStep(1, 0, true); }
-	protected void ElevationDownCoarse(float value, EActionTrigger trigger) { RequestStep(-1, 0, true); }
-	protected void WindageLeftCoarse(float value, EActionTrigger trigger) { RequestStep(0, -1, true); }
-	protected void WindageRightCoarse(float value, EActionTrigger trigger) { RequestStep(0, 1, true); }
 
 	protected void ResetZeroing(float value, EActionTrigger trigger)
 	{
@@ -235,9 +306,10 @@ class MRAD_OpticsInputController
 			m_HUD = GetGame().GetWorkspace().CreateWidgets(HUD_LAYOUT);
 			if (!m_HUD)
 				return;
-			m_HUDValue = TextWidget.Cast(m_HUD.FindAnyWidget("MRAD_ZeroingValue"));
+			m_HUDElevation = TextWidget.Cast(m_HUD.FindAnyWidget("MRAD_ElevationValue"));
+			m_HUDWindage = TextWidget.Cast(m_HUD.FindAnyWidget("MRAD_WindageValue"));
 			m_HUDStatus = TextWidget.Cast(m_HUD.FindAnyWidget("MRAD_ZeroingStatus"));
-			if (!m_HUDValue || !m_HUDStatus)
+			if (!m_HUDElevation || !m_HUDWindage || !m_HUDStatus)
 			{
 				DeleteHUD();
 				return;
@@ -246,13 +318,19 @@ class MRAD_OpticsInputController
 		}
 
 		m_HUD.SetVisible(true);
-		m_HUDValue.SetVisible(showValue);
+		m_HUDElevation.SetVisible(showValue);
+		m_HUDWindage.SetVisible(showValue);
 		m_HUDStatus.SetVisible(atLimit);
-		string text = string.Format(WidgetManager.Translate("#MRAD_ZeroingHUD"), m_State.GetElevationMrad().ToString(1, 1), m_State.GetWindageMrad().ToString(1, 1));
-		if (text != m_sLastHUDText)
+		string verticalArrow = "↑"; if (m_State.GetElevationTicks() < 0) verticalArrow = "↓";
+		string horizontalArrow = "←"; if (m_State.GetWindageTicks() > 0) horizontalArrow = "→";
+		string elevationText = verticalArrow + " " + Math.AbsFloat(m_State.GetElevationMrad()).ToString(1, 1) + " MRAD";
+		string windageText = horizontalArrow + " " + Math.AbsFloat(m_State.GetWindageMrad()).ToString(1, 1) + " MRAD";
+		string signature = elevationText + "|" + windageText;
+		if (signature != m_sLastHUDText)
 		{
-			m_HUDValue.SetText(text);
-			m_sLastHUDText = text;
+			m_HUDElevation.SetText(elevationText);
+			m_HUDWindage.SetText(windageText);
+			m_sLastHUDText = signature;
 		}
 	}
 
@@ -261,7 +339,8 @@ class MRAD_OpticsInputController
 		if (m_HUD)
 			m_HUD.RemoveFromHierarchy();
 		m_HUD = null;
-		m_HUDValue = null;
+		m_HUDElevation = null;
+		m_HUDWindage = null;
 		m_HUDStatus = null;
 		m_sLastHUDText = string.Empty;
 	}

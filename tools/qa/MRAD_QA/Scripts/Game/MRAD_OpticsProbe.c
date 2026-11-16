@@ -50,6 +50,13 @@ class MRAD_OpticsProbe
 		entity.FindComponents(MRAD_ZeroingStateComponent, states);
 		Check(sights.Count() == 1, label + " has exactly one sights component");
 		Check(states.Count() == 1, label + " has exactly one per-instance state");
+		BaseSightsComponent nativeSights = BaseSightsComponent.Cast(entity.FindComponent(BaseSightsComponent));
+		if (nativeSights)
+		{
+			vector baseZero = nativeSights.GetCurrentSightsRange();
+			PrintFormat("MRAD_OPTICS_NATIVE_RANGE label=%1 animation=%2 metres=%3", label, baseZero[0], baseZero[1]);
+			Check(Math.AbsFloat(baseZero[1]) < 0.001, label + " has neutral vanilla metre zero");
+		}
 		MRAD_2DSightsComponent twoD = MRAD_2DSightsComponent.Cast(entity.FindComponent(MRAD_2DSightsComponent));
 		MRAD_PIPSightsComponent picture = MRAD_PIPSightsComponent.Cast(entity.FindComponent(MRAD_PIPSightsComponent));
 		if (pip)
@@ -147,12 +154,10 @@ class MRAD_OpticsProbe
 		}
 		IEntity optic2D = LoadAndSpawn("{A7DE1002B62C4801}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_2D.et", 0, "ARTII 2D");
 		IEntity opticPIP = LoadAndSpawn("{A7DE1002B62C4802}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_PIP.et", 1, "ARTII PIP");
-		IEntity rifle2D = LoadAndSpawn("{A7DE1002B62C4803}Prefabs/Weapons/MRAD/Rifles/MRAD_Rifle_M21_2D.et", 2, "M21 2D");
-		IEntity riflePIP = LoadAndSpawn("{A7DE1002B62C4804}Prefabs/Weapons/MRAD/Rifles/MRAD_Rifle_M21_PIP.et", 3, "M21 PIP");
+		// The mod owner deliberately removed the old sample rifle prefabs.
+		// Exercise standalone scope prefabs only; do not restore/modify rifles.
 		MRAD_ZeroingStateComponent first = CheckOptic(optic2D, false, "ARTII 2D");
 		MRAD_ZeroingStateComponent second = CheckOptic(opticPIP, true, "ARTII PIP");
-		CheckWeapon(rifle2D, false, "M21 2D");
-		CheckWeapon(riflePIP, true, "M21 PIP");
 		CheckState(first, second);
 		foreach (IEntity entity : m_aEntities)
 		{

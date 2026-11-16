@@ -186,9 +186,16 @@ class MRAD_SettingsProbe
 		Check(RTTextureWidget.Cast(root.FindAnyWidget("drg_Main_RTTexture")) != null, "notebook has the expected render-target widget");
 		Check(RichTextWidget.Cast(root.FindAnyWidget("drg_Text")) != null, "notebook retains the legacy static RichText widget");
 		Check(FrameWidget.Cast(root.FindAnyWidget("mrad_Dynamic")) != null, "notebook has its dynamic content frame");
-		array<string> fields = {"mrad_Bullet", "mrad_Suppressed", "mrad_RangeHeader", "mrad_DropHeader", "mrad_WindHeader", "mrad_Ranges", "mrad_Drops", "mrad_Winds", "mrad_Status", "mrad_Page"};
+		array<string> fields = {"mrad_Bullet", "mrad_Suppressed", "mrad_RangeHeader", "mrad_DropHeader", "mrad_WindHeader", "mrad_Status", "mrad_Page"};
 		foreach (string name : fields)
 			CheckText(root, name);
+		// 12 explicit rows for each column prevent multiline RT overdraw.
+		for (int i = 0; i < 12; i++)
+		{
+			CheckText(root, "mrad_Range" + i.ToString());
+			CheckText(root, "mrad_Drop" + i.ToString());
+			CheckText(root, "mrad_Wind" + i.ToString());
+		}
 	}
 
 	protected void CheckSettingsLayout(Widget root)
@@ -314,7 +321,8 @@ class MRAD_SettingsProbe
 		Widget hud = CreateLayout(workspace, HUD_LAYOUT, "optics HUD");
 		if (hud)
 		{
-			CheckText(hud, "MRAD_ZeroingValue");
+			CheckText(hud, "MRAD_ElevationValue");
+			CheckText(hud, "MRAD_WindageValue");
 			CheckText(hud, "MRAD_ZeroingStatus");
 		}
 		Widget settings = CreateLayout(workspace, MRAD_SettingsMenu.LAYOUT, "settings");

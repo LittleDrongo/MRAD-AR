@@ -102,47 +102,437 @@ FrameWidgetClass {
        Text ""
        "Font Size" 23
       }
-      TextWidgetClass "{263220AAC1B75F25}" {
-       Name "mrad_Ranges"
-       Slot FrameWidgetSlot "{9E441D571AD5E3F4}" {
+      TextWidgetClass "{0F5D9801FEF3846A}" {
+       Name "mrad_Range0"
+       Slot FrameWidgetSlot "{4E46074C0B048DCB}" {
         PositionX 121
-        PositionY 287
+        PositionY 282
         SizeX 91
-        SizeY 542
+        SizeY 43
        }
        Color 0.003 0.003 0.202 1
        Text ""
-       "Font Size" 31
-       FontProperties FontProperties {
-       }
+       "Font Size" 28
       }
-      TextWidgetClass "{754AC915A3797B4C}" {
-       Name "mrad_Drops"
-       Slot FrameWidgetSlot "{FE3B6B6A2C41921C}" {
+      TextWidgetClass "{7CA2BD912E6A27D6}" {
+       Name "mrad_Drop0"
+       Slot FrameWidgetSlot "{4671C38DDA9D98EF}" {
         PositionX 222
-        PositionY 287
+        PositionY 282
         SizeX 165
-        SizeY 542
+        SizeY 43
        }
        Color 0.003 0.003 0.202 1
        Text ""
-       "Font Size" 31
-       FontProperties FontProperties {
-       }
+       "Font Size" 28
       }
-      TextWidgetClass "{17AA3394693674CE}" {
-       Name "mrad_Winds"
-       Slot FrameWidgetSlot "{37FFAEA0776505F2}" {
+      TextWidgetClass "{818A49907ED66F64}" {
+       Name "mrad_Wind0"
+       Slot FrameWidgetSlot "{479FA1139C03F415}" {
         PositionX 400
-        PositionY 287
+        PositionY 282
         SizeX 230
-        SizeY 542
+        SizeY 43
        }
        Color 0.003 0.003 0.202 1
        Text ""
-       "Font Size" 31
-       FontProperties FontProperties {
+       "Font Size" 28
+      }
+      TextWidgetClass "{40D5C1CBF61BFB0B}" {
+       Name "mrad_Range1"
+       Slot FrameWidgetSlot "{71F0A27C244A43E7}" {
+        PositionX 121
+        PositionY 326
+        SizeX 91
+        SizeY 43
        }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{94054675A457C1AC}" {
+       Name "mrad_Drop1"
+       Slot FrameWidgetSlot "{DC40A3D28E0E8825}" {
+        PositionX 222
+        PositionY 326
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{53594AD4AAFFBD5C}" {
+       Name "mrad_Wind1"
+       Slot FrameWidgetSlot "{C10331E786764E0D}" {
+        PositionX 400
+        PositionY 326
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{1B230767541FDF97}" {
+       Name "mrad_Range2"
+       Slot FrameWidgetSlot "{35C646DA0AF9FDC0}" {
+        PositionX 121
+        PositionY 370
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{C4CF1BB68CA84613}" {
+       Name "mrad_Drop2"
+       Slot FrameWidgetSlot "{CCE68A01D806A6FC}" {
+        PositionX 222
+        PositionY 370
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{F8D4F9DA2953FD40}" {
+       Name "mrad_Wind2"
+       Slot FrameWidgetSlot "{E03D19BD0E3189B9}" {
+        PositionX 400
+        PositionY 370
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{38856259404E87FF}" {
+       Name "mrad_Range3"
+       Slot FrameWidgetSlot "{5F3F90A8DB2F508F}" {
+        PositionX 121
+        PositionY 414
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{56AA6555932A06A6}" {
+       Name "mrad_Drop3"
+       Slot FrameWidgetSlot "{7BFC72218AE45145}" {
+        PositionX 222
+        PositionY 414
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{964C00ED64A4C750}" {
+       Name "mrad_Wind3"
+       Slot FrameWidgetSlot "{7254A881F834024B}" {
+        PositionX 400
+        PositionY 414
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{B7522C7E4CC14630}" {
+       Name "mrad_Range4"
+       Slot FrameWidgetSlot "{240DD167BDF7B63A}" {
+        PositionX 121
+        PositionY 458
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{58FA22C7A7E6F363}" {
+       Name "mrad_Drop4"
+       Slot FrameWidgetSlot "{D9A775C643DD1E12}" {
+        PositionX 222
+        PositionY 458
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{3F13B513E4DA4529}" {
+       Name "mrad_Wind4"
+       Slot FrameWidgetSlot "{CF1DB233CD91077A}" {
+        PositionX 400
+        PositionY 458
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{79258CE52FD43FA0}" {
+       Name "mrad_Range5"
+       Slot FrameWidgetSlot "{5568646DAE0BBF9B}" {
+        PositionX 121
+        PositionY 502
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{222F898B491D6E70}" {
+       Name "mrad_Drop5"
+       Slot FrameWidgetSlot "{05468AC10153A530}" {
+        PositionX 222
+        PositionY 502
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{957A0F1717EF7CAB}" {
+       Name "mrad_Wind5"
+       Slot FrameWidgetSlot "{ADCA043479831C61}" {
+        PositionX 400
+        PositionY 502
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{8F1C441F902DA9B4}" {
+       Name "mrad_Range6"
+       Slot FrameWidgetSlot "{3D13FB17343D8188}" {
+        PositionX 121
+        PositionY 546
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{6AB68488DE2E50B0}" {
+       Name "mrad_Drop6"
+       Slot FrameWidgetSlot "{5A561E07E1841699}" {
+        PositionX 222
+        PositionY 546
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{D773D7F32390984E}" {
+       Name "mrad_Wind6"
+       Slot FrameWidgetSlot "{34A2A57F5814C4D8}" {
+        PositionX 400
+        PositionY 546
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{3D8954521A8CA32E}" {
+       Name "mrad_Range7"
+       Slot FrameWidgetSlot "{CB0FDADFC90F3FC4}" {
+        PositionX 121
+        PositionY 590
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{ED57314FD61FD86C}" {
+       Name "mrad_Drop7"
+       Slot FrameWidgetSlot "{07CEBCF727919C15}" {
+        PositionX 222
+        PositionY 590
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{332955AF1CE3D8FD}" {
+       Name "mrad_Wind7"
+       Slot FrameWidgetSlot "{5CCBE7D18799AA64}" {
+        PositionX 400
+        PositionY 590
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{487CCBCFB89C51A6}" {
+       Name "mrad_Range8"
+       Slot FrameWidgetSlot "{5A75986DF98DBCD4}" {
+        PositionX 121
+        PositionY 634
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{CAF58FF9C693A84A}" {
+       Name "mrad_Drop8"
+       Slot FrameWidgetSlot "{A7875315115D4228}" {
+        PositionX 222
+        PositionY 634
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{C86603C4ED2EA213}" {
+       Name "mrad_Wind8"
+       Slot FrameWidgetSlot "{72D2BE208E0EAD89}" {
+        PositionX 400
+        PositionY 634
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{246FD6C0FA94AD99}" {
+       Name "mrad_Range9"
+       Slot FrameWidgetSlot "{90A1899B52EBDB3D}" {
+        PositionX 121
+        PositionY 678
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{7E38FDE88D3A495C}" {
+       Name "mrad_Drop9"
+       Slot FrameWidgetSlot "{9A2C46EA1F382624}" {
+        PositionX 222
+        PositionY 678
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{A04EFAA1239C160D}" {
+       Name "mrad_Wind9"
+       Slot FrameWidgetSlot "{DA63D92426E9C6E2}" {
+        PositionX 400
+        PositionY 678
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{67DADCBE139A5F2E}" {
+       Name "mrad_Range10"
+       Slot FrameWidgetSlot "{3BF13A50BADC6FE5}" {
+        PositionX 121
+        PositionY 722
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{1C22C1B1C06F0D2E}" {
+       Name "mrad_Drop10"
+       Slot FrameWidgetSlot "{F8B046D43DB97D25}" {
+        PositionX 222
+        PositionY 722
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{A0EF7CB65EB36330}" {
+       Name "mrad_Wind10"
+       Slot FrameWidgetSlot "{8D639403BA38588D}" {
+        PositionX 400
+        PositionY 722
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{9B30F5DA27175D49}" {
+       Name "mrad_Range11"
+       Slot FrameWidgetSlot "{EFDF8A9F82089782}" {
+        PositionX 121
+        PositionY 766
+        SizeX 91
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{1BFD2B9F32447C14}" {
+       Name "mrad_Drop11"
+       Slot FrameWidgetSlot "{BA673A8E2F72476D}" {
+        PositionX 222
+        PositionY 766
+        SizeX 165
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{B2E6EDA1419144FF}" {
+       Name "mrad_Wind11"
+       Slot FrameWidgetSlot "{749FCEFC169AEB8F}" {
+        PositionX 400
+        PositionY 766
+        SizeX 230
+        SizeY 43
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
       }
       TextWidgetClass "{E643D67DD2140733}" {
        Name "mrad_Status"

@@ -2,6 +2,31 @@ GenericEntity : "{F7592BD37116D7C3}Prefabs/Weapons/Attachments/Optics/Optic_ARTI
  ID "A7DE1002B62C4811"
  components {
   MRAD_2DSightsComponent "{5D0CC83435B55855}" {
+   SightsRanges {
+    SightRangeInfo "{5D0CCDD062A62502}" {
+     Range 0 0
+    }
+    SightRangeInfo "{5D0CCDD062A62503}" {
+     Range 0 0
+    }
+    SightRangeInfo "{5D0CCDD062A62500}" {
+     Range 0 0
+    }
+    SightRangeInfo "{5D0CCDD062A62501}" {
+     Range 0 0
+    }
+    SightRangeInfo "{5D0CCDD062A657C3}" {
+     Range 0 0
+    }
+    SightRangeInfo "{5D0CCDD062A657DC}" {
+     Range 0 0
+    }
+    SightRangeInfo "{5D0CCDD062A657DD}" {
+     Range 0 0
+    }
+   }
+   SightsRangesDefaultIndex 0
+   m_eZeroingType EPZ_NONE
   }
   MRAD_ZeroingStateComponent "{A7DE1002B62C4821}" {
    m_fElevationLimitMrad 50

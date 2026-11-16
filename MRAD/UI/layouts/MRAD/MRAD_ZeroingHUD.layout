@@ -8,7 +8,7 @@ FrameWidgetClass {
     PositionX -430
     PositionY -230
     SizeX 390
-    SizeY 68
+    SizeY 105
    }
    {
     PanelWidgetClass "{A7DE1002B62C4738}" {
@@ -23,7 +23,7 @@ FrameWidgetClass {
      Color 0.025 0.03 0.03 0.78
     }
     TextWidgetClass "{A7DE1002B62C4734}" {
-     Name "MRAD_ZeroingValue"
+     Name "MRAD_ElevationValue"
      Slot FrameWidgetSlot "{A7DE1002B62C4735}" {
       PositionX 12
       PositionY 4
@@ -31,14 +31,26 @@ FrameWidgetClass {
       SizeY 32
      }
      Color 0.94 0.96 0.91 1
-     Text "#MRAD_ZeroingHUD"
+     Text "↑ 0.0 MRAD"
+     "Font Size" 24
+    }
+    TextWidgetClass "{A7DE1002B62C473A}" {
+     Name "MRAD_WindageValue"
+     Slot FrameWidgetSlot "{A7DE1002B62C473B}" {
+      PositionX 12
+      PositionY 37
+      SizeX 366
+      SizeY 32
+     }
+     Color 0.94 0.96 0.91 1
+     Text "← 0.0 MRAD"
      "Font Size" 24
     }
     TextWidgetClass "{A7DE1002B62C4736}" {
      Name "MRAD_ZeroingStatus"
      Slot FrameWidgetSlot "{A7DE1002B62C4737}" {
       PositionX 12
-      PositionY 34
+      PositionY 73
       SizeX 366
       SizeY 30
      }
