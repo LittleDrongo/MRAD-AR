@@ -1,0 +1,289 @@
+18:29:47.261 SCRIPT       : MRAD_RUNTIME_BEGIN enableDiag=1 consoleApp=0
+18:29:47.262 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D resource loads
+18:29:47.263 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D is an entity resource
+18:29:47.269 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D instance spawns
+18:29:47.270 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP resource loads
+18:29:47.271 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP is an entity resource
+18:29:47.272 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP instance spawns
+18:29:47.273 SCRIPT       : MRAD_OPTICS_PASS M21 2D resource loads
+18:29:47.274 SCRIPT       : MRAD_OPTICS_PASS M21 2D is an entity resource
+18:29:47.288 SCRIPT       : MRAD_OPTICS_PASS M21 2D instance spawns
+18:29:47.290 SCRIPT       : MRAD_OPTICS_PASS M21 PIP resource loads
+18:29:47.291 SCRIPT       : MRAD_OPTICS_PASS M21 PIP is an entity resource
+18:29:47.292 SCRIPT       : MRAD_OPTICS_PASS M21 PIP instance spawns
+18:29:47.292 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D has exactly one sights component
+18:29:47.294 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D has exactly one per-instance state
+18:29:47.294 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D uses MRAD 2D class
+18:29:47.294 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D has no residual vanilla PIP component
+18:29:47.295 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D state has a replication item ID
+18:29:47.296 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D starts with zero extra correction
+18:29:47.297 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP has exactly one sights component
+18:29:47.298 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP has exactly one per-instance state
+18:29:47.299 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP uses MRAD PIP class
+18:29:47.299 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP state has a replication item ID
+18:29:47.300 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP starts with zero extra correction
+18:29:47.301 SCRIPT       : MRAD_OPTICS_PASS M21 2D retains native weapon component
+18:29:47.303 SCRIPT       : MRAD_OPTICS_PASS M21 2D spawns exactly one MRAD scope attachment
+18:29:47.303 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope has exactly one sights component
+18:29:47.304 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope has exactly one per-instance state
+18:29:47.305 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope uses MRAD 2D class
+18:29:47.306 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope has no residual vanilla PIP component
+18:29:47.307 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope state has a replication item ID
+18:29:47.308 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope starts with zero extra correction
+18:29:47.309 SCRIPT       : MRAD_OPTICS_PASS M21 PIP retains native weapon component
+18:29:47.310 SCRIPT       : MRAD_OPTICS_PASS M21 PIP spawns exactly one MRAD scope attachment
+18:29:47.310 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope has exactly one sights component
+18:29:47.311 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope has exactly one per-instance state
+18:29:47.311 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope uses MRAD PIP class
+18:29:47.312 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope state has a replication item ID
+18:29:47.313 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope starts with zero extra correction
+18:29:47.313 SCRIPT       : MRAD_OPTICS_PASS two spawned optics have distinct state instances
+18:29:47.313 SCRIPT       : MRAD_OPTICS_PASS ten fine changes accumulate as exact integer ticks
+18:29:47.313 SCRIPT       : MRAD_OPTICS_PASS mutating first optic leaves second optic unchanged
+18:29:47.314 SCRIPT       : MRAD_OPTICS_PASS three coarse changes obey the effective server limit
+18:29:47.315 SCRIPT       : MRAD_OPTICS_PASS malformed dual-axis, oversized, invalid-limit and malformed-reset requests are rejected
+18:29:47.316 SCRIPT       : MRAD_OPTICS_PASS positive accumulation clamps at effective authority limit
+18:29:47.317 SCRIPT       : MRAD_OPTICS_PASS negative accumulation clamps symmetrically
+18:29:47.318 SCRIPT       : MRAD_OPTICS_PASS live lower limits reconcile without resetting the adjustment
+18:29:47.319 SCRIPT       : MRAD_OPTICS_PASS instance camera correction preserves translation
+18:29:47.320 SCRIPT       : MRAD_OPTICS_PASS explicit reset clears both extra axes
+18:29:47.321 SCRIPT       : MRAD_OPTICS_PASS independent second optic remains unchanged after all requests
+18:29:47.322 SCRIPT       : MRAD_OPTICS_RESULT checks=49 failures=0
+18:29:47.323 SCRIPT       : MRAD_RUNTIME_PREFAB {29DD901C0664FC61}Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_suppressor_4x20_OliveGreen_Sand_Stripes.et
+18:29:47.341 SCRIPT       : MRAD_RUNTIME_EQUIP selected=1 weapon=GenericEntity<0x0000011E3135AA58> @"ENTITY:4611686018427388015" ('GenericEntity','Assets/Weapons/Rifles/M16A2/M16A2_body.xob') at <0.512586 5.000376 0.148415> @"{29DD901C0664FC61}Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_suppressor_4x20_OliveGreen_Sand_Stripes.et"
+18:29:50.262 SCRIPT       : MRAD_RUNTIME_STATS_LOOKUP entity=SCR_WeaponStatsManagerComponent<0x0000011DFD0F9810> weaponComponent=WeaponComponent<0x0000011DE38F2560> nested=NULL
+18:29:50.262 SCRIPT       : MRAD_RUNTIME_WEAPON muzzles=1 index=0 stats=SCR_WeaponStatsManagerComponent<0x0000011DFD0F9810> initialSpeed=930
+18:29:50.262 SCRIPT       : MRAD_RUNTIME_STATS muzzleCount=1
+18:29:50.262 SCRIPT       : MRAD_RUNTIME_COEFFICIENT label=baseline muzzle=1 attachment=1.01 present=1 suppressed=1 chambered=1 initialSpeed=930
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=baseline range=100 nativeHeight=0.0871789 nativeTime=0.138428 sourceHeight=0.0871789 sourceTime=0.138428 productHeight=0.0858847 productTime=0.107346
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=baseline range=300 nativeHeight=0.784611 nativeTime=0.415285 sourceHeight=0.784611 sourceTime=0.415285 productHeight=0.773483 productTime=0.329257
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=baseline range=700 nativeHeight=5.95381 nativeTime=1.2407 sourceHeight=5.95381 sourceTime=1.2407 productHeight=5.87212 productTime=1.01208
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=baseline range=1000 nativeHeight=17.067 nativeTime=2.21163 sourceHeight=17.067 sourceTime=2.21163 productHeight=16.8313 productTime=1.80305
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_MODIFIER registeredSuppressor=GenericEntity<0x0000011E3135B088> @"ENTITY:4611686018427388018" ('GenericEntity','Assets/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16.xob') at <0.369638 1.192680 -0.163188> @"{ADDF08D09F1877A4}Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16_OliveGreen_Sand_Stripes.et" applied=1
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_COEFFICIENT label=registered_suppressor_0.8 muzzle=1 attachment=0.8 present=1 suppressed=1 chambered=1 initialSpeed=930
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=registered_suppressor_0.8 range=100 nativeHeight=0.0871789 nativeTime=0.138428 sourceHeight=0.0871789 sourceTime=0.138428 productHeight=0.124533 productTime=0.152733
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=registered_suppressor_0.8 range=300 nativeHeight=0.784611 nativeTime=0.415285 sourceHeight=0.784611 sourceTime=0.415285 productHeight=1.18778 productTime=0.467408
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=registered_suppressor_0.8 range=700 nativeHeight=5.95381 nativeTime=1.2407 sourceHeight=5.95381 sourceTime=1.2407 productHeight=9.2269 productTime=1.43524
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=registered_suppressor_0.8 range=1000 nativeHeight=17.067 nativeTime=2.21163 sourceHeight=17.067 sourceTime=2.21163 productHeight=26.455 productTime=2.56007
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_MODIFIER_RESTORE restored=1
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_COEFFICIENT label=after_attribute_restore muzzle=1 attachment=1.01 present=1 suppressed=1 chambered=1 initialSpeed=930
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=after_attribute_restore range=100 nativeHeight=0.0871789 nativeTime=0.138428 sourceHeight=0.0871789 sourceTime=0.138428 productHeight=0.0858847 productTime=0.107346
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=after_attribute_restore range=300 nativeHeight=0.784611 nativeTime=0.415285 sourceHeight=0.784611 sourceTime=0.415285 productHeight=0.773483 productTime=0.329257
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=after_attribute_restore range=700 nativeHeight=5.95381 nativeTime=1.2407 sourceHeight=5.95381 sourceTime=1.2407 productHeight=5.87212 productTime=1.01208
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_DROP label=after_attribute_restore range=1000 nativeHeight=17.067 nativeTime=2.21163 sourceHeight=17.067 sourceTime=2.21163 productHeight=16.8313 productTime=1.80305
+18:29:50.263 SCRIPT       : MRAD_RUNTIME_PROJECTILE prefab={AC26AB660097633D}Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et initSpeed=930 muzzleCoefficient=1 bulletCoefficient=1 windConfig=
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_SIMULATION nowind=<0,1.42748,1000> crosswind4=<4.4062,1.42728,1000>
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_SIMULATION_AVAILABLE driftX=4.4062 traveledZ=1000
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CALCULATOR calmRows=10 rightRows=10 leftRows=10 error= estimated=0 missing=0
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CARD range=100 drop=0.858847 right4=0.292086 left4=-0.292086
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CARD range=200 drop=1.71769 right4=0.601122 left4=-0.601122
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CARD range=300 drop=2.57827 right4=0.940479 left4=-0.940479
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CARD range=400 drop=3.61784 right4=1.3105 left4=-1.3105
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CARD range=500 drop=4.91191 right4=1.71414 left4=-1.71414
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CARD range=600 drop=6.48633 right4=2.15423 left4=-2.15423
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CARD range=700 drop=8.38855 right4=2.63514 left4=-2.63514
+18:29:50.264 SCRIPT       : MRAD_RUNTIME_CARD range=800 drop=10.6652 right4=3.16068 left4=-3.16068
+18:29:50.265 SCRIPT       : MRAD_RUNTIME_CARD range=900 drop=13.4503 right4=3.73509 left4=-3.73509
+18:29:50.265 SCRIPT       : MRAD_RUNTIME_CARD range=1000 drop=16.8297 right4=4.3642 left4=-4.3642
+18:29:50.265 SCRIPT       : MRAD_NOTEBOOK_PASS original AUTO resource still loads
+18:29:50.265 SCRIPT       : MRAD_NOTEBOOK_PASS AUTO instance spawns
+18:29:50.265 SCRIPT       : MRAD_NOTEPAD_MODEL_BOUNDS min=<-0.0592332,5.97e-05,-0.0868753> max=<0.053157,0.0138692,0.0855856> size=<0.11239,0.0138095,0.172461> center=<-0.0030381,0.00696443,-0.000644848>
+18:29:50.267 SCRIPT       : MRAD_NOTEPAD_PHYSICS present=1 geoms=1 layers=20480 mass=1
+18:29:50.267 SCRIPT       : MRAD_NOTEPAD_GEOMETRY index=0 name= layers=20480 worldMin=<3.94077,5.00006,3.91312> worldMax=<4.05316,5.01387,4.08559> size=<0.11239,0.0138092,0.172461>
+18:29:50.267 SCRIPT       : MRAD_NOTEBOOK_PASS AUTO inherits dynamic renderer and native gadget adapter
+18:29:50.267 SCRIPT       : MRAD_NOTEBOOK_PASS spawn on ground allocates no render target
+18:29:50.267 SCRIPT       : MRAD_NOTEBOOK_PASS notebook snapshot has a replication item ID
+18:29:50.275 SCRIPT       : MRAD_NOTEBOOK_PASS in-hand event resolves the explicit character owner
+18:29:50.275 SCRIPT       : MRAD_NOTEBOOK_PASS client in-hand state creates its render target
+18:29:50.275 SCRIPT       : MRAD_NOTEBOOK_PASS actual slot-zero weapon yields ten supported rows
+18:29:50.275 SCRIPT       : MRAD_NOTEBOOK_PASS authority uses configured page size and advances to page two
+18:29:50.277 SCRIPT       : MRAD_NOTEBOOK_PASS 100 page changes preserve cyclic page state
+18:29:50.278 SCRIPT       : MRAD_NOTEBOOK_PASS page-only changes reuse the calculated table
+18:29:50.278 SCRIPT       : MRAD_NOTEBOOK_PASS invalid authority page directions are rejected
+18:29:50.280 SCRIPT       : MRAD_NOTEBOOK_PASS independent empty-slot character spawns
+18:29:50.280 SCRIPT       : MRAD_NOTEBOOK_PASS fixture has empty primary and a populated secondary slot
+18:29:50.280 SCRIPT       : MRAD_NOTEBOOK_PASS empty first slot produces a localized error despite secondary weapon
+18:29:50.280 SCRIPT       : MRAD_NOTEBOOK_PASS empty data clamps the authority page to zero
+18:29:50.280 SCRIPT       : MRAD_NOTEBOOK_PASS returning to the first-slot weapon restores the table
+18:29:50.283 SCRIPT       : MRAD_INVENTORY_PASS independent inventory fixture has a real primary slot and two distinct loaded rifles
+18:29:50.297 SCRIPT       : MRAD_INVENTORY_PASS 100 native primary-slot weapon replacements complete
+18:29:50.298 SCRIPT       : MRAD_INVENTORY_PASS every actual weapon replacement selects its own projectile data
+18:29:50.298 SCRIPT       : MRAD_INVENTORY_PASS 100 actual weapon replacements cause exactly 100 table rebuilds
+18:29:50.298 SCRIPT       : MRAD_INVENTORY_PASS page requests between replacements preserve the cached table
+18:29:50.298 SCRIPT       : MRAD_INVENTORY_PASS actual M14 magazine, storage slot and replacement are available
+18:29:50.298 SCRIPT       : MRAD_INVENTORY_PASS native M118 and M80 magazines expose different actual projectile resources
+18:29:50.298 SCRIPT       : MRAD_INVENTORY_MAGAZINE permitted=1 accepted=1 observed=1 before={B7DC0C3C3D1784C2}Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M118.et after={C14C5DE6F97F06F0}Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et
+18:29:50.298 SCRIPT       : MRAD_INVENTORY_PASS native inventory replacement changes the actual muzzle magazine
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_PASS magazine replacement updates the notebook to its actual projectile
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_PASS one magazine replacement causes exactly one table rebuild
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=100 oldNativeMrad=1.04603 oldCachedMrad=1.04603 newNativeMrad=0.915036 newCachedMrad=0.915036
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=200 oldNativeMrad=2.09207 oldCachedMrad=2.09207 newNativeMrad=1.83007 newCachedMrad=1.83007
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=300 oldNativeMrad=3.15799 oldCachedMrad=3.15799 newNativeMrad=2.74511 newCachedMrad=2.74511
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=400 oldNativeMrad=4.49477 oldCachedMrad=4.49477 newNativeMrad=3.80287 newCachedMrad=3.80287
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=500 oldNativeMrad=5.83155 oldCachedMrad=5.83155 newNativeMrad=4.99528 newCachedMrad=4.99528
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=600 oldNativeMrad=7.39438 oldCachedMrad=7.39438 newNativeMrad=6.34994 newCachedMrad=6.34994
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=700 oldNativeMrad=9.18419 oldCachedMrad=9.18419 newNativeMrad=7.89928 newCachedMrad=7.89928
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=800 oldNativeMrad=11.2482 oldCachedMrad=11.2482 newNativeMrad=9.66813 newCachedMrad=9.66813
+18:29:50.299 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=900 oldNativeMrad=13.5739 oldCachedMrad=13.5739 newNativeMrad=11.6755 newCachedMrad=11.6755
+18:29:50.300 SCRIPT       : MRAD_INVENTORY_NATIVE_ROW range=1000 oldNativeMrad=16.2349 oldCachedMrad=16.2349 newNativeMrad=13.9521 newCachedMrad=13.9521
+18:29:50.300 SCRIPT       : MRAD_INVENTORY_PASS all old and new ammo rows match their distinct native projectile source queries
+18:29:50.300 SCRIPT       : MRAD_INVENTORY_PASS the M118-to-M80 fixture changes drop as confirmed by the independent native source probe
+18:29:50.300 SCRIPT       : MRAD_INVENTORY_PASS unchanged replacement magazine reuses the new table
+18:29:50.300 SCRIPT       : MRAD_INVENTORY_PASS deleting the owned replacement clears the actual muzzle magazine
+18:29:50.300 SCRIPT       : MRAD_INVENTORY_PASS actual missing magazine yields the localized error and no stale rows
+18:29:50.300 SCRIPT       : MRAD_INVENTORY_PASS the original holder and its real table are restored
+18:29:50.300 SCRIPT       : MRAD_INVENTORY_RESULT checks=16 failures=0 weaponChanges=100 magazineChanges=1
+18:29:50.306 SCRIPT       : MRAD_NOTEBOOK_PASS 100 close/open cycles complete
+18:29:50.306 SCRIPT       : MRAD_NOTEBOOK_PASS drop clears owner, polling and render target
+18:29:50.306 SCRIPT       : MRAD_NOTEBOOK_RESULT checks=19 failures=0
+18:29:50.306 SCRIPT       : MRAD_SETTINGS_PASS new independent settings instance has the specified defaults
+18:29:50.306 SCRIPT       : MRAD_SETTINGS_PASS protected Sanitize clamps wind, range and row count
+18:29:50.306 SCRIPT       : MRAD_SETTINGS_PASS protected Sanitize clamps the two step sizes
+18:29:50.306 SCRIPT       : MRAD_SETTINGS_PASS protected Sanitize clamps the two limits
+18:29:50.307 SCRIPT       : MRAD_SETTINGS_PASS real Apply writes isolated settings.json
+18:29:50.307 SCRIPT       : MRAD_SETTINGS_PASS Apply advances revision for live consumers
+18:29:50.308 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves normalized wind and weather mode
+18:29:50.308 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves normalized range and row count
+18:29:50.308 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves both normalized step sizes
+18:29:50.308 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves both normalized limits
+18:29:50.308 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves disabled HUD
+18:29:50.308 SCRIPT       : MRAD_SETTINGS_PASS partial older-profile fixture writes successfully
+18:29:50.309 SCRIPT       : MRAD_SETTINGS_PASS real Load supplies defaults for all absent JSON properties
+18:29:50.309 SCRIPT       : MRAD_SETTINGS_PASS RestoreDefaults saves and advances revision
+18:29:50.310 SCRIPT       : MRAD_SETTINGS_PASS restored defaults survive a fresh instance Load
+18:29:50.310 SCRIPT       : MRAD_SETTINGS_PASS fixture removed; originally absent profile remains absent
+18:29:50.310 SCRIPT       : MRAD_SETTINGS_LANGUAGE original=en_us
+18:29:50.310 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source en_us
+18:29:50.311 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source en_us
+18:29:50.331 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source ru_ru
+18:29:50.332 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source ru_ru
+18:29:50.351 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source uk_ua
+18:29:50.351 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source uk_ua
+18:29:50.370 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source de_de
+18:29:50.371 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source de_de
+18:29:50.389 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source fr_fr
+18:29:50.390 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source fr_fr
+18:29:50.407 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source it_it
+18:29:50.407 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source it_it
+18:29:50.425 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source es_es
+18:29:50.425 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source es_es
+18:29:50.443 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source cs_cz
+18:29:50.444 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source cs_cz
+18:29:50.461 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source pl_pl
+18:29:50.461 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source pl_pl
+18:29:50.479 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source pt_br
+18:29:50.479 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source pt_br
+18:29:50.497 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source ja_jp
+18:29:50.498 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source ja_jp
+18:29:50.514 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source ko_kr
+18:29:50.514 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source ko_kr
+18:29:50.531 SCRIPT       : MRAD_SETTINGS_PASS runtime language title matches source zh_cn
+18:29:50.531 SCRIPT       : MRAD_SETTINGS_PASS runtime language action label matches source zh_cn
+18:29:50.543 SCRIPT       : MRAD_SETTINGS_PASS registered runtime string resolves #MRAD_Tab
+18:29:50.543 SCRIPT       : MRAD_SETTINGS_PASS registered runtime string resolves #MRAD_Apply
+18:29:50.543 SCRIPT       : MRAD_SETTINGS_PASS registered runtime string resolves #MRAD_RestoreDefaults
+18:29:50.543 SCRIPT       : MRAD_SETTINGS_PASS registered runtime string resolves #MRAD_ReferenceWind
+18:29:50.543 SCRIPT       : MRAD_SETTINGS_PASS registered runtime string resolves #MRAD_ActualWind
+18:29:50.543 SCRIPT       : MRAD_SETTINGS_PASS registered runtime string resolves #MRAD_ZeroingHUD
+18:29:50.543 SCRIPT       : MRAD_SETTINGS_PASS registered runtime string resolves #MRAD_BindElevationUpFine
+18:29:50.543 SCRIPT       : MRAD_SETTINGS_PASS registered runtime string resolves #MRAD_BindResetZeroing
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS notebook creates real widgets from the packaged layout
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS notebook has the expected render-target widget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS notebook retains the legacy static RichText widget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS notebook has its dynamic content frame
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_Bullet is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_Suppressed is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_RangeHeader is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_DropHeader is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_WindHeader is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_Ranges is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_Drops is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_Winds is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_Status is a TextWidget
+18:29:50.544 SCRIPT       : MRAD_SETTINGS_PASS mrad_Page is a TextWidget
+18:29:50.545 SCRIPT       : MRAD_SETTINGS_PASS optics HUD creates real widgets from the packaged layout
+18:29:50.545 SCRIPT       : MRAD_SETTINGS_PASS MRAD_ZeroingValue is a TextWidget
+18:29:50.545 SCRIPT       : MRAD_SETTINGS_PASS MRAD_ZeroingStatus is a TextWidget
+18:29:50.545 SCRIPT       : MRAD_SETTINGS_PASS settings creates real widgets from the packaged layout
+18:29:50.545 SCRIPT       : MRAD_SETTINGS_PASS settings layout attaches the real MRAD_SettingsMenu handler
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS MRAD_Wind is an EditBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS MRAD_Range is an EditBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS MRAD_Rows is an EditBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS MRAD_Fine is an EditBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS MRAD_Coarse is an EditBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS MRAD_Elevation is an EditBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS MRAD_Windage is an EditBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS actual-wind option is a CheckBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS HUD option is a CheckBoxWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS Apply is a ButtonWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS Defaults is a ButtonWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS MRAD_Status is a TextWidget
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS settings parameters have a scroll container
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS settings bindings have a scroll container
+18:29:50.546 SCRIPT       : MRAD_SETTINGS_PASS native keybind rows have the expected parent type
+18:29:50.548 SCRIPT       : MRAD_SETTINGS_PASS merged native keybinding config deserializes
+18:29:50.548 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_ElevationUpFine
+18:29:50.550 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_ElevationUpFine
+18:29:50.550 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_ElevationUpFine
+18:29:50.550 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_ElevationUpFine
+18:29:50.550 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_ElevationUpFine keyboardBindings=1
+18:29:50.550 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_ElevationDownFine
+18:29:50.551 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_ElevationDownFine
+18:29:50.551 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_ElevationDownFine
+18:29:50.551 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_ElevationDownFine
+18:29:50.551 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_ElevationDownFine keyboardBindings=1
+18:29:50.551 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_WindageLeftFine
+18:29:50.552 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_WindageLeftFine
+18:29:50.552 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_WindageLeftFine
+18:29:50.552 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_WindageLeftFine
+18:29:50.552 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_WindageLeftFine keyboardBindings=1
+18:29:50.552 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_WindageRightFine
+18:29:50.553 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_WindageRightFine
+18:29:50.553 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_WindageRightFine
+18:29:50.553 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_WindageRightFine
+18:29:50.553 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_WindageRightFine keyboardBindings=1
+18:29:50.553 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_ElevationUpCoarse
+18:29:50.553 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_ElevationUpCoarse
+18:29:50.553 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_ElevationUpCoarse
+18:29:50.554 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_ElevationUpCoarse
+18:29:50.554 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_ElevationUpCoarse keyboardBindings=2
+18:29:50.554 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_ElevationDownCoarse
+18:29:50.554 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_ElevationDownCoarse
+18:29:50.554 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_ElevationDownCoarse
+18:29:50.555 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_ElevationDownCoarse
+18:29:50.555 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_ElevationDownCoarse keyboardBindings=2
+18:29:50.555 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_WindageLeftCoarse
+18:29:50.555 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_WindageLeftCoarse
+18:29:50.555 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_WindageLeftCoarse
+18:29:50.556 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_WindageLeftCoarse
+18:29:50.556 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_WindageLeftCoarse keyboardBindings=2
+18:29:50.556 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_WindageRightCoarse
+18:29:50.556 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_WindageRightCoarse
+18:29:50.556 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_WindageRightCoarse
+18:29:50.556 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_WindageRightCoarse
+18:29:50.556 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_WindageRightCoarse keyboardBindings=2
+18:29:50.557 SCRIPT       : MRAD_SETTINGS_PASS native category contains unique expected action MRAD_ResetZeroing
+18:29:50.557 SCRIPT       : MRAD_SETTINGS_PASS native keybind row creates for MRAD_ResetZeroing
+18:29:50.557 SCRIPT       : MRAD_SETTINGS_PASS native keybind row component attaches for MRAD_ResetZeroing
+18:29:50.557 SCRIPT       : MRAD_SETTINGS_PASS native row initializes its action and preset MRAD_ResetZeroing
+18:29:50.557 SCRIPT       : MRAD_SETTINGS_NATIVE_BINDING action=MRAD_ResetZeroing keyboardBindings=1
+18:29:50.557 SCRIPT       : MRAD_SETTINGS_PASS exactly one MRAD category creates all nine native keybind rows
+18:29:50.557 SCRIPT    (W): MRAD_SETTINGS_VISUAL_SKIP hidden widget integration is not a visual or key-capture acceptance test
+18:29:50.558 SCRIPT       : MRAD_INPUT_PASS exactly one binding probe phase is requested
+18:29:50.558 SCRIPT       : MRAD_INPUT_PASS binding probe has a real GUI input service
+18:29:50.558 SCRIPT       : MRAD_INPUT_PASS binding probe uses the same native object as Controls and MRAD
+18:29:50.558 SCRIPT       : MRAD_INPUT_PASS write-phase backup exists for the second process
+18:29:50.558 SCRIPT       : MRAD_INPUT_PASS backup identifies only the expected originally-default action
+18:29:50.558 SCRIPT       : MRAD_INPUT_LEGACY_LIST phase=READ_AFTER_RESTART found=0 count=0
+18:29:50.558 SCRIPT       : MRAD_INPUT_PASS READ_AFTER_RESTART reads the custom binding flag
+18:29:50.558 SCRIPT       : MRAD_INPUT_PASS READ_AFTER_RESTART has exactly one chord binding
+18:29:50.559 SCRIPT       : MRAD_INPUT_PASS READ_AFTER_RESTART active InputManager map contains both chord keys
+18:29:50.559 SCRIPT       : MRAD_INPUT_PASS READ_AFTER_RESTART active stack combines exactly two keys as one chord
+18:29:50.559 SCRIPT       : MRAD_INPUT_ACTIVE phase=READ_AFTER_RESTART input=keyboard:KC_NUMPAD6
+18:29:50.559 SCRIPT       : MRAD_INPUT_ACTIVE phase=READ_AFTER_RESTART input=keyboard:KC_RCONTROL
+18:29:50.559 SCRIPT       : MRAD_INPUT_ACTIVE phase=READ_AFTER_RESTART input=+
+18:29:50.567 SCRIPT       : MRAD_INPUT_PASS native ResetDefault and Save restore the backed-up raw binding state
+18:29:50.567 SCRIPT       : MRAD_INPUT_PASS backup removed only after exact target restoration
+18:29:50.567 SCRIPT       : MRAD_INPUT_RESULT phase=READ_RESTORE checks=11 failures=0
+18:29:50.567 SCRIPT       : MRAD_SETTINGS_RESULT checks=122 failures=0 profile=PASS ui=LAYOUT_AND_ROWS_PASS
+18:29:50.567 SCRIPT       : MRAD_RUNTIME_DONE validRows=12 failures=0

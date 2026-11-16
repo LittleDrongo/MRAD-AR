@@ -4,37 +4,21 @@ FrameWidgetClass {
   RTTextureWidgetClass "{61ECFCA7CF2C4B1D}" {
    Name "drg_Main_RTTexture"
    Slot FrameWidgetSlot "{61ECFCA7CF2C4CFE}" {
-    OffsetLeft 0
-    OffsetTop 0
     SizeX 670
-    OffsetRight -670
     SizeY 997
-    OffsetBottom -997
    }
    {
     FrameWidgetClass "{61ECFCA645BA2F4B}" {
      Name "artboard"
-     Slot FrameWidgetSlot "{61ECFCA645BA2F29}" {
-      OffsetLeft 0
-      OffsetTop 0
+     Slot FrameWidgetSlot "{61ECFCA645BA2F4C}" {
       SizeX 670
-      OffsetRight -670
       SizeY 997
-      OffsetBottom -997
      }
      {
       ImageWidgetClass "{61ECFCA62E9A3E59}" {
        Name "Image0"
        Slot FrameWidgetSlot "{61ECFCA62E9A3E34}" {
         Anchor 0 0 1 1
-        PositionX 0
-        OffsetLeft 0
-        PositionY 0
-        OffsetTop 0
-        SizeX 0
-        OffsetRight 0
-        SizeY 0
-        OffsetBottom 0
        }
        Texture "{96550C854B971698}UI/layouts/NotepadSheet/NotepadSheet.edds"
        Size 709 971
@@ -42,38 +26,148 @@ FrameWidgetClass {
       RichTextWidgetClass "{61ECFCA524B94CE7}" {
        Name "drg_Text"
        Slot FrameWidgetSlot "{61ECFCA524B94CC2}" {
-        Anchor 0 0 0 0
-        PositionX 121.292
-        OffsetLeft 121.292
-        PositionY 75
-        OffsetTop 75
-        SizeX 508.35
-        OffsetRight -629.642
-        SizeY 887
-        OffsetBottom -962
+        PositionX 121
+        PositionY 95
+        SizeX 508
+        SizeY 770
        }
        Color 0.003 0.003 0.202 1
-       Text "	M40A5		"\
-       "	Ball: M61		"\
-       "			"\
-       "	Meters	|	up mrad"\
-       "	100	-	1,3"\
-       "	200	-	1,5"\
-       "	300	-	2,1"\
-       "	400	-	2,9"\
-       "	500	-	3,7"\
-       "	600	-	4,6"\
-       "	700	-	5,7"\
-       "	800	-	6,9"\
-       "	900	-	8,3"\
-       "	1000	-	10,1"\
-       "	1100	-	11,9"\
-       "	1200	-	14,1"\
-       "	1300	-	16,5"
-       "Font Size" 48
-       FontProperties FontProperties "{61ECFCA5AC3BD206}" {
-        Font "{F2C89AF8C4C1FE43}UI/Fonts/Eskal_Font4You.fnt"
-        Bold 1
+       Text ""
+       "Font Size" 30
+      }
+      FrameWidgetClass "{DFB9C8DDF5FE0AD1}" {
+       Name "mrad_Dynamic"
+       "Is Visible" 0
+       Slot FrameWidgetSlot "{DFB9C8DDF5FE0AD2}" {
+        Anchor 0 0 1 1
+       }
+       {
+      TextWidgetClass "{27F570CC4767C8C4}" {
+       Name "mrad_Bullet"
+       Slot FrameWidgetSlot "{5152D97318F8D739}" {
+        PositionX 121
+        PositionY 64
+        SizeX 508
+        SizeY 96
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 28
+      }
+      TextWidgetClass "{0C3CF8F932BD1CF7}" {
+       Name "mrad_Suppressed"
+       Slot FrameWidgetSlot "{FFB3AE541D106ACD}" {
+        PositionX 121
+        PositionY 166
+        SizeX 508
+        SizeY 31
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 21
+      }
+      TextWidgetClass "{5213E5EFC2B7D207}" {
+       Name "mrad_RangeHeader"
+       Slot FrameWidgetSlot "{DA8C9BC39FE93C98}" {
+        PositionX 121
+        PositionY 208
+        SizeX 91
+        SizeY 70
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 23
+      }
+      TextWidgetClass "{9F1A47155F660186}" {
+       Name "mrad_DropHeader"
+       Slot FrameWidgetSlot "{254D34E73B8F0E36}" {
+        PositionX 222
+        PositionY 208
+        SizeX 165
+        SizeY 70
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 23
+      }
+      TextWidgetClass "{BE7B2027CC3D2A04}" {
+       Name "mrad_WindHeader"
+       Slot FrameWidgetSlot "{D793ACC1F237AE97}" {
+        PositionX 400
+        PositionY 208
+        SizeX 230
+        SizeY 70
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 23
+      }
+      TextWidgetClass "{263220AAC1B75F25}" {
+       Name "mrad_Ranges"
+       Slot FrameWidgetSlot "{9E441D571AD5E3F4}" {
+        PositionX 121
+        PositionY 287
+        SizeX 91
+        SizeY 542
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 31
+       FontProperties FontProperties {
+       }
+      }
+      TextWidgetClass "{754AC915A3797B4C}" {
+       Name "mrad_Drops"
+       Slot FrameWidgetSlot "{FE3B6B6A2C41921C}" {
+        PositionX 222
+        PositionY 287
+        SizeX 165
+        SizeY 542
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 31
+       FontProperties FontProperties {
+       }
+      }
+      TextWidgetClass "{17AA3394693674CE}" {
+       Name "mrad_Winds"
+       Slot FrameWidgetSlot "{37FFAEA0776505F2}" {
+        PositionX 400
+        PositionY 287
+        SizeX 230
+        SizeY 542
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 31
+       FontProperties FontProperties {
+       }
+      }
+      TextWidgetClass "{E643D67DD2140733}" {
+       Name "mrad_Status"
+       Slot FrameWidgetSlot "{6219B6DCBD62B980}" {
+        PositionX 121
+        PositionY 838
+        SizeX 508
+        SizeY 54
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 19
+      }
+      TextWidgetClass "{0A81D0DE75C5805D}" {
+       Name "mrad_Page"
+       Slot FrameWidgetSlot "{05C4E4FB2ADDCF3D}" {
+        PositionX 121
+        PositionY 908
+        SizeX 508
+        SizeY 42
+       }
+       Color 0.003 0.003 0.202 1
+       Text ""
+       "Font Size" 24
+      }
        }
       }
      }

@@ -7,16 +7,83 @@ GameProject {
  }
  Configurations {
   GameProjectConfig PC {
+   WidgetManagerSettings WidgetManagerSettings "{AC4BE58770485E02}" {
+    StringTables {
+     StringTableDefinition "{6894A4B955094F14}" {
+      StringTableSource "{8ED63B60FABF6B61}UI/Lang/MradLang.st"
+      Languages {
+       LanguageDefinition "{E755BB52324BA737}" {
+        Code "en_us"
+        StringTableRuntime "{517084FB3CA5CE53}UI/Lang/MradLang.en_us.conf"
+       }
+       LanguageDefinition "{6040A4080A5531F2}" {
+        Code "ru_ru"
+        StringTableRuntime "{C36A0ED12C32C593}UI/Lang/MradLang.ru_ru.conf"
+       }
+       LanguageDefinition "{3D3FC26D3D698998}" {
+        Code "uk_ua"
+        StringTableRuntime "{49325B27401C7BC6}UI/Lang/MradLang.uk_ua.conf"
+       }
+       LanguageDefinition "{D276542010780ED6}" {
+        Code "de_de"
+        StringTableRuntime "{0F800EB05656CB52}UI/Lang/MradLang.de_de.conf"
+       }
+       LanguageDefinition "{A663ED78CE4F4F5E}" {
+        Code "fr_fr"
+        StringTableRuntime "{2F943C453424464E}UI/Lang/MradLang.fr_fr.conf"
+       }
+       LanguageDefinition "{15B700AA9E9214A2}" {
+        Code "it_it"
+        StringTableRuntime "{AF88B3719906C5B7}UI/Lang/MradLang.it_it.conf"
+       }
+       LanguageDefinition "{6A5A855BA2D47B3C}" {
+        Code "es_es"
+        StringTableRuntime "{943CC972D2A7A54C}UI/Lang/MradLang.es_es.conf"
+       }
+       LanguageDefinition "{D7EA3B1A54FA533D}" {
+        Code "cs_cz"
+        StringTableRuntime "{DAFE148345F5DA72}UI/Lang/MradLang.cs_cz.conf"
+       }
+       LanguageDefinition "{9B77709FE6E506A0}" {
+        Code "pl_pl"
+        StringTableRuntime "{435C80B58AB56A5F}UI/Lang/MradLang.pl_pl.conf"
+       }
+       LanguageDefinition "{C14AF32B7D79C417}" {
+        Code "pt_br"
+        StringTableRuntime "{962B1A79B14BA0E5}UI/Lang/MradLang.pt_br.conf"
+       }
+       LanguageDefinition "{E229875150C89374}" {
+        Code "ja_jp"
+        FontOverride "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+        LanguageGroup EastAsian
+        StringTableRuntime "{BF930EE3A777F51C}UI/Lang/MradLang.ja_jp.conf"
+       }
+       LanguageDefinition "{7583974420E1B350}" {
+        Code "ko_kr"
+        FontOverride "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+        LanguageGroup EastAsian
+        StringTableRuntime "{1F2D264F345AF623}UI/Lang/MradLang.ko_kr.conf"
+       }
+       LanguageDefinition "{7B7A175B2A96566C}" {
+        Code "zh_cn"
+        FontOverride "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+        LanguageGroup EastAsian
+        StringTableRuntime "{9382351A79BCABDB}UI/Lang/MradLang.zh_cn.conf"
+       }
+      }
+     }
+    }
+   }
   }
-  GameProjectConfig XBOX_ONE {
+  GameProjectConfig XBOX_ONE : PC {
   }
-  GameProjectConfig XBOX_SERIES {
+  GameProjectConfig XBOX_SERIES : PC {
   }
-  GameProjectConfig PS4 {
+  GameProjectConfig PS4 : PC {
   }
-  GameProjectConfig PS5 {
+  GameProjectConfig PS5 : PC {
   }
-  GameProjectConfig HEADLESS {
+  GameProjectConfig HEADLESS : PC {
   }
  }
 }

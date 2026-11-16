@@ -1,0 +1,18 @@
+GenericEntity : "{F7592BD37116D7C3}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_base.et" {
+ ID "A7DE1002B62C4811"
+ components {
+  MRAD_2DSightsComponent "{5D0CC83435B55855}" {
+  }
+  MRAD_ZeroingStateComponent "{A7DE1002B62C4821}" {
+   m_fElevationLimitMrad 50
+   m_fWindageLimitMrad 50
+  }
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D0CC83435B5584E}" {
+     Name "#MRAD_ExampleOptic2D"
+    }
+   }
+  }
+ }
+}

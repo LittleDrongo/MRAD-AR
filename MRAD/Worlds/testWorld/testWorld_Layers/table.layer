@@ -1,7 +1,7 @@
 GenericEntity : "{757FCCE8E756175C}Prefabs/Props/Furniture/MeetingTable_01.et" {
  coords 1.361 1 2.62
  {
-  GenericEntity : "{BCEA0EB0D764D8DD}Prefabs/Items/Equipment/Binoculars/Rangefinder_PDU4.et" {
+  GenericEntity : "{F2539FA5706E51E4}Prefabs/Items/Equipment/Binoculars/Binoculars_B12/Binoculars_B12.et" {
    coords 1.036 0.954 0.313
   }
  }

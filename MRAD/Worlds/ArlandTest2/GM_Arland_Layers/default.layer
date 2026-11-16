@@ -189,6 +189,8 @@ $grp GenericEntity {
  }
  {
   components {
+   SignalsManagerComponent "{A7DE1002B62C4901}" {
+   }
    WeaponComponent "{CFBAA4B706BA66E8}" {
     components {
      SightsComponent "{BB23A637957CFFF8}" {
@@ -210,6 +212,8 @@ $grp GenericEntity {
  }
  {
   components {
+   SignalsManagerComponent "{A7DE1002B62C4902}" {
+   }
    WeaponComponent "{CFBAA4B706BA66E8}" {
     components {
      SightsComponent "{BB23A637957CFFF8}" {
@@ -2031,7 +2035,7 @@ $grp Projectile {
   angles 0 81.622 0
  }
 }
-$grp GenericEntity : "{0EC215F0EB3288A6}Prefabs/Weapons/Magazines/Magazine_762x51_M40_5rnd_Base.et" {
+$grp GenericEntity : "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" {
  {
   coords 627.87 39.481 2563.031
   angles 0 81.622 0
@@ -2089,11 +2093,11 @@ $grp GenericEntity : "{2A7C01B93CC92ACE}Prefabs/Items/Equipment/RangeCard/RangeC
   coords 1461.799 54.091 1165.656
  }
 }
-Projectile : "{2FBCA0A7CEDDE7B0}Prefabs/Weapons/Ammo/SmallArms/Ammo_762x39_Ball_57N231.et" {
+Projectile : "{2FBCA0A7CEDDE7B0}Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et" {
  coords 627.582 39.481 2563.027
  angles 0 81.622 0
 }
-Projectile : "{33F3FD3662F44BB7}Prefabs/Weapons/Ammo/SmallArms/Ammo_545x39_AP_7N10.et" {
+Projectile : "{33F3FD3662F44BB7}Prefabs/Weapons/Ammo/Ammo_545x39_AP_7N10.et" {
  coords 627.823 39.481 2565.432
  angles 0 81.622 0
 }
@@ -2103,17 +2107,17 @@ Vehicle UAZ452_ambulance1 : "{43C4AF1EEBD001CE}Prefabs/Vehicles/Wheeled/UAZ452/U
 GenericEntity : "{757FCCE8E756175C}Prefabs/Props/Furniture/MeetingTable_01.et" {
  coords 960.831 39 2654.237
  {
-  GenericEntity : "{03810BEF182ADA0B}Prefabs/Items/Equipment/Binoculars/Rangefinder_Vector21.et" {
+  GenericEntity : "{0CF54B9A85D8E0D4}Prefabs/Items/Equipment/Binoculars/Binoculars_M22/Binoculars_M22.et" {
    coords 0.966 0.906 -0.089
   }
-  GenericEntity : "{56CE827F9AD5880E}Prefabs/Weapons/Rifles/M40/Rifle_M40A5_Optic_PEQ.et" {
+  GenericEntity : "{A7DE1002B62C4803}Prefabs/Weapons/MRAD/Rifles/MRAD_Rifle_M21_2D.et" {
    coords -0.499 0.955 -0.133
    angles 3.354 -22.211 98.154
   }
-  GameEntity : "{ACC9B43941CE5EA6}Prefabs/Weapons/Attachments/Optics/Optic_leupoldMK4/Optic_leupoldMK4.et" {
+  GenericEntity : "{A7DE1002B62C4802}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_PIP.et" {
    coords -0.755 0.905 -0.291
   }
-  GenericEntity : "{BCEA0EB0D764D8DD}Prefabs/Items/Equipment/Binoculars/Rangefinder_PDU4.et" {
+  GenericEntity : "{F2539FA5706E51E4}Prefabs/Items/Equipment/Binoculars/Binoculars_B12/Binoculars_B12.et" {
    coords 1.036 0.906 0.313
   }
  }
@@ -2122,25 +2126,14 @@ GameEntity : "{792F06155BEBD71D}Prefabs/Items/Equipment/BallisticTable/Ballistic
  coords 627.165 39.481 2565.875
  angles 0 81.622 0
 }
-GenericEntity : "{8909A91CFF369BB3}Prefabs/Weapons/Rifles/M40/Rifle_M40A5_Optic.et" {
- components {
-  WeaponComponent "{CFBAA4B706BA66E8}" {
-   components {
-    AttachmentSlotComponent "{5E0E3155DB81CDD4}" {
-     AttachmentSlot RHS_SlidingInventoryStorageSlot Scope {
-      Prefab "{ACC9B43941CE5EA6}Prefabs/Weapons/Attachments/Optics/Optic_leupoldMK4/Optic_leupoldMK4.et"
-     }
-    }
-   }
-  }
- }
+GenericEntity : "{A7DE1002B62C4804}Prefabs/Weapons/MRAD/Rifles/MRAD_Rifle_M21_PIP.et" {
  coords 1462.819 54.091 1165.914
  angles 0 81.622 0
 }
-GameEntity : "{A1F5E9EE635B7A9E}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_AZS_Template.et" {
+GenericEntity : "{A7DE1002B62C4801}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_2D.et" {
  coords 1463.206 54.091 1165.593
 }
-GameEntity : "{ACC9B43941CE5EA6}Prefabs/Weapons/Attachments/Optics/Optic_leupoldMK4/Optic_leupoldMK4.et" {
+GenericEntity : "{A7DE1002B62C4802}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_PIP.et" {
  coords 1461.914 54.091 1165.223
 }
 $grp GenericEntity : "{D30D4FA5A82D6F0D}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_Base.et" {
@@ -2155,7 +2148,7 @@ $grp GenericEntity : "{D30D4FA5A82D6F0D}Prefabs/Items/Equipment/RangeCard/RangeC
 GenericEntity : "{DD17D4BC320A94C8}Prefabs/Weapons/Rifles/M14/Rifle_M21_ARTII_OliveGreen_Sand_Stripes_Wrapped.et" {
  coords 1462.452 54.091 1165.68
 }
-Projectile : "{F606179DC6D9E781}Prefabs/Weapons/Ammo/SmallArms/Ammo_545x39_AP_7N22.et" {
+Projectile : "{F606179DC6D9E781}Prefabs/Weapons/Ammo/Ammo_545x39_AP_7N22.et" {
  coords 627.841 39.481 2565.405
  angles 0 81.622 0
 }

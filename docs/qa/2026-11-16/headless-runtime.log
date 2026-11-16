@@ -1,0 +1,124 @@
+17:39:21.158 SCRIPT       : MRAD_RUNTIME_BEGIN enableDiag=0 consoleApp=1
+17:39:21.159 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D resource loads
+17:39:21.159 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D is an entity resource
+17:39:21.161 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D instance spawns
+17:39:21.161 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP resource loads
+17:39:21.161 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP is an entity resource
+17:39:21.162 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP instance spawns
+17:39:21.162 SCRIPT       : MRAD_OPTICS_PASS M21 2D resource loads
+17:39:21.162 SCRIPT       : MRAD_OPTICS_PASS M21 2D is an entity resource
+17:39:21.167 SCRIPT       : MRAD_OPTICS_PASS M21 2D instance spawns
+17:39:21.168 SCRIPT       : MRAD_OPTICS_PASS M21 PIP resource loads
+17:39:21.168 SCRIPT       : MRAD_OPTICS_PASS M21 PIP is an entity resource
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS M21 PIP instance spawns
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D has exactly one sights component
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D has exactly one per-instance state
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D uses MRAD 2D class
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D has no residual vanilla PIP component
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D state has a replication item ID
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII 2D starts with zero extra correction
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP has exactly one sights component
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP has exactly one per-instance state
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP uses MRAD PIP class
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP state has a replication item ID
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS ARTII PIP starts with zero extra correction
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS M21 2D retains native weapon component
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS M21 2D spawns exactly one MRAD scope attachment
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope has exactly one sights component
+17:39:21.169 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope has exactly one per-instance state
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope uses MRAD 2D class
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope has no residual vanilla PIP component
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope state has a replication item ID
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 2D attached scope starts with zero extra correction
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 PIP retains native weapon component
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 PIP spawns exactly one MRAD scope attachment
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope has exactly one sights component
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope has exactly one per-instance state
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope uses MRAD PIP class
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope state has a replication item ID
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS M21 PIP attached scope starts with zero extra correction
+17:39:21.170 SCRIPT       : MRAD_OPTICS_PASS two spawned optics have distinct state instances
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS ten fine changes accumulate as exact integer ticks
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS mutating first optic leaves second optic unchanged
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS three coarse changes obey the effective server limit
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS malformed dual-axis, oversized, invalid-limit and malformed-reset requests are rejected
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS positive accumulation clamps at effective authority limit
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS negative accumulation clamps symmetrically
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS live lower limits reconcile without resetting the adjustment
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS instance camera correction preserves translation
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS explicit reset clears both extra axes
+17:39:21.171 SCRIPT       : MRAD_OPTICS_PASS independent second optic remains unchanged after all requests
+17:39:21.171 SCRIPT       : MRAD_OPTICS_RESULT checks=49 failures=0
+17:39:21.171 SCRIPT       : MRAD_RUNTIME_PREFAB {29DD901C0664FC61}Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_suppressor_4x20_OliveGreen_Sand_Stripes.et
+17:39:21.263 SCRIPT       : MRAD_RUNTIME_EQUIP selected=1 weapon=GenericEntity<0x000001D8409A4128> @"ENTITY:4611686018427387920" ('GenericEntity','Assets/Weapons/Rifles/M16A2/M16A2_body.xob') at <0.512586 5.000376 0.148415> @"{29DD901C0664FC61}Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_suppressor_4x20_OliveGreen_Sand_Stripes.et"
+17:39:24.160 SCRIPT       : MRAD_RUNTIME_STATS_LOOKUP entity=SCR_WeaponStatsManagerComponent<0x000001D8163658C8> weaponComponent=WeaponComponent<0x000001D8409A4338> nested=NULL
+17:39:24.160 SCRIPT       : MRAD_RUNTIME_WEAPON muzzles=1 index=0 stats=SCR_WeaponStatsManagerComponent<0x000001D8163658C8> initialSpeed=930
+17:39:24.161 SCRIPT       : MRAD_RUNTIME_STATS muzzleCount=1
+17:39:24.161 SCRIPT       : MRAD_RUNTIME_COEFFICIENT label=baseline muzzle=1 attachment=1.01 present=1 suppressed=1 chambered=1 initialSpeed=930
+17:39:24.161 SCRIPT       : MRAD_RUNTIME_DROP label=baseline range=100 nativeHeight=0.0871789 nativeTime=0.138428 sourceHeight=0.0871789 sourceTime=0.138428 productHeight=0.0858847 productTime=0.107346
+17:39:24.161 SCRIPT       : MRAD_RUNTIME_DROP label=baseline range=300 nativeHeight=0.784611 nativeTime=0.415285 sourceHeight=0.784611 sourceTime=0.415285 productHeight=0.773483 productTime=0.329257
+17:39:24.161 SCRIPT       : MRAD_RUNTIME_DROP label=baseline range=700 nativeHeight=5.95381 nativeTime=1.2407 sourceHeight=5.95381 sourceTime=1.2407 productHeight=5.87212 productTime=1.01208
+17:39:24.161 SCRIPT       : MRAD_RUNTIME_DROP label=baseline range=1000 nativeHeight=17.067 nativeTime=2.21163 sourceHeight=17.067 sourceTime=2.21163 productHeight=16.8313 productTime=1.80305
+17:39:24.161 SCRIPT       : MRAD_RUNTIME_MODIFIER registeredSuppressor=GenericEntity<0x000001D8409A4650> @"ENTITY:4611686018427387923" ('GenericEntity','Assets/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16.xob') at <0.366692 1.192584 -0.162177> @"{ADDF08D09F1877A4}Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16_OliveGreen_Sand_Stripes.et" applied=1
+17:39:24.161 SCRIPT       : MRAD_RUNTIME_COEFFICIENT label=registered_suppressor_0.8 muzzle=1 attachment=0.8 present=1 suppressed=1 chambered=1 initialSpeed=930
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_DROP label=registered_suppressor_0.8 range=100 nativeHeight=0.0871789 nativeTime=0.138428 sourceHeight=0.0871789 sourceTime=0.138428 productHeight=0.124533 productTime=0.152733
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_DROP label=registered_suppressor_0.8 range=300 nativeHeight=0.784611 nativeTime=0.415285 sourceHeight=0.784611 sourceTime=0.415285 productHeight=1.18778 productTime=0.467408
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_DROP label=registered_suppressor_0.8 range=700 nativeHeight=5.95381 nativeTime=1.2407 sourceHeight=5.95381 sourceTime=1.2407 productHeight=9.2269 productTime=1.43524
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_DROP label=registered_suppressor_0.8 range=1000 nativeHeight=17.067 nativeTime=2.21163 sourceHeight=17.067 sourceTime=2.21163 productHeight=26.455 productTime=2.56007
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_MODIFIER_RESTORE restored=1
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_COEFFICIENT label=after_attribute_restore muzzle=1 attachment=1.01 present=1 suppressed=1 chambered=1 initialSpeed=930
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_DROP label=after_attribute_restore range=100 nativeHeight=0.0871789 nativeTime=0.138428 sourceHeight=0.0871789 sourceTime=0.138428 productHeight=0.0858847 productTime=0.107346
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_DROP label=after_attribute_restore range=300 nativeHeight=0.784611 nativeTime=0.415285 sourceHeight=0.784611 sourceTime=0.415285 productHeight=0.773483 productTime=0.329257
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_DROP label=after_attribute_restore range=700 nativeHeight=5.95381 nativeTime=1.2407 sourceHeight=5.95381 sourceTime=1.2407 productHeight=5.87212 productTime=1.01208
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_DROP label=after_attribute_restore range=1000 nativeHeight=17.067 nativeTime=2.21163 sourceHeight=17.067 sourceTime=2.21163 productHeight=16.8313 productTime=1.80305
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_PROJECTILE prefab={AC26AB660097633D}Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et initSpeed=930 muzzleCoefficient=1 bulletCoefficient=1 windConfig=
+17:39:24.162 SCRIPT       : MRAD_RUNTIME_SIMULATION nowind=<0,0,0> crosswind4=<0,0,0>
+17:39:24.164 SCRIPT       : MRAD_RUNTIME_CALCULATOR calmRows=10 rightRows=10 leftRows=10 error= estimated=1 missing=0
+17:39:24.164 SCRIPT       : MRAD_RUNTIME_CARD range=100 drop=0.858847 right4=0.276625 left4=-0.276625
+17:39:24.164 SCRIPT       : MRAD_RUNTIME_CARD range=200 drop=1.71769 right4=0.576593 left4=-0.576593
+17:39:24.164 SCRIPT       : MRAD_RUNTIME_CARD range=300 drop=2.57827 right4=0.903387 left4=-0.903387
+17:39:24.164 SCRIPT       : MRAD_RUNTIME_CARD range=400 drop=3.61784 right4=1.2593 left4=-1.2593
+17:39:24.165 SCRIPT       : MRAD_RUNTIME_CARD range=500 drop=4.91191 right4=1.64732 left4=-1.64732
+17:39:24.165 SCRIPT       : MRAD_RUNTIME_CARD range=600 drop=6.48633 right4=2.07064 left4=-2.07064
+17:39:24.165 SCRIPT       : MRAD_RUNTIME_CARD range=700 drop=8.38855 right4=2.53288 left4=-2.53288
+17:39:24.165 SCRIPT       : MRAD_RUNTIME_CARD range=800 drop=10.6652 right4=3.03797 left4=-3.03797
+17:39:24.165 SCRIPT       : MRAD_RUNTIME_CARD range=900 drop=13.4503 right4=3.59038 left4=-3.59038
+17:39:24.165 SCRIPT       : MRAD_RUNTIME_CARD range=1000 drop=16.8297 right4=4.19502 left4=-4.19502
+17:39:24.165 SCRIPT       : MRAD_NOTEBOOK_PASS original AUTO resource still loads
+17:39:24.166 SCRIPT       : MRAD_NOTEBOOK_PASS AUTO instance spawns
+17:39:24.166 SCRIPT       : MRAD_NOTEBOOK_PASS AUTO inherits dynamic renderer and native gadget adapter
+17:39:24.166 SCRIPT       : MRAD_NOTEBOOK_PASS spawn on ground allocates no render target
+17:39:24.166 SCRIPT       : MRAD_NOTEBOOK_PASS notebook snapshot has a replication item ID
+17:39:24.167 SCRIPT       : MRAD_NOTEBOOK_PASS in-hand event resolves the explicit character owner
+17:39:24.168 SCRIPT       : MRAD_NOTEBOOK_PASS headless in-hand state allocates no render target
+17:39:24.168 SCRIPT       : MRAD_NOTEBOOK_PASS actual slot-zero weapon yields ten supported rows
+17:39:24.168 SCRIPT       : MRAD_NOTEBOOK_PASS authority uses configured page size and advances to page two
+17:39:24.169 SCRIPT       : MRAD_NOTEBOOK_PASS 100 page changes preserve cyclic page state
+17:39:24.169 SCRIPT       : MRAD_NOTEBOOK_PASS page-only changes reuse the calculated table
+17:39:24.169 SCRIPT       : MRAD_NOTEBOOK_PASS invalid authority page directions are rejected
+17:39:24.172 SCRIPT       : MRAD_NOTEBOOK_PASS independent empty-slot character spawns
+17:39:24.173 SCRIPT       : MRAD_NOTEBOOK_PASS fixture has empty primary and a populated secondary slot
+17:39:24.173 SCRIPT       : MRAD_NOTEBOOK_PASS empty first slot produces a localized error despite secondary weapon
+17:39:24.173 SCRIPT       : MRAD_NOTEBOOK_PASS empty data clamps the authority page to zero
+17:39:24.174 SCRIPT       : MRAD_NOTEBOOK_PASS returning to the first-slot weapon restores the table
+17:39:24.175 SCRIPT       : MRAD_NOTEBOOK_PASS 100 close/open cycles complete
+17:39:24.175 SCRIPT       : MRAD_NOTEBOOK_PASS drop clears owner, polling and render target
+17:39:24.175 SCRIPT       : MRAD_NOTEBOOK_RESULT checks=19 failures=0
+17:39:24.175 SCRIPT       : MRAD_SETTINGS_PASS new independent settings instance has the specified defaults
+17:39:24.175 SCRIPT       : MRAD_SETTINGS_PASS protected Sanitize clamps wind, range and row count
+17:39:24.176 SCRIPT       : MRAD_SETTINGS_PASS protected Sanitize clamps the two step sizes
+17:39:24.176 SCRIPT       : MRAD_SETTINGS_PASS protected Sanitize clamps the two limits
+17:39:24.176 SCRIPT       : MRAD_SETTINGS_PASS real Apply writes isolated settings.json
+17:39:24.176 SCRIPT       : MRAD_SETTINGS_PASS Apply advances revision for live consumers
+17:39:24.177 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves normalized wind and weather mode
+17:39:24.177 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves normalized range and row count
+17:39:24.177 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves both normalized step sizes
+17:39:24.178 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves both normalized limits
+17:39:24.178 SCRIPT       : MRAD_SETTINGS_PASS JSON roundtrip preserves disabled HUD
+17:39:24.178 SCRIPT       : MRAD_SETTINGS_PASS partial older-profile fixture writes successfully
+17:39:24.178 SCRIPT       : MRAD_SETTINGS_PASS real Load supplies defaults for all absent JSON properties
+17:39:24.179 SCRIPT       : MRAD_SETTINGS_PASS RestoreDefaults saves and advances revision
+17:39:24.179 SCRIPT       : MRAD_SETTINGS_PASS restored defaults survive a fresh instance Load
+17:39:24.179 SCRIPT       : MRAD_SETTINGS_PASS fixture removed; originally absent profile remains absent
+17:39:24.180 SCRIPT       : MRAD_SETTINGS_RESULT checks=16 failures=0 profile=PASS ui=SKIP_HEADLESS
+17:39:24.180 SCRIPT       : MRAD_RUNTIME_DONE validRows=12 failures=0

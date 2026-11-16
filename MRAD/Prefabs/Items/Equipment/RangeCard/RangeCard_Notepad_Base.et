@@ -74,13 +74,40 @@ GenericEntity : "{7CEEC3FF35A201A2}Prefabs/Items/Core/Compass_Base.et" {
    Mass 1
    LinearDamping 0.05
    AngularDamping 0.05
-   ModelGeometry 1
+   ModelGeometry 0
+   Geometries {
+    PhysicsBoxGeometry "{A7DE1002B62C4905}" {
+     LayerPreset "ItemFireView"
+     Offset -0.0030381 0.00696443 -0.000644848
+     Extents 0.11239 0.0138095 0.172461
+    }
+   }
    CCDRadius 0.007
   }
-  SCR_GadgetComponent "{61EA9D1BBDB999D8}" {
+  MRAD_NotepadGadgetComponent "{61EA9D1BBDB999D8}" {
    m_eAnimVariable ADRIANOV
   }
   ActionsManagerComponent "{508AB5952B584B2E}" {
+   additionalActions {
+    MRAD_ChangeNotepadPageAction "{A7DE1002B62C4901}" {
+     UIInfo UIInfo "{A7DE1002B62C4902}" {
+      Name "#MRAD_NextPage"
+     }
+     ParentContextList {
+      ""
+     }
+     m_iStep 1
+    }
+    MRAD_ChangeNotepadPageAction "{A7DE1002B62C4903}" {
+     UIInfo UIInfo "{A7DE1002B62C4904}" {
+      Name "#MRAD_PreviousPage"
+     }
+     ParentContextList {
+      ""
+     }
+     m_iStep -1
+    }
+   }
    ActionContexts {
     UserActionContext "{508AC2ABEC97066C}" {
      Position PointInfo "{508AC2ABEAC4A0F5}" {

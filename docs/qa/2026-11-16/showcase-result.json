@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "completion_marker_found": true,
+  "native_fire_requested": false,
+  "showcase_requested": true,
+  "native_fire_completion_marker_found": false,
+  "evidence_run": "runtime-20261116T153130065889Z",
+  "log_sha256": {
+    "console.log": "2968e34440dfe3bea80fd7da87c389b9f0d49ac468a1af0eedd128956dc593b4",
+    "error.log": "f20b1923fdf54d3ed18a608c7047afc47fad14d4a2fb2acd56e0f5bd83eb1a7b",
+    "script.log": "933301e3e7d2301f3c93ad604f391e3a025fcca8c0292d9889529282c181756f"
+  },
+  "scope": "Five original placed notebooks load with gadget/collider and without headless RT. Strict run is NOT a pass because two native resupply station errors occur during process teardown."
+}

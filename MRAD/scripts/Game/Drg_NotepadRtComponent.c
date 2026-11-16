@@ -1,181 +1,80 @@
-[ComponentEditorProps(category: "GameScripted/Misc", description: "")]
-class Drg_NotepadRtComponentClass : ScriptGameComponentClass
-{
-}
-
-class Drg_NotepadRtComponent : ScriptGameComponent
-{
-	[Attribute("")]
-	ResourceName m_sPathLayout;
-	
-	[Attribute("", UIWidgets.EditBoxMultiline)]
-	string m_sText;
-	
-	Widget m_wRTRoot;
-	RichTextWidget m_wRich;
-	RTTextureWidget m_wRtTexture;
-	
-	//------------------------------------------------------------------------------------------------
-	override void EOnInit(IEntity owner)
-	{
-		if (SCR_Global.IsEditMode())
-			return;
-		
-		m_wRTRoot = GetGame().GetWorkspace().CreateWidgets(m_sPathLayout);
-		m_wRtTexture = RTTextureWidget.Cast(m_wRTRoot.FindAnyWidget("drg_Main_RTTexture"));
-		m_wRich = RichTextWidget.Cast(m_wRTRoot.FindAnyWidget("drg_Text"));
-		m_wRtTexture.SetRenderTarget(owner);
-	}
-
-	//------------------------------------------------------------------------------------------------
-	override void OnPostInit(IEntity owner)
-	{
-		SetEventMask(owner, EntityEvent.INIT);
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	override void OnDelete(IEntity owner)
-	{
-		if (m_wRTRoot)
-			m_wRTRoot.RemoveFromHierarchy();
-		
-		if (m_wRtTexture)
-		{
-			m_wRtTexture.SetRenderTarget(owner);
-			m_wRtTexture = null;
-		}
-	}	
-}
-
-[ComponentEditorProps(category: "GameScripted/Misc", description: "")]
-class Drg_AutoNotepadRtComponentClass : Drg_NotepadRtComponentClass
-{
-}
-
-
-class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
-{
-	void RecalculateWidget()
-	{
-		m_wRich.SetText(CalculateRadians());
-	}
-	
-	BaseWeaponComponent GetMuzzleFromWeapon()
-	{
-		IEntity controlledEntity = GetOwner().GetRootParent();
-		if (!controlledEntity)
-			return null;
-		
-		ChimeraCharacter character = ChimeraCharacter.Cast(controlledEntity);
-		if (!character)
-			return null;
-		
-		CharacterWeaponManagerComponent manager = CharacterWeaponManagerComponent.Cast(character.FindComponent(CharacterWeaponManagerComponent));
-		BaseWeaponComponent current = manager.GetCurrentWeapon();
-		if (!current)
-			return null;
-		
-		return current;
-	}
-	
-	string CalculateRadians()
-	{
-		BaseWeaponComponent weapon = GetMuzzleFromWeapon();
-		if (!weapon)
-			return WidgetManager.Translate("#MRAD_Error_NoWeapon");
-		
-		BaseMuzzleComponent muzzle = weapon.GetCurrentMuzzle();
-		if (!muzzle)
-			return WidgetManager.Translate("#MRAD_Error_NoMuzzle");
-			
-		BaseMagazineComponent magazine = weapon.GetCurrentMagazine();
-		if (!magazine)
-			return WidgetManager.Translate("#MRAD_Error_NoMagazine");
-			
-		string returnValue;
-		
-		MagazineUIInfo magazineUI = MagazineUIInfo.Cast(magazine.GetUIInfo());
-
-		returnValue =  string.Format("%1 \n\n", WidgetManager.Translate(magazineUI.GetAmmoCaliber()));
-		
-		for (int i = 1; i <= 15; i++)
-		{
-			float distance = 100 * i;
-			float travelTime, aimHeight, angleRad;
-	
-			aimHeight = BallisticTable.GetAimHeightOfNextProjectile(distance, travelTime, muzzle, false);
-			angleRad = Math.Atan2(aimHeight, distance);
-			angleRad = SCR_Math.ConvertFromRadians(angleRad, SCR_EOpticsAngleUnits.MILLIRADIANS);
-			string roundValue = angleRad.ToString(2, 1); 
-			returnValue += string.Format("%1 m --- %2 Mrad\n", distance, roundValue);
-		}
-			
-		return returnValue;
-	}
-}
-
-modded class SCR_GadgetComponent : ScriptGameComponent
-{
-	override void UpdateVisibility(EGadgetMode mode)
-	{	
-		super.UpdateVisibility(mode);
-		Drg_AutoNotepadRtComponent notepad = Drg_AutoNotepadRtComponent.Cast(GetOwner().FindComponent(Drg_AutoNotepadRtComponent));
-		if (!notepad)
-			return;
-		
-		notepad.RecalculateWidget();
-	}
-}
-
-/* Статическая версия (не подходит для генерации в игре)
-
-[ComponentEditorProps(category: "GameScripted/Misc", description: "")]
+// Existing class/attribute names stay stable for inherited 1.x notepads.
+[ComponentEditorProps(category: "GameScripted/MRAD", description: "In-hand notepad render target")]
 class Drg_NotepadRtComponentClass : ScriptComponentClass
 {
 }
-
 
 class Drg_NotepadRtComponent : ScriptComponent
 {
 	[Attribute("")]
 	ResourceName m_sPathLayout;
-	Widget m_wRTRoot;
-	
 	[Attribute("", UIWidgets.EditBoxMultiline)]
 	string m_sText;
-	
-	static ref map<ResourceName,RTTextureWidget> m_mStaticWidgets = new map<ResourceName,RTTextureWidget>();
-	
-		
-	//------------------------------------------------------------------------------------------------
-	override void EOnInit(IEntity owner)
+	protected Widget m_wRTRoot;
+	protected RTTextureWidget m_wRtTexture;
+	protected ChimeraCharacter m_Character;
+	protected bool m_bHeld;
+
+	bool OpenFor(ChimeraCharacter character)
 	{
-		ResourceName prefabName = owner.GetPrefabData().GetPrefabName();		
-		RTTextureWidget rtTexture = m_mStaticWidgets.Get(prefabName);
-		
-		if (!rtTexture)
+		if (SCR_Global.IsEditMode() || !character)
+			return false;
+		m_Character = character;
+		m_bHeld = true;
+		// Dedicated server keeps data/page state but never creates UI.
+		if (System.IsConsoleApp() || !GetGame().GetWorkspace())
+			return true;
+		if (m_wRTRoot)
+			return true;
+		if (m_sPathLayout.IsEmpty())
+			return false;
+		m_wRTRoot = GetGame().GetWorkspace().CreateWidgets(m_sPathLayout);
+		if (!m_wRTRoot)
+			return false;
+		m_wRtTexture = RTTextureWidget.Cast(m_wRTRoot.FindAnyWidget("drg_Main_RTTexture"));
+		if (!m_wRtTexture)
 		{
-			m_wRTRoot = GetGame().GetWorkspace().CreateWidgets(m_sPathLayout);
-			rtTexture = RTTextureWidget.Cast(m_wRTRoot.FindAnyWidget("drg_Main_RTTexture"));
-			RichTextWidget richRextureWidget = RichTextWidget.Cast(m_wRTRoot.FindAnyWidget("drg_Text"));
-			richRextureWidget.SetText(m_sText);
-			m_mStaticWidgets.Insert(prefabName, rtTexture);
+			m_wRTRoot.RemoveFromHierarchy();
+			m_wRTRoot = null;
+			return false;
 		}
-		
-		rtTexture.SetGUIWidget(owner, 1);
+		m_wRtTexture.SetRenderTarget(GetOwner());
+		Draw();
+		return true;
 	}
 
-	//------------------------------------------------------------------------------------------------
-	override void OnPostInit(IEntity owner)
+	void Close()
 	{
-		SetEventMask(owner, EntityEvent.INIT);
-	}
-
-	//------------------------------------------------------------------------------------------------
-	override void OnDelete(IEntity owner)
-	{
+		m_bHeld = false;
+		m_Character = null;
+		// Detach while the widget is alive, before removing its hierarchy.
+		if (m_wRtTexture && GetOwner() && !GetOwner().IsDeleted())
+			m_wRtTexture.RemoveRenderTarget(GetOwner());
+		m_wRtTexture = null;
 		if (m_wRTRoot)
 			m_wRTRoot.RemoveFromHierarchy();
-	}	
+		m_wRTRoot = null;
+	}
+
+	void Draw()
+	{
+		if (!m_wRTRoot || !m_wRtTexture)
+			return;
+		m_wRtTexture.SetEnabled(true);
+		RichTextWidget text = RichTextWidget.Cast(m_wRTRoot.FindAnyWidget("drg_Text"));
+		if (text)
+			text.SetText(m_sText);
+		m_wRtTexture.SetEnabled(false);
+	}
+
+	int GetNumberOfPages() { return 1; }
+	void RequestPage(int direction) {}
+	bool IsHeld() { return m_bHeld; }
+	bool HasRenderTarget() { return m_wRTRoot != null && m_wRtTexture != null; }
+	ChimeraCharacter GetHolder() { return m_Character; }
+
+	override void OnDelete(IEntity owner)
+	{
+		Close();
+	}
 }
-*/

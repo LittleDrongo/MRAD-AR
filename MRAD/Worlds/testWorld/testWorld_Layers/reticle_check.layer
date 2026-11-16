@@ -1,32 +1,4 @@
-$grp GenericEntity {
- {
-  components {
-   MeshObject "{65FD13E962D0CA47}" {
-    Object "{2D4E29152C522990}Assets/toxic_test_temp/Artilery_debuger/artilery_debuger.xob"
-   }
-  }
-  coords 1 1 0.5
- }
- {
-  components {
-   MeshObject "{65FD13E962D0CA47}" {
-    Object "{2D4E29152C522990}Assets/toxic_test_temp/Artilery_debuger/artilery_debuger.xob"
-   }
-  }
-  coords 1 1 0.5
-  angles 90 0 0
- }
- {
-  components {
-   MeshObject "{65FD13E962D0CA47}" {
-    Object "{2D4E29152C522990}Assets/toxic_test_temp/Artilery_debuger/artilery_debuger.xob"
-   }
-  }
-  coords 1 1 14.989
-  angles 90 0 0
- }
-}
-$grp GenericEntity : "{0EC215F0EB3288A6}Prefabs/Weapons/Magazines/Magazine_762x51_M40_5rnd_Base.et" {
+$grp GenericEntity : "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" {
  {
   coords 4.317 1.906 3.09
  }
@@ -61,9 +33,6 @@ $grp GenericEntity : "{0EC215F0EB3288A6}Prefabs/Weapons/Magazines/Magazine_762x5
   coords 4.179 1.906 2.579
  }
 }
-GenericEntity : "{1828C5C23AE5E4CA}Prefabs/Weapons/GrenadeLaunchers/GM94/GL_GM94.et" {
- coords 2.332 1 0.665
-}
-GenericEntity : "{8909A91CFF369BB3}Prefabs/Weapons/Rifles/M40/Rifle_M40A5_Optic.et" {
+GenericEntity : "{A7DE1002B62C4804}Prefabs/Weapons/MRAD/Rifles/MRAD_Rifle_M21_PIP.et" {
  coords 4.463 1.906 2.911
 }

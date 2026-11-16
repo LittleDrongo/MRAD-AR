@@ -1,0 +1,88 @@
+{
+  "engine": "Arma Reforger / Workbench 1.9.0.37",
+  "date": "2026-11-16",
+  "runs": {
+    "workbench-tests": {
+      "run": "tests-20261116T145530450603Z",
+      "result": {
+        "action": "tests",
+        "configuration": "PC",
+        "process_exit_code": 0,
+        "timed_out": false,
+        "completion_marker_found": true,
+        "passed": true
+      },
+      "logs": {
+        "script.log": {
+          "sha256": "9872378f8a6b9adbdd1afa9e50b391c51842671eeae0c5d4033cf8a1a46068eb",
+          "bytes": 7643
+        },
+        "console.log": {
+          "sha256": "856df67c958d5291b67cd0057af6f95aeb88e5b2b7240393dec0918b4c6f86b9",
+          "bytes": 29036
+        }
+      }
+    },
+    "wind-comparison": {
+      "run": "wind-20261116T144429420704Z",
+      "result": {
+        "action": "wind",
+        "configuration": "PC",
+        "process_exit_code": 0,
+        "timed_out": false,
+        "completion_marker_found": true,
+        "passed": true
+      },
+      "logs": {
+        "script.log": {
+          "sha256": "bf9981431e2a11614c2d8de2f1a3c58f1538fe5bed08c56882bc0cb8a5bd73e3",
+          "bytes": 69181
+        },
+        "console.log": {
+          "sha256": "8f5bc7c44b1eac12c00eff5757d86e1ad182a4c1f60392fd877d1fb7ae519caa",
+          "bytes": 95654
+        }
+      }
+    },
+    "headless-runtime": {
+      "run": "runtime-20261116T143917818453Z",
+      "result": {
+        "passed": true,
+        "process_exit_code": 0,
+        "timed_out": false,
+        "completion_marker_found": true
+      },
+      "logs": {
+        "script.log": {
+          "sha256": "73ab39ed6725645ec1184736cb9ecaa08fe483f1c90be8379e0b3e18e2559df5",
+          "bytes": 17215
+        },
+        "console.log": {
+          "sha256": "bf6e4a85cecd2fcc117184a9062faed07e83000b264c36f4efb635b0a150d36d",
+          "bytes": 32411
+        }
+      }
+    },
+    "localization-build": {
+      "run": "localize-20261116T144906863757Z",
+      "result": {
+        "action": "localize",
+        "configuration": "PC",
+        "process_exit_code": 0,
+        "timed_out": false,
+        "completion_marker_found": true,
+        "passed": true
+      },
+      "logs": {
+        "script.log": {
+          "sha256": "a62c70f32eabd10a05705a3eaeb8f9a59d1b24d110338d89c843d5d3b1b1902c",
+          "bytes": 3499
+        },
+        "console.log": {
+          "sha256": "5c165cbe2ddbd88d3c5ab4e231b35a84502b6a5d264a0797dd6c2c3b75f05c73",
+          "bytes": 27600
+        }
+      }
+    }
+  }
+}

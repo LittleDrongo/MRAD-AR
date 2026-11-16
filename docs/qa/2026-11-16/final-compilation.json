@@ -1,0 +1,48 @@
+[
+  {
+    "action": "validate",
+    "configuration": "PC",
+    "process_exit_code": 0,
+    "timed_out": false,
+    "completion_marker_found": true,
+    "passed": true,
+    "evidence_run": "validate-20261116T152927422919Z",
+    "logs": [
+      {
+        "path": "logs\\console.log",
+        "sha256": "0b3a8af4f926fbed546dd7047ff840523f9658cbd3a4fafcd948a609e0bd011a"
+      },
+      {
+        "path": "logs\\error.log",
+        "sha256": "629aef0a1367d35494ae0fdbef8b7c3507490bb6c28115801c5cbd57c78b756c"
+      },
+      {
+        "path": "logs\\script.log",
+        "sha256": "154fac8e482d2c612011af13a004d1aa694c5a7b8f311dec50616b94f25ab76c"
+      }
+    ]
+  },
+  {
+    "action": "validate",
+    "configuration": "HEADLESS",
+    "process_exit_code": 0,
+    "timed_out": false,
+    "completion_marker_found": true,
+    "passed": true,
+    "evidence_run": "validate-20261116T152933706129Z",
+    "logs": [
+      {
+        "path": "logs\\console.log",
+        "sha256": "7e021510d1bdfa8a76abe9ee960fbc46309eec0e276a4b0eeddb9b4d0fad73bd"
+      },
+      {
+        "path": "logs\\error.log",
+        "sha256": "b9af9ea68e051b6c5bb7f31aa2c806c9d36731959feac06baa5c8a7bd18ba553"
+      },
+      {
+        "path": "logs\\script.log",
+        "sha256": "2c732a26338e5d5e43abb774c6f48be6e153cdfb9772bf42bf0ec459fcc6397c"
+      }
+    ]
+  }
+]

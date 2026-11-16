@@ -1,0 +1,23 @@
+{
+  "run": "network-20261116T151544271791Z",
+  "passed": true,
+  "source_sha256": "5c5a3394f51766fdecd0e692893f9a69034758acd33048b6a5920f33364caa98",
+  "scope": "Actual network row/page/tick replication and JIP; no physical-key mapping, item transfer or impact claim",
+  "roles": {
+    "server": {
+      "exit_code": 0,
+      "passed": true,
+      "script_log_sha256": "781cb812acb48780e4e294560ea8dce234eddea854a120dc9439cbdf9f0f1af5"
+    },
+    "client-live": {
+      "exit_code": 0,
+      "passed": true,
+      "script_log_sha256": "66aa8d4e15e47846a29ce0605db397cb8137775221c8bab3ee7b62ae77c43db7"
+    },
+    "client-jip": {
+      "exit_code": 0,
+      "passed": true,
+      "script_log_sha256": "aace9ca5d25b780264e8b44a4f890b4cfab8a6daa699e62ed118dac9c32e7162"
+    }
+  }
+}

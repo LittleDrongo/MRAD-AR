@@ -1,0 +1,5 @@
+18:16:05.338      SCRIPT       : MRAD_NETWORK_BEGIN role=client deadlineSeconds=55
+18:16:06.496 SCRIPT       : MRAD_NETWORK_DIAG_NODE phase=0 probeId=1073741879 rplId=1073741878 proxy=1 owner=0 selfInserted=1 released=0 nodeItems=2
+18:16:06.496 SCRIPT       : MRAD_NETWORK_DIAG phase=0 probeId=1073741879 notebookId=0 scopeId=0 notebook=0 scope=0 player=1 mismatch=
+18:16:07.498 SCRIPT       : MRAD_NETWORK_CLIENT_PASS phase=2 page=0 rows=12 elevationTicks=17 windageTicks=19
+18:16:07.498 SCRIPT       : MRAD_NETWORK_CLIENT_RESULT snapshots=1 firstPhase=2 lastPhase=2 failures=0

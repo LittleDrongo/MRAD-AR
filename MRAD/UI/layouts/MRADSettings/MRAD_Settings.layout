@@ -1,0 +1,654 @@
+HorizontalLayoutWidgetClass {
+ Name "MRAD_SettingsRoot"
+ components {
+  MRAD_SettingsMenu "{5DC3D6FE2BBC7355}" {
+  }
+ }
+ {
+  ScrollLayoutWidgetClass "{93D01D89FDAA8A56}" {
+   Name "MRAD_SettingsScroll"
+   Slot LayoutSlot "{D4948D5FDBE1A887}" {
+    Padding 16 32 16 16
+    SizeMode Fill
+    FillWeight 1
+   }
+   Color 0.761 0.392 0.078 1
+   style Small
+   components {
+    SCR_GamepadScrollComponent "{90F48A18E8E5867B}" {
+    }
+   }
+   {
+    VerticalLayoutWidgetClass "{FEEE2305B323C510}" {
+     Name "MRAD_SettingsContent"
+     Slot AlignableSlot "{EBA6BAFBD4F973C3}" {
+      HorizontalAlign 3
+      VerticalAlign 3
+      Padding 4 4 12 0
+     }
+     {
+      TextWidgetClass "{6A67FD6FF8E29D18}" {
+       Name "MRAD_SettingsTitle"
+       Slot LayoutSlot "{6DBCE0705C85494B}" {
+        Padding 2 0 10 18
+       }
+       Text "#MRAD_SettingsTitle"
+       "Font Size" 28
+       Color 0.92 0.93 0.94 1
+       "Vertical Alignment" Center
+       Wrap 1
+      }
+      HorizontalLayoutWidgetClass "{22C8294CE50F9036}" {
+       Name "MRAD_Wind_Row"
+       Slot LayoutSlot "{D8799B1347011B50}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{09F6E273BE23774C}" {
+         Name "MRAD_Wind_Label"
+         Slot LayoutSlot "{F47A72FFAC0904C5}" {
+          SizeMode Fill
+          FillWeight 3
+          Padding 0 0 14 0
+         }
+         Text "#MRAD_ReferenceWindSpeed"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{F377EFB17E9DBCCF}" {
+         Name "MRAD_Wind_Box"
+         Slot LayoutSlot "{A83527A0BF9FCEC7}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          EditBoxWidgetClass "{FE759773676C3658}" {
+           Name "MRAD_Wind"
+           Slot AlignableSlot "{9F811E278DC4DE7C}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           "Font Size" 22
+          }
+         }
+        }
+        TextWidgetClass "{62E98000B8197997}" {
+         Name "MRAD_Wind_Limits"
+         Slot LayoutSlot "{A4876BE0D826EE8D}" {
+          Padding 12 0 0 0
+         }
+         Text "0–30"
+         "Font Size" 16
+         Color 0.62 0.67 0.70 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{DF03EA8F95D56EC1}" {
+       Name "MRAD_ActualWind_Row"
+       Slot LayoutSlot "{D9842E1B945D9259}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{2088E6DA085C3CA1}" {
+         Name "MRAD_ActualWind_Label"
+         Slot LayoutSlot "{D5D4DB83449E12F8}" {
+          SizeMode Fill
+          Padding 0 0 12 0
+         }
+         Text "#MRAD_UseActualWind"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{C32FF8F17D84DAC2}" {
+         Name "MRAD_ActualWind_Box"
+         Slot LayoutSlot "{EE8AD129AF509EB1}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          CheckBoxWidgetClass "{8EB2E66961FE769D}" {
+           Name "MRAD_ActualWind"
+           Slot AlignableSlot "{AAB6974D8E6C17BB}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+          }
+         }
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{4D1F5BB0F426E00E}" {
+       Name "MRAD_Range_Row"
+       Slot LayoutSlot "{5C9B9DCCD24CB0ED}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{6073C4D0A6DAF662}" {
+         Name "MRAD_Range_Label"
+         Slot LayoutSlot "{D48F8EEF287B59E1}" {
+          SizeMode Fill
+          FillWeight 3
+          Padding 0 0 14 0
+         }
+         Text "#MRAD_MaxRange"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{04FB916916088FCE}" {
+         Name "MRAD_Range_Box"
+         Slot LayoutSlot "{2BD03DD4CD78DB14}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          EditBoxWidgetClass "{F28D8DBA7EC54AB9}" {
+           Name "MRAD_Range"
+           Slot AlignableSlot "{2B1DB9F24DFDF72C}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           "Font Size" 22
+          }
+         }
+        }
+        TextWidgetClass "{D9B3B0E455670E02}" {
+         Name "MRAD_Range_Limits"
+         Slot LayoutSlot "{920CB58507FA3080}" {
+          Padding 12 0 0 0
+         }
+         Text "100–5000"
+         "Font Size" 16
+         Color 0.62 0.67 0.70 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{93AC960614658EA7}" {
+       Name "MRAD_Rows_Row"
+       Slot LayoutSlot "{F417C76D87BC5CB8}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{047EE4FAE84B0721}" {
+         Name "MRAD_Rows_Label"
+         Slot LayoutSlot "{FC715839DB44F9E6}" {
+          SizeMode Fill
+          FillWeight 3
+          Padding 0 0 14 0
+         }
+         Text "#MRAD_RowsPerPage"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{42862B4A8A9A454D}" {
+         Name "MRAD_Rows_Box"
+         Slot LayoutSlot "{AE7A7F8D62365A13}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          EditBoxWidgetClass "{B0CA52604DCB5BDF}" {
+           Name "MRAD_Rows"
+           Slot AlignableSlot "{4789D67903BC0E07}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           "Font Size" 22
+          }
+         }
+        }
+        TextWidgetClass "{5FAD643B0845B855}" {
+         Name "MRAD_Rows_Limits"
+         Slot LayoutSlot "{DB131EE05AC34BD0}" {
+          Padding 12 0 0 0
+         }
+         Text "5–12"
+         "Font Size" 16
+         Color 0.62 0.67 0.70 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{CCB3D898EDCA9486}" {
+       Name "MRAD_Fine_Row"
+       Slot LayoutSlot "{FAAEF601B84D74E1}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{8519931A4873AAAA}" {
+         Name "MRAD_Fine_Label"
+         Slot LayoutSlot "{2DC76B4CF1772252}" {
+          SizeMode Fill
+          FillWeight 3
+          Padding 0 0 14 0
+         }
+         Text "#MRAD_FineStep"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{8324D89A47B66CB4}" {
+         Name "MRAD_Fine_Box"
+         Slot LayoutSlot "{312CC020D9140A23}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          EditBoxWidgetClass "{03FFA1F8F1E922BC}" {
+           Name "MRAD_Fine"
+           Slot AlignableSlot "{6DC094923F130C7A}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           "Font Size" 22
+          }
+         }
+        }
+        TextWidgetClass "{50A0BAF95D605693}" {
+         Name "MRAD_Fine_Limits"
+         Slot LayoutSlot "{91C89DAC22668A1C}" {
+          Padding 12 0 0 0
+         }
+         Text "0.1–5"
+         "Font Size" 16
+         Color 0.62 0.67 0.70 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{CBA272273036BD20}" {
+       Name "MRAD_Coarse_Row"
+       Slot LayoutSlot "{87EC5F42C072E033}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{CFFF117870F649E6}" {
+         Name "MRAD_Coarse_Label"
+         Slot LayoutSlot "{4F178E7DAA52C1DB}" {
+          SizeMode Fill
+          FillWeight 3
+          Padding 0 0 14 0
+         }
+         Text "#MRAD_CoarseStep"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{9EC18121F2503515}" {
+         Name "MRAD_Coarse_Box"
+         Slot LayoutSlot "{F0C5351CAC30FE48}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          EditBoxWidgetClass "{AA0A1A470505E290}" {
+           Name "MRAD_Coarse"
+           Slot AlignableSlot "{85D0BA6C5680C1CC}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           "Font Size" 22
+          }
+         }
+        }
+        TextWidgetClass "{66FE521DAE300736}" {
+         Name "MRAD_Coarse_Limits"
+         Slot LayoutSlot "{2762810A4AF4DAB1}" {
+          Padding 12 0 0 0
+         }
+         Text "0.1–10"
+         "Font Size" 16
+         Color 0.62 0.67 0.70 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{6BC5F2CB9C610872}" {
+       Name "MRAD_Elevation_Row"
+       Slot LayoutSlot "{D52C3720B48C7EA3}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{43FA6D7DD7B17F30}" {
+         Name "MRAD_Elevation_Label"
+         Slot LayoutSlot "{E57EF5109950339F}" {
+          SizeMode Fill
+          FillWeight 3
+          Padding 0 0 14 0
+         }
+         Text "#MRAD_ElevationLimit"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{15CF2C51C6228E89}" {
+         Name "MRAD_Elevation_Box"
+         Slot LayoutSlot "{CC81B7320044AF56}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          EditBoxWidgetClass "{2296834ECDD16319}" {
+           Name "MRAD_Elevation"
+           Slot AlignableSlot "{C03CA1D69DCB5567}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           "Font Size" 22
+          }
+         }
+        }
+        TextWidgetClass "{22D3B9D25A0046BD}" {
+         Name "MRAD_Elevation_Limits"
+         Slot LayoutSlot "{ED60CCC9E5C2D53E}" {
+          Padding 12 0 0 0
+         }
+         Text "1–50"
+         "Font Size" 16
+         Color 0.62 0.67 0.70 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{ED6C254E6D9A16F5}" {
+       Name "MRAD_Windage_Row"
+       Slot LayoutSlot "{FD6C8CA5B6DD2962}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{A27B822FAC3F15AB}" {
+         Name "MRAD_Windage_Label"
+         Slot LayoutSlot "{728B065D17610DEE}" {
+          SizeMode Fill
+          FillWeight 3
+          Padding 0 0 14 0
+         }
+         Text "#MRAD_WindageLimit"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{214724EB97DA4AD6}" {
+         Name "MRAD_Windage_Box"
+         Slot LayoutSlot "{C4D6D7B9039FEC18}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          EditBoxWidgetClass "{B312EA76A82D3D22}" {
+           Name "MRAD_Windage"
+           Slot AlignableSlot "{E04A215FB093250B}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           "Font Size" 22
+          }
+         }
+        }
+        TextWidgetClass "{94919D7CE9438E04}" {
+         Name "MRAD_Windage_Limits"
+         Slot LayoutSlot "{8BA746F414E737CA}" {
+          Padding 12 0 0 0
+         }
+         Text "1–50"
+         "Font Size" 16
+         Color 0.62 0.67 0.70 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{5768CD3341DF12CD}" {
+       Name "MRAD_ShowHUD_Row"
+       Slot LayoutSlot "{3692527178E36921}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{3D6BE13AB29C4365}" {
+         Name "MRAD_ShowHUD_Label"
+         Slot LayoutSlot "{5025C746C60A0ACA}" {
+          SizeMode Fill
+          Padding 0 0 12 0
+         }
+         Text "#MRAD_ShowHUD"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{04EE87AAF03D7940}" {
+         Name "MRAD_ShowHUD_Box"
+         Slot LayoutSlot "{61B4A5194E8F3551}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          CheckBoxWidgetClass "{B58DE94F1EEB672F}" {
+           Name "MRAD_ShowHUD"
+           Slot AlignableSlot "{F693AB80B2A3341C}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+          }
+         }
+        }
+       }
+      }
+      HorizontalLayoutWidgetClass "{3EA9C72E6402CDEE}" {
+       Name "MRAD_Buttons"
+       Slot LayoutSlot "{FABED0F43CA92C20}" {
+        Padding 2 24 0 10
+       }
+       {
+        ButtonWidgetClass "{18E3F8C2FA216919}" {
+         Name "MRAD_Apply"
+         Slot LayoutSlot "{2E7BE6CDBF9F9AD0}" {
+          SizeMode Fill
+          Padding 0 0 10 0
+         }
+         Color 1 1 1 0
+         {
+          SizeLayoutWidgetClass "{7C3723A43DE71A66}" {
+           Name "MRAD_Apply_Size"
+           Slot ButtonWidgetSlot "{06A181F7D3C1C122}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           AllowHeightOverride 1
+           HeightOverride 48
+           {
+            OverlayWidgetClass "{C4C73BEBF442FA25}" {
+             Name "MRAD_Apply_Overlay"
+             Slot AlignableSlot "{C0892BDB469D5016}" {
+              HorizontalAlign 3
+              VerticalAlign 3
+             }
+             {
+              ImageWidgetClass "{07413D0220ED4F8D}" {
+               Name "MRAD_Apply_Background"
+               Slot OverlayWidgetSlot "{C0225B8F25329548}" {
+                HorizontalAlign 3
+                VerticalAlign 3
+               }
+               Color 0.20 0.27 0.31 0.95
+              }
+              TextWidgetClass "{97E40D2BCCFE70C6}" {
+               Name "MRAD_Apply_Text"
+               Slot OverlayWidgetSlot "{AF32A23B3F5367C8}" {
+                HorizontalAlign 3
+                VerticalAlign 3
+                Padding 14 6 14 6
+               }
+               Text "#MRAD_Apply"
+               "Font Size" 20
+               Color 0.92 0.93 0.94 1
+               "Vertical Alignment" Center
+               Wrap 1
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+        ButtonWidgetClass "{68A47EC0D9F94F78}" {
+         Name "MRAD_Defaults"
+         Slot LayoutSlot "{6DE0D9B63BA78C70}" {
+          SizeMode Fill
+          Padding 0 0 10 0
+         }
+         Color 1 1 1 0
+         {
+          SizeLayoutWidgetClass "{56A34F4FF57FC066}" {
+           Name "MRAD_Defaults_Size"
+           Slot ButtonWidgetSlot "{49DF3BD002B46FD9}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           AllowHeightOverride 1
+           HeightOverride 48
+           {
+            OverlayWidgetClass "{B36A4BF8E4305921}" {
+             Name "MRAD_Defaults_Overlay"
+             Slot AlignableSlot "{A453AB7D836FFC6F}" {
+              HorizontalAlign 3
+              VerticalAlign 3
+             }
+             {
+              ImageWidgetClass "{C171BEA272AB1B38}" {
+               Name "MRAD_Defaults_Background"
+               Slot OverlayWidgetSlot "{A0D34B85D7B4789C}" {
+                HorizontalAlign 3
+                VerticalAlign 3
+               }
+               Color 0.20 0.27 0.31 0.95
+              }
+              TextWidgetClass "{046EEC2EDA7EF27A}" {
+               Name "MRAD_Defaults_Text"
+               Slot OverlayWidgetSlot "{22DCF5946F905AD8}" {
+                HorizontalAlign 3
+                VerticalAlign 3
+                Padding 14 6 14 6
+               }
+               Text "#MRAD_RestoreDefaults"
+               "Font Size" 20
+               Color 0.92 0.93 0.94 1
+               "Vertical Alignment" Center
+               Wrap 1
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+      TextWidgetClass "{4D7B062C7E75F8A3}" {
+       Name "MRAD_Status"
+       Slot LayoutSlot "{1D76462732DB7E69}" {
+        Padding 2 4 10 18
+       }
+       Text ""
+       "Font Size" 18
+       Color 0.80 0.86 0.75 1
+       "Vertical Alignment" Center
+       Wrap 1
+      }
+     }
+    }
+   }
+  }
+  ScrollLayoutWidgetClass "{255F6F96424E8E84}" {
+   Name "MRAD_KeybindScroll"
+   Slot LayoutSlot "{D8DEDD4FE6F43FD3}" {
+    Padding 12 32 16 16
+    SizeMode Fill
+    FillWeight 1.6
+   }
+   Color 0.761 0.392 0.078 1
+   style Small
+   components {
+    SCR_GamepadScrollComponent "{9C1624874235D92B}" {
+    }
+   }
+   {
+    VerticalLayoutWidgetClass "{AAD4C6B71B272A9F}" {
+     Name "MRAD_KeybindContent"
+     Slot AlignableSlot "{2E0FB99E8DA194D7}" {
+      HorizontalAlign 3
+      VerticalAlign 3
+      Padding 0 4 12 0
+     }
+     {
+      TextWidgetClass "{9B5ADFB80E754189}" {
+       Name "MRAD_KeybindsTitle"
+       Slot LayoutSlot "{2183F7D030D44108}" {
+        Padding 4 0 10 12
+       }
+       Text "#MRAD_KeybindsTitle"
+       "Font Size" 28
+       Color 0.92 0.93 0.94 1
+       "Vertical Alignment" Center
+       Wrap 1
+      }
+      TextWidgetClass "{F744A849A60AE58E}" {
+       Name "MRAD_KeybindHint"
+       Slot LayoutSlot "{B17C711BF1924B3E}" {
+        Padding 4 0 10 16
+       }
+       Text "#MRAD_KeybindsHint"
+       "Font Size" 18
+       Color 0.70 0.75 0.78 1
+       "Vertical Alignment" Center
+       Wrap 1
+      }
+      VerticalLayoutWidgetClass "{5E3EE33C7B18661E}" {
+       Name "MRAD_KeybindRows"
+       Slot LayoutSlot "{2DB4360B69BF8F9B}" {
+        Padding 0 0 8 0
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

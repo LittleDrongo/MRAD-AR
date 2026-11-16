@@ -1,0 +1,152 @@
+{
+  "run": "gui-20261116T152920832286Z",
+  "engine": "Arma Reforger 1.9.0.37",
+  "passed": true,
+  "binding_roundtrip_pass": true,
+  "binding_backup_removed": true,
+  "physical_capture": "NOT_RUN",
+  "visual_review": "PASS: inspected second own-window screenshot, no account notification",
+  "phases": {
+    "write": {
+      "phase": "write",
+      "integration_pass": true,
+      "assertions_pass": true,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "consoleApp": "0",
+      "runtime_pass": true,
+      "settings_layout_and_native_rows_pass": true,
+      "notebook_render_target_created": true,
+      "notebook_pass": true,
+      "input_phase_pass": true,
+      "script_errors": false,
+      "native_fire_requested": false,
+      "native_fire_pass": null,
+      "unknown_keywords": [],
+      "unresolved_mrad_strings": [],
+      "mrad_resource_errors": [],
+      "gui_errors": [
+        "GUI       (E): Unknown class 'SCR_WidgetExportRuleRoot' at offset 282(0x11a)"
+      ],
+      "actual_native_menu_probe_pass": true,
+      "captures": [
+        {
+          "path": "settings-mrad.png",
+          "pid": 28400,
+          "hwnd": 2622878,
+          "width": 1440,
+          "height": 900,
+          "meanRGB": [
+            102.20821759259259,
+            111.95101234567902,
+            117.1082924382716
+          ]
+        }
+      ],
+      "capture_errors": [],
+      "visual_review": "PASS_SECOND_CAPTURE",
+      "input_capture_acceptance": "NOT_RUN",
+      "captured_count": 2,
+      "withheld_capture_reason": "First capture contained a transient account notification; only the inspected clean second capture is published."
+    },
+    "read": {
+      "phase": "read",
+      "integration_pass": true,
+      "assertions_pass": true,
+      "process_exit_code": 0,
+      "timed_out": false,
+      "consoleApp": "0",
+      "runtime_pass": true,
+      "settings_layout_and_native_rows_pass": true,
+      "notebook_render_target_created": true,
+      "notebook_pass": true,
+      "input_phase_pass": true,
+      "script_errors": false,
+      "native_fire_requested": false,
+      "native_fire_pass": null,
+      "unknown_keywords": [],
+      "unresolved_mrad_strings": [],
+      "mrad_resource_errors": [],
+      "gui_errors": [
+        "GUI       (E): Unknown class 'SCR_WidgetExportRuleRoot' at offset 282(0x11a)"
+      ],
+      "actual_native_menu_probe_pass": null,
+      "captures": [],
+      "capture_errors": [],
+      "visual_review": "NOT_RUN",
+      "input_capture_acceptance": "NOT_RUN"
+    }
+  },
+  "full_log_hashes": [
+    {
+      "path": "read/logs/console.log",
+      "bytes": 63515,
+      "sha256": "451d1e4aeb0ebc4babd3bbda23b285e1ae08b7ade87193020b275f3176fcdb68"
+    },
+    {
+      "path": "read/logs/error.log",
+      "bytes": 13418,
+      "sha256": "4facd946a195e8d0f6dc959ad8667a45fe54383c25d984ee6dedf8de317419bd"
+    },
+    {
+      "path": "read/logs/script.log",
+      "bytes": 36168,
+      "sha256": "50bc4cecad00f2eb28242b64166da83fb424439015db05099dc5b731b21e75dd"
+    },
+    {
+      "path": "read/stderr.log",
+      "bytes": 132,
+      "sha256": "37348f7dff064144c2224319d078325119c12c4ab302ef1c3de243ce69d10315"
+    },
+    {
+      "path": "read/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "write/logs/console.log",
+      "bytes": 68368,
+      "sha256": "b6ca8f799dcfa195681473a21dcddb2280f22b18dc71bfb6dd5545a94f3eafde"
+    },
+    {
+      "path": "write/logs/error.log",
+      "bytes": 13518,
+      "sha256": "dc62581fde7cd79a51d6c24b0fb2855e5f67a837056617d383cacffd4d75d132"
+    },
+    {
+      "path": "write/logs/script.log",
+      "bytes": 40938,
+      "sha256": "707b91092caf307ef994e1c22dc7a772ed52de0aa3cfcb5f44a948a78dc331c9"
+    },
+    {
+      "path": "write/stderr.log",
+      "bytes": 132,
+      "sha256": "37348f7dff064144c2224319d078325119c12c4ab302ef1c3de243ce69d10315"
+    },
+    {
+      "path": "write/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "image": {
+    "path": "settings-mrad.png",
+    "sha256": "540b93da9287a6ff2d64321ced2aee875ba2433d501bff3ffa8ffaf26c5e5941"
+  },
+  "scope": "MRAD Settings/native binding write-restart-read-restore gate; physical key capture and native-fire were not run.",
+  "remaining_engine_qa_diagnostics": [
+    "Native IntroSplashScreen SCR_WidgetExportRuleRoot unknown class",
+    "Installed Rally resources have GUID/name mismatches",
+    "Minimal QA map has no AIWorld",
+    "Native UI EditBoxFilter warning and shutdown UI-resource leak diagnostics",
+    "Deprecated observer APIs in separate QA network probe; no product MRAD script errors"
+  ],
+  "binding_fixture": {
+    "path": "final-gui-binding.conf",
+    "sha256": "09fdb3cd097dba08b8d2ed5d88530aeff97d3d8c28ec2d6b53d44a95437add79"
+  },
+  "published_markers": [
+    "final-gui-write.log",
+    "final-gui-read.log"
+  ]
+}

@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{D30D4FA5A82D6F0D}Prefabs/Items/Equipment/Compass/RangeCard_Notepad_Base.et"
+ Name "{D30D4FA5A82D6F0D}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_Base.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }

@@ -1,0 +1,47 @@
+17:55:34.677  SCRIPT       : MRAD_QA_PASS default reference wind is 4 mps
+17:55:34.678  SCRIPT       : MRAD_QA_PASS default fine/coarse steps follow FR-2.2
+17:55:34.678  SCRIPT       : MRAD_QA_PASS default notebook bounds
+17:55:34.678  SCRIPT       : MRAD_QA_PASS reference wind is the default mode
+17:55:34.678  SCRIPT       : MRAD_QA_PASS negative wind cannot enter reference settings
+17:55:34.678  SCRIPT       : MRAD_QA_PASS range cap rounds down to a 100 m row
+17:55:34.678  SCRIPT       : MRAD_QA_PASS bad page size cannot divide by zero
+17:55:34.679  SCRIPT       : MRAD_QA_PASS input steps stay inside protocol limits
+17:55:34.679  SCRIPT       : MRAD_QA_PASS invalid sight limits cannot escape safety bounds
+17:55:34.679  SCRIPT       : MRAD_QA_PASS empty notebook keeps one valid page
+17:55:34.679  SCRIPT       : MRAD_QA_PASS 23 rows paginate into 10+10+3
+17:55:34.679  SCRIPT       : MRAD_QA_PASS zero rows-per-page is guarded
+17:55:34.680  SCRIPT       : MRAD_QA_PASS both page boundaries wrap
+17:55:34.680  SCRIPT       : MRAD_QA_PASS last partial page includes each remaining range exactly once
+17:55:34.680  SCRIPT       : MRAD_QA_PASS negative wind sign and fixed precision survive page rendering
+17:55:34.680  SCRIPT       : MRAD_QA_PASS 100 model-level page changes preserve cyclic state
+17:55:34.680  SCRIPT       : MRAD_QA_PASS negative page request renders the last page
+17:55:34.681  SCRIPT       : MRAD_QA_PASS engine angle units agree with one MRAD
+17:55:34.681  SCRIPT       : MRAD_QA_PASS fine steps have symmetric integer representation
+17:55:34.681  SCRIPT       : MRAD_QA_PASS three coarse steps represent 3 MRAD
+17:55:34.681  SCRIPT       : MRAD_QA_PASS whole values retain one decimal
+17:55:34.681  SCRIPT       : MRAD_QA_PASS small negative values cannot display negative zero
+17:55:34.681  SCRIPT       : MRAD_QA_PASS long values are not truncated and round once
+17:55:34.681  SCRIPT       : MRAD_QA_PASS decimal separator and negative sign are stable
+17:55:34.682  SCRIPT       : MRAD_QA_PASS east wind requires right correction when facing north
+17:55:34.682  SCRIPT       : MRAD_QA_PASS west wind requires left correction when facing north
+17:55:34.682  SCRIPT       : MRAD_QA_PASS north wind requires left correction when facing east
+17:55:34.682  SCRIPT       : MRAD_QA_PASS headwind and tailwind have no lateral correction
+17:55:34.682  SCRIPT       : MRAD_QA_PASS view pitch does not change horizontal crosswind
+17:55:34.682  SCRIPT       : MRAD_QA_PASS vertical view has no arbitrary lateral axis
+17:55:34.682  SCRIPT       : MRAD_QA_PASS wind table first sample is safe
+17:55:34.682  SCRIPT       : MRAD_QA_PASS wind table last sample is safe
+17:55:34.682  SCRIPT       : MRAD_QA_PASS sparse unsorted wind samples interpolate
+17:55:34.684  SCRIPT       : MRAD_QA_PASS wind table does not extrapolate outside samples
+17:55:34.684  SCRIPT       : MRAD_QA_PASS mismatched wind arrays fail without indexing
+17:55:34.684  SCRIPT       : MRAD_QA_PASS missing calculator input has an explicit empty state
+17:55:34.684  SCRIPT       : MRAD_OPTICS_MATH_PASS zero correction preserves the full native camera transform
+17:55:34.684  SCRIPT       : MRAD_OPTICS_MATH_PASS ten fine elevation ticks equal the expected local camera pitch
+17:55:34.684  SCRIPT       : MRAD_OPTICS_MATH_PASS pitch correction leaves camera translation unchanged
+17:55:34.684  SCRIPT       : MRAD_OPTICS_MATH_PASS inverse pitch corrections compose to identity
+17:55:34.684  SCRIPT       : MRAD_OPTICS_MATH_PASS three coarse windage changes equal the expected local yaw
+17:55:34.684  SCRIPT       : MRAD_OPTICS_MATH_PASS inverse yaw corrections compose to identity
+17:55:34.685  SCRIPT       : MRAD_OPTICS_MATH_PASS combined maximum correction preserves the native camera position
+17:55:34.685  SCRIPT       : MRAD_OPTICS_MATH_PASS combined correction preserves unit basis lengths
+17:55:34.685  SCRIPT       : MRAD_OPTICS_MATH_RESULT checks=8 failures=0
+17:55:34.685  SCRIPT       : MRAD_QA_PASS native camera matrix checks
+17:55:34.685  SCRIPT       : MRAD_VALIDATE_RESULT checks=37 failures=0

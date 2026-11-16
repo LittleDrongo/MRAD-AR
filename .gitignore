@@ -1,2 +1,5 @@
 *.resourceDatabase.rdb
 *.rdb
+__pycache__/
+
+*.pyc
