@@ -15,7 +15,7 @@ class MRAD_Settings
 	protected float m_fElevationLimitMrad = 50.0;
 	protected float m_fWindageLimitMrad = 50.0;
 	protected bool m_bShowHUD = true;
-	protected bool m_bShowWindHUD = true;
+	protected bool m_bShowWindHUD = false;
 	protected int m_iRevision = 1;
 
 	static MRAD_Settings Get()
@@ -71,7 +71,7 @@ class MRAD_Settings
 
 	bool RestoreDefaults()
 	{
-		return Apply(4.0, false, 1500, 15, 0.1, 1.0, 50.0, 50.0, true, true);
+		return Apply(4.0, false, 1500, 15, 0.1, 1.0, 50.0, 50.0, true, false);
 	}
 
 	protected void Sanitize()
@@ -109,7 +109,7 @@ class MRAD_Settings
 		context.ReadValueDefault("elevationLimitMrad", m_fElevationLimitMrad, 50.0);
 		context.ReadValueDefault("windageLimitMrad", m_fWindageLimitMrad, 50.0);
 		context.ReadValueDefault("showHUD", m_bShowHUD, true);
-		context.ReadValueDefault("showWindHUD", m_bShowWindHUD, true);
+		context.ReadValueDefault("showWindHUD", m_bShowWindHUD, false);
 		Sanitize();
 	}
 

@@ -1,19 +1,15 @@
-// Small wind indicator in the top-left corner, in the spirit of the Arma 3 wind HUD:
-// an arrow that shows where the wind blows (12 o'clock = away from the viewer) and
-// one dot per Beaufort step. It is drawn only while an MRAD scope is in ADS and can
-// be hidden with the settings checkbox or the MRAD_ToggleWindHUD action.
+// Small wind indicator in the top-left corner (Arma 3 style): an arrow that shows
+// where the wind blows relative to the view (12 o'clock = away from the viewer) and
+// one dot per Beaufort step. No panel, no exact speed in m/s.
+// Shown or hidden with MRAD_ToggleWindHUD (Shift+F by default) or the settings checkbox.
 class MRAD_WindHUD
 {
 	protected const ResourceName LAYOUT = "{A7DE1002B62C4780}UI/layouts/MRAD/MRAD_WindHUD.layout";
-
-	// TrianglePointer points up at zero rotation, which is zero bearing.
-	protected const float ARROW_TEXTURE_OFFSET_DEG = 0;
 	protected const string DOT = "•";
 
 	protected Widget m_wRoot;
 	protected ImageWidget m_wArrow;
 	protected TextWidget m_wDots;
-	protected TextWidget m_wSpeed;
 	protected string m_sDots;
 	protected float m_fBearing;
 	protected bool m_bToggleHeld;
@@ -27,7 +23,6 @@ class MRAD_WindHUD
 		m_wRoot = null;
 		m_wArrow = null;
 		m_wDots = null;
-		m_wSpeed = null;
 		m_sDots = string.Empty;
 	}
 
@@ -46,13 +41,13 @@ class MRAD_WindHUD
 
 		m_wArrow = ImageWidget.Cast(m_wRoot.FindAnyWidget("MRAD_WindArrow"));
 		m_wDots = TextWidget.Cast(m_wRoot.FindAnyWidget("MRAD_WindDots"));
-		m_wSpeed = TextWidget.Cast(m_wRoot.FindAnyWidget("MRAD_WindSpeed"));
-		if (!m_wArrow || !m_wDots || !m_wSpeed)
+		if (!m_wArrow || !m_wDots)
 		{
 			Delete();
 			return false;
 		}
 
+		// Стрелка текстуры смотрит вверх, поэтому ноль поворота = ноль пеленга.
 		m_wArrow.SetPivot(0.5, 0.5);
 		return true;
 	}
@@ -123,7 +118,7 @@ class MRAD_WindHUD
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Called every frame while an MRAD scope is in ADS.
+	//! Called every frame for the local player.
 	//! \param character the local shooter
 	//! \param toggleHeld the MRAD_ToggleWindHUD action is held this frame
 	void Update(ChimeraCharacter character, bool toggleHeld)
@@ -159,30 +154,24 @@ class MRAD_WindHUD
 		if (!Create())
 			return;
 
-		float speed = Math.Max(0.0, weather.GetWindSpeed());
-		int beaufort = Beaufort(speed);
-		float bearing = RelativeBearing(character.GetWorldTransformAxis(2), weather.GetWindDirection());
-
-		if (beaufort != 0)
+		int beaufort = Beaufort(Math.Max(0.0, weather.GetWindSpeed()));
+		string dots = Dots(beaufort);
+		if (dots != m_sDots)
 		{
-			string dots = Dots(beaufort);
-			if (dots != m_sDots)
-			{
-				m_wDots.SetText(dots);
-				m_sDots = dots;
-			}
-		}
-		else if (m_sDots != "0")
-		{
-			m_wDots.SetText("0");
-			m_sDots = "0";
+			m_wDots.SetText(dots);
+			m_sDots = dots;
 		}
 
-		m_wDots.SetVisible(true);
+		// Calm weather: no direction to show.
 		m_wArrow.SetVisible(beaufort != 0);
-		if (beaufort != 0)
-			m_wArrow.SetRotation(bearing + ARROW_TEXTURE_OFFSET_DEG);
+		if (beaufort == 0)
+			return;
 
-		m_wSpeed.SetText(speed.ToString(1, 1) + " " + WidgetManager.Translate("#MRAD_WindUnit"));
+		float bearing = RelativeBearing(character.GetWorldTransformAxis(2), weather.GetWindDirection());
+		if (Math.AbsFloat(bearing - m_fBearing) < 0.25)
+			return;
+
+		m_wArrow.SetRotation(bearing);
+		m_fBearing = bearing;
 	}
 }

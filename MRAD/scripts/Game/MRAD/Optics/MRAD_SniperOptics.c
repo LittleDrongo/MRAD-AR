@@ -223,9 +223,9 @@ modded class SCR_2DOpticsComponent
 		if (!m_bMRADActive)
 			return;
 
-		// A turret click is instant: no interpolation towards the target angle.
-		m_fCurrentCameraPitch = GetCameraPitchTarget();
-
+		// Клик по поправке уже мгновенно выставляет m_fCurrentCameraPitch в
+		// MRAD_SetTicks; здесь камеру каждый кадр не переписываем, иначе
+		// прицеливание начинает «бороться» с собственным питчем игрока.
 		if (m_MRADInput)
 			m_MRADInput.Update(timeSlice);
 	}
