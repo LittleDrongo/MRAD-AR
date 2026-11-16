@@ -1,11 +1,9 @@
-// The wind indicator is a player HUD element, not part of the scope: it is driven
-// from the character control phase of the local player, so it works in ADS, from
-// the hip and with excluded optics alike, and it does not need a full-screen widget
-// that could get in the way of the HUD.
+// The wind indicator is a player HUD element, not part of the scope: it is drawn
+// every frame from the character control phase of the local player. Key input is
+// not read here on purpose: a context activated every frame takes inputs away
+// from the character (camera and sprint), so the toggle lives in the scope context.
 modded class SCR_CharacterControllerComponent
 {
-	protected const string WIND_CONTEXT = "MRAD_WindHUDContext";
-
 	protected ref MRAD_WindHUD m_MRADWindHUD;
 
 	//------------------------------------------------------------------------------------------------
@@ -16,20 +14,15 @@ modded class SCR_CharacterControllerComponent
 		if (!player || !am || SCR_Global.IsEditMode())
 			return;
 
-		// Only the locally controlled character: a dedicated server must not read
-		// anybody else's input.
+		// Only the locally controlled character.
 		PlayerController localPlayer = GetGame().GetPlayerController();
 		if (!localPlayer || localPlayer.GetControlledEntity() != owner)
 			return;
 
-		// The context lives for this frame only.
-		am.ActivateContext(WIND_CONTEXT);
-
 		if (!m_MRADWindHUD)
 			m_MRADWindHUD = new MRAD_WindHUD();
 
-		bool toggleHeld = am.GetActionValue("MRAD_ToggleWindHUD") > 0.5;
-		m_MRADWindHUD.Update(ChimeraCharacter.Cast(owner), toggleHeld);
+		m_MRADWindHUD.Update(ChimeraCharacter.Cast(owner));
 	}
 
 	//------------------------------------------------------------------------------------------------

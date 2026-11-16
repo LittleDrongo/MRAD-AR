@@ -14,6 +14,7 @@ class MRAD_OpticsInputController
 	protected bool m_bListening;
 	protected int m_iHeldElevation;
 	protected int m_iHeldWindage;
+	protected bool m_bWindToggleHeld;
 	protected float m_fElevationRepeat;
 	protected float m_fWindageRepeat;
 
@@ -73,6 +74,14 @@ class MRAD_OpticsInputController
 		InputManager input = GetGame().GetInputManager();
 		input.ActivateContext(INPUT_CONTEXT);
 		PollHeldActions(timeSlice);
+
+		// Клавиша индикатора ветра живёт в прицельном контексте: отдельный
+		// всегда активный контекст забирал бы ввод у камеры и бега.
+		bool windHeld = input.GetActionValue("MRAD_ToggleWindHUD") > 0.5;
+		if (windHeld && !m_bWindToggleHeld)
+			MRAD_WindHUD.Toggle();
+
+		m_bWindToggleHeld = windHeld;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -92,6 +101,7 @@ class MRAD_OpticsInputController
 		else
 		{
 			input.RemoveActionListener("MRAD_ResetZeroing", EActionTrigger.DOWN, ResetZeroing);
+			m_bWindToggleHeld = false;
 			m_iHeldElevation = 0;
 			m_iHeldWindage = 0;
 			m_fElevationRepeat = 0;

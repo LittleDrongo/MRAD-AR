@@ -15,7 +15,6 @@ class MRAD_WindHUD
 	protected string m_sDots;
 	protected int m_iBeaufort = -1;
 	protected float m_fBearing;
-	protected bool m_bToggleHeld;
 
 	//------------------------------------------------------------------------------------------------
 	void Delete()
@@ -155,18 +154,19 @@ class MRAD_WindHUD
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Called every frame for the local player.
-	//! \param character the local shooter
-	//! \param toggleHeld the MRAD_ToggleWindHUD action is held this frame
-	void Update(ChimeraCharacter character, bool toggleHeld)
+	//! Show/hide the indicator; remembered in the player profile.
+	static void Toggle()
 	{
 		MRAD_Settings settings = MRAD_Settings.Get();
+		settings.SetShowWindHUD(!settings.GetShowWindHUD());
+	}
 
-		// Edge on the toggle action, so one press flips the visibility once.
-		if (toggleHeld && !m_bToggleHeld)
-			settings.SetShowWindHUD(!settings.GetShowWindHUD());
-
-		m_bToggleHeld = toggleHeld;
+	//------------------------------------------------------------------------------------------------
+	//! Called every frame for the local player.
+	//! \param character the local shooter
+	void Update(ChimeraCharacter character)
+	{
+		MRAD_Settings settings = MRAD_Settings.Get();
 
 		if (!settings.GetShowWindHUD() || !character)
 		{
