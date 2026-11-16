@@ -5,6 +5,8 @@
 //
 //	Meters	|	up mrad
 //	100	-	1,3
+// plus a wind column (2.0 spec): correction for the reference crosswind (Settings, 4 m/s)
+// or, with "actual wind", for the current crosswind with an arrow to the side to turn.
 // Calculated locally on the holder's machine, nothing is replicated.
 [ComponentEditorProps(category: "GameScripted/MRAD", description: "Range card of the holder's weapon")]
 class Drg_AutoNotepadRtComponentClass : Drg_NotepadRtComponentClass
@@ -15,6 +17,8 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 {
 	protected static const int RANGE_STEP = 100;
 	protected static const int MAX_ROWS_ON_SHEET = 12;
+	protected static const string ARROW_RIGHT = "→";
+	protected static const string ARROW_LEFT = "←";
 
 	protected ChimeraCharacter m_Holder;
 	protected string m_sWeaponName;
@@ -22,6 +26,10 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	protected string m_sError = "#MRAD_Error_NoWeapon";
 	protected ref array<int> m_aRanges = {};
 	protected ref array<float> m_aMrad = {};
+	protected ref array<float> m_aWind = {};
+	protected ref array<bool> m_aWindValid = {};
+	protected float m_fWindSpeed;
+	protected bool m_bActualWind;
 	protected int m_iPage;
 
 	//------------------------------------------------------------------------------------------------
@@ -90,6 +98,8 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	{
 		m_aRanges.Clear();
 		m_aMrad.Clear();
+		m_aWind.Clear();
+		m_aWindValid.Clear();
 		m_sWeaponName = string.Empty;
 		m_sAmmoName = string.Empty;
 		m_sError = string.Empty;
@@ -131,7 +141,20 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 			m_sAmmoName = ReplaceMultiplySign(m_sAmmoName);
 		}
 
-		int maxRange = Math.ClampInt(MRAD_Settings.Get().GetMaxRange(), RANGE_STEP, 5000);
+		MRAD_Settings settings = MRAD_Settings.Get();
+		m_bActualWind = settings.GetUseActualWind();
+		float signedWind = GetSignedCrosswind(settings);
+		m_fWindSpeed = Math.AbsFloat(signedWind);
+		if (!m_bActualWind)
+			m_fWindSpeed = settings.GetReferenceWindSpeed();
+
+		MRAD_RangeCardInput input = MRAD_RangeCardInputResolver.ResolveWeapon(weapon);
+		bool hasInput = input.m_sError.IsEmpty();
+		MRAD_RangeCardWind wind = new MRAD_RangeCardWind();
+		if (hasInput)
+			wind.Load(input.m_Source);
+
+		int maxRange = Math.ClampInt(settings.GetMaxRange(), RANGE_STEP, 5000);
 		for (int distance = RANGE_STEP; distance <= maxRange; distance += RANGE_STEP)
 		{
 			float travelTime;
@@ -143,12 +166,74 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 			float angle = Math.Atan2(aimHeight, distance);
 			m_aRanges.Insert(distance);
 			m_aMrad.Insert(SCR_Math.ConvertFromRadians(angle, SCR_EOpticsAngleUnits.MILLIRADIANS));
+
+			// Game wind table -> projectile simulation -> ShellMove model (MRAD 2.0 code).
+			float windMrad;
+			bool windValid;
+			if (hasInput)
+			{
+				windValid = wind.TryTable(angle, input.m_fSpeedCoef, signedWind, windMrad);
+				if (!windValid)
+					windValid = wind.TrySimulation(input, distance, angle, travelTime, signedWind, windMrad);
+				if (!windValid)
+					windValid = wind.TryGameModel(input, distance, angle, signedWind, windMrad);
+			}
+
+			m_aWind.Insert(windMrad);
+			m_aWindValid.Insert(windValid);
 		}
+
+		wind.Release();
 
 		if (m_aRanges.IsEmpty())
 			m_sError = "#MRAD_Error_NoBallistics";
 
 		m_iPage = Math.ClampInt(m_iPage, 0, GetNumberOfPages() - 1);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! + = turn the correction right. Reference mode: +reference speed.
+	protected float GetSignedCrosswind(MRAD_Settings settings)
+	{
+		if (!settings.GetUseActualWind())
+			return Math.Max(0.0, settings.GetReferenceWindSpeed());
+
+		ChimeraWorld world = GetGame().GetWorld();
+		if (!world || !m_Holder)
+			return 0;
+
+		TimeAndWeatherManagerEntity weather = world.GetTimeAndWeatherManager();
+		if (!weather)
+			return 0;
+
+		vector forward = m_Holder.GetWorldTransformAxis(2);
+		float horizontal = Math.Sqrt(forward[0] * forward[0] + forward[2] * forward[2]);
+		if (horizontal <= 0.0001)
+			return 0;
+
+		// Weather direction is where the wind comes FROM, degrees.
+		vector right = Vector(forward[2] / horizontal, 0, -forward[0] / horizontal);
+		float azimuth = weather.GetWindDirection() * Math.DEG2RAD;
+		vector windFrom = Vector(Math.Sin(azimuth), 0, Math.Cos(azimuth)) * Math.Max(0.0, weather.GetWindSpeed());
+		return windFrom[0] * right[0] + windFrom[2] * right[2];
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected string FormatWind(int index)
+	{
+		if (!m_aWindValid[index])
+			return "-";
+
+		float value = m_aWind[index];
+		string text = FormatMrad(Math.AbsFloat(value));
+		if (!m_bActualWind || Math.AbsFloat(value) < 0.05)
+			return text;
+
+		// Arrows exist in the handwritten font (U+2192 / U+2190).
+		if (value > 0)
+			return ARROW_RIGHT + text;
+
+		return ARROW_LEFT + text;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -204,7 +289,7 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		if (!m_sError.IsEmpty())
 			return text + "\n\n\t" + WidgetManager.Translate(m_sError);
 
-		text += "\n\tMeters\t|\tup mrad";
+		text += string.Format("\n\tMeters\t|\tup\t|\twind %1", FormatMrad(m_fWindSpeed));
 
 		int pages = GetNumberOfPages();
 		if (pages > 1)
@@ -215,7 +300,7 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		int last = Math.Min(first + rows, m_aRanges.Count());
 		for (int i = first; i < last; i++)
 		{
-			text += string.Format("\n\t%1\t-\t%2", m_aRanges[i], FormatMrad(m_aMrad[i]));
+			text += string.Format("\n\t%1\t-\t%2\t-\t%3", m_aRanges[i], FormatMrad(m_aMrad[i]), FormatWind(i));
 		}
 
 		return text;
