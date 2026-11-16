@@ -1,9 +1,0 @@
-18:31:38.655 SCRIPT       : MRAD_SHOWCASE_BEGIN native game mode started
-18:31:43.538 SCRIPT       : MRAD_SHOWCASE_NOTEBOOK position=<960.816,39.906,2654> gadget=1 geometries=1 hasRT=0 valid=1
-18:31:43.540 SCRIPT       : MRAD_SHOWCASE_NOTEBOOK position=<627.013,39.481,2566.36> gadget=1 geometries=1 hasRT=0 valid=1
-18:31:43.540 SCRIPT       : MRAD_SHOWCASE_NOTEBOOK position=<627.223,39.481,2564.88> gadget=1 geometries=1 hasRT=0 valid=1
-18:31:43.546 SCRIPT       : MRAD_SHOWCASE_NOTEBOOK position=<1462.11,54.091,1165.57> gadget=1 geometries=1 hasRT=0 valid=1
-18:31:43.546 SCRIPT       : MRAD_SHOWCASE_NOTEBOOK position=<1461.8,54.091,1165.66> gadget=1 geometries=1 hasRT=0 valid=1
-18:31:43.549 SCRIPT       : MRAD_SHOWCASE_RESULT notebooks=5 failures=0
-18:31:44.269 SCRIPT    (E): 'SCR_BaseResupplySupportStationComponent' needs a entity catalog manager!
-18:31:44.273 SCRIPT    (E): 'SCR_BaseResupplySupportStationComponent' needs a entity catalog manager!

@@ -32,7 +32,17 @@ class MRAD_SettingsMenu : SCR_SubMenuBase
 		m_ActualWind = CheckBoxWidget.Cast(m_wRoot.FindAnyWidget("MRAD_ActualWind"));
 		m_ShowHUD = CheckBoxWidget.Cast(m_wRoot.FindAnyWidget("MRAD_ShowHUD"));
 		m_Status = TextWidget.Cast(m_wRoot.FindAnyWidget("MRAD_Status"));
+		// The range card is elevation only (1.x format): wind rows are not used.
+		HideRow("MRAD_Wind_Row");
+		HideRow("MRAD_ActualWind_Row");
 		LoadValues();
+	}
+
+	protected void HideRow(string name)
+	{
+		Widget row = m_wRoot.FindAnyWidget(name);
+		if (row)
+			row.SetVisible(false);
 	}
 
 	override void OnTabShow()

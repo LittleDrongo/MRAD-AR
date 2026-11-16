@@ -1,5 +1,0 @@
-MRAD_RuntimeProbe MRAD_RuntimeProbe1 {
- coords 0 2 0
- m_sTestWeapon "{29DD901C0664FC61}Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_suppressor_4x20_OliveGreen_Sand_Stripes.et"
- m_bRequireSuppressor 1
-}

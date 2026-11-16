@@ -1,9 +1,0 @@
-MetaFileClass {
- Name "{CBA77A6A1C5E4B23}Prefabs/MRAD_QA/MRAD_NetworkProbe.et"
- Configurations {
-  EntityTemplateResourceClass PC {
-  }
-  EntityTemplateResourceClass HEADLESS : PC {
-  }
- }
-}

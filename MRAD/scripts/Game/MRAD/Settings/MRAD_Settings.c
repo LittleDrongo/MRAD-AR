@@ -9,7 +9,7 @@ class MRAD_Settings
 	protected float m_fReferenceWindSpeed = 4.0;
 	protected bool m_bUseActualWind;
 	protected int m_iMaxRange = 1500;
-	protected int m_iRowsPerPage = 10;
+	protected int m_iRowsPerPage = 12;
 	protected float m_fFineStepMrad = 0.1;
 	protected float m_fCoarseStepMrad = 1.0;
 	protected float m_fElevationLimitMrad = 50.0;
@@ -57,7 +57,7 @@ class MRAD_Settings
 
 	bool RestoreDefaults()
 	{
-		return Apply(4.0, false, 1500, 10, 0.1, 1.0, 50.0, 50.0, true);
+		return Apply(4.0, false, 1500, 12, 0.1, 1.0, 50.0, 50.0, true);
 	}
 
 	protected void Sanitize()
@@ -89,7 +89,7 @@ class MRAD_Settings
 		context.ReadValueDefault("referenceWindSpeed", m_fReferenceWindSpeed, 4.0);
 		context.ReadValueDefault("useActualWind", m_bUseActualWind, false);
 		context.ReadValueDefault("maxRange", m_iMaxRange, 1500);
-		context.ReadValueDefault("rowsPerPage", m_iRowsPerPage, 10);
+		context.ReadValueDefault("rowsPerPage", m_iRowsPerPage, 12);
 		context.ReadValueDefault("fineStepMrad", m_fFineStepMrad, 0.1);
 		context.ReadValueDefault("coarseStepMrad", m_fCoarseStepMrad, 1.0);
 		context.ReadValueDefault("elevationLimitMrad", m_fElevationLimitMrad, 50.0);

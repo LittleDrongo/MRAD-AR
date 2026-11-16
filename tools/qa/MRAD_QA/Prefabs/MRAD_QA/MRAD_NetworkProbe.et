@@ -1,9 +1,0 @@
-MRAD_NetworkProbe {
- ID "CBA77A6A1C5E4B23"
- components {
-  Hierarchy "{CBA77A6A1C5E4B25}" {
-  }
-  RplComponent "{CBA77A6A1C5E4B24}" {
-  }
- }
-}

@@ -36,6 +36,6 @@ $grp GenericEntity : "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x5
 GenericEntity : "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et" {
  coords 4.463 1.906 2.911
 }
-GenericEntity : "{A7DE1002B62C4802}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_PIP.et" {
+GenericEntity : "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et" {
  coords 4.65 1.906 2.911
 }

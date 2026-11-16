@@ -1,9 +1,0 @@
-MetaFileClass {
- Name "{CBA77A6A1C5E4B22}Worlds/MRAD_NetworkQA/MRAD_NetworkQA.ent"
- Configurations {
-  ENTResourceClass PC {
-  }
-  ENTResourceClass HEADLESS : PC {
-  }
- }
-}

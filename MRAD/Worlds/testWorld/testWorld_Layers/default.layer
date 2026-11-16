@@ -210,7 +210,7 @@ $grp Projectile : "{2F007929B7F8399F}Prefabs/Weapons/Ammo/Ammo_9x39_AP_SP6.et" {
 Projectile : "{2FBCA0A7CEDDE7B0}Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et" {
  coords 4.189 1.906 2.289
 }
-GenericEntity : "{A7DE1002B62C4801}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_2D.et" {
+GenericEntity : "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et" {
  coords 1.198 1.001 35.253
 }
 SCR_ChimeraCharacter : "{37578B1666981FCE}Prefabs/Characters/Core/Character_Base.et" {

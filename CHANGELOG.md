@@ -1,5 +1,25 @@
 # Изменения
 
+## 2.1.0 — 2026-11-16
+
+### Блокнот
+
+- Вернул схему 1.x: один `RichTextWidget` `drg_Text`, исходный `NotepadSheet.layout` (шрифт Eskal, размер 48), формат карточки автора (`Meters | up mrad`, `100 - 1,3`), расчёт `GetAimHeightOfNextProjectile` по текущему оружию держащего.
+- Причина «пустого/размытого» листа: лист с render target есть только в LOD 0 модели, в руках блокнот уходил в LOD 1. Теперь в руках LOD 0 зафиксирован.
+- Убраны серверный расчёт, репликация таблицы, ветер и 36 ячеек Codex. Страница — локальная, 12 строк.
+- «×» в калибре заменяется на «x» (в рукописном шрифте его нет).
+
+### Прицелы
+
+- MRAD работает на любом снайперском прицеле без префабов: modded `SCR_2DOpticsComponent` / `SCR_2DSightsComponent`. Удалены `MRAD_2DSightsComponent`, `MRAD_PIPSightsComponent`, `MRAD_ZeroingStateComponent`, RPC через PlayerController и примеры `MRAD_Optic_ARTII_*` (в тестовых мирах заменены на ванильный ART II).
+- 0 MRAD = параллельно стволу, штатная таблица дальностей не действует.
+- Щелчок: штатные `SOUND_ZEROING_UP/DOWN` на оружии (раньше вызывался несуществующий UI-звук `SOUND_SIGHT_ELEVATION`).
+- HUD: в ванильной строке пристрелки блока оружия, стрелки — ванильные значки; подсказка PgUp/PgDn скрыта для MRAD-прицелов.
+
+### Разработка
+
+- Удалены устаревшие `tools/qa`, `docs/qa`, `docs/MODDING.md`, `docs/VERIFICATION.md` (описывали удалённые классы).
+
 ## 2.0.0 — 2026-11-16
 
 Целевая версия игры и Workbench: 1.9.0.37. Подробный статус приёмки: [VERIFICATION.md](docs/VERIFICATION.md).
