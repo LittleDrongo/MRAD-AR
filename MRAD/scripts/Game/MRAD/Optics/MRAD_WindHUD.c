@@ -7,10 +7,13 @@ class MRAD_WindHUD
 	protected const ResourceName LAYOUT = "{A7DE1002B62C4780}UI/layouts/MRAD/MRAD_WindHUD.layout";
 	protected const string DOT = "•";
 
+	protected const int BEAUFORT_MAX = 12;
+
 	protected Widget m_wRoot;
-	protected ImageWidget m_wArrow;
+	protected ref array<ImageWidget> m_aArrows;
 	protected TextWidget m_wDots;
 	protected string m_sDots;
+	protected int m_iBeaufort = -1;
 	protected float m_fBearing;
 	protected bool m_bToggleHeld;
 
@@ -21,9 +24,10 @@ class MRAD_WindHUD
 			m_wRoot.RemoveFromHierarchy();
 
 		m_wRoot = null;
-		m_wArrow = null;
+		m_aArrows = null;
 		m_wDots = null;
 		m_sDots = string.Empty;
+		m_iBeaufort = -1;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -39,16 +43,30 @@ class MRAD_WindHUD
 		if (!m_wRoot)
 			return false;
 
-		m_wArrow = ImageWidget.Cast(m_wRoot.FindAnyWidget("MRAD_WindArrow"));
 		m_wDots = TextWidget.Cast(m_wRoot.FindAnyWidget("MRAD_WindDots"));
-		if (!m_wArrow || !m_wDots)
+		m_aArrows = {};
+		for (int i = 0; i <= BEAUFORT_MAX; i++)
+		{
+			ImageWidget arrow = ImageWidget.Cast(m_wRoot.FindAnyWidget("MRAD_WindArrow" + i));
+			if (!arrow)
+			{
+				Delete();
+				return false;
+			}
+
+			// Цвет клетки «Баллы Бофорта» задан в layout; ноль поворота
+			// соответствует нулевому пеленгу (текстура смотрит вверх).
+			arrow.SetPivot(0.5, 0.5);
+			arrow.SetVisible(false);
+			m_aArrows.Insert(arrow);
+		}
+
+		if (!m_wDots)
 		{
 			Delete();
 			return false;
 		}
 
-		// Стрелка текстуры смотрит вверх, поэтому ноль поворота = ноль пеленга.
-		m_wArrow.SetPivot(0.5, 0.5);
 		return true;
 	}
 
@@ -162,8 +180,21 @@ class MRAD_WindHUD
 			m_sDots = dots;
 		}
 
+		if (!m_aArrows || m_aArrows.Count() <= beaufort)
+			return;
+
+		// Показана ровно одна стрелка: цвет клетки шкалы Бофорта для текущих баллов.
+		if (beaufort != m_iBeaufort)
+		{
+			if (m_iBeaufort >= 0 && m_iBeaufort < m_aArrows.Count())
+				m_aArrows[m_iBeaufort].SetVisible(false);
+
+			m_iBeaufort = beaufort;
+			m_aArrows[beaufort].SetVisible(true);
+		}
+
 		// Calm weather: no direction to show.
-		m_wArrow.SetVisible(beaufort != 0);
+		m_aArrows[beaufort].SetVisible(beaufort != 0);
 		if (beaufort == 0)
 			return;
 
@@ -171,7 +202,7 @@ class MRAD_WindHUD
 		if (Math.AbsFloat(bearing - m_fBearing) < 0.25)
 			return;
 
-		m_wArrow.SetRotation(bearing);
+		m_aArrows[beaufort].SetRotation(bearing);
 		m_fBearing = bearing;
 	}
 }
