@@ -11,6 +11,24 @@
 // scopes, the reticle and the misalignment all follow it. Windage adds the matching yaw.
 // Values are kept per scope item on the local machine: only the shooter's view changes,
 // the shot itself is the normal network-synced aim.
+// Per-prefab switch: an optic with its own reticle/range table (PSO-4 and similar)
+// can be excluded from MRAD by ticking "Exclude from MRAD" on its sights component,
+// or by adding the empty MRAD_SightExclusionComponent marker.
+modded class SCR_2DOpticsComponentClass
+{
+	[Attribute("0", UIWidgets.CheckBox, "Exclude this optic from MRAD: keep its own reticle and range table", category: "MRAD")]
+	bool m_bMRADExcluded;
+}
+
+[ComponentEditorProps(category: "GameScripted/MRAD", description: "Marks an optic prefab as excluded from MRAD")]
+class MRAD_SightExclusionComponentClass : ScriptComponentClass
+{
+}
+
+class MRAD_SightExclusionComponent : ScriptComponent
+{
+}
+
 modded class SCR_2DOpticsComponent
 {
 	static const float MRAD_MIN_ZOOM_SNIPER = 2.0;
@@ -106,8 +124,27 @@ modded class SCR_2DOpticsComponent
 
 	//------------------------------------------------------------------------------------------------
 	//! Sniper-type scope on a hand-held weapon. Result is cached per weapon the scope is mounted on.
+	//! Optic prefab opted out of MRAD (checkbox on the sights component or the marker).
+	bool MRAD_IsExcluded()
+	{
+		IEntity owner = GetOwner();
+		if (!owner)
+			return false;
+
+		if (owner.FindComponent(MRAD_SightExclusionComponent))
+			return true;
+
+		SCR_2DOpticsComponentClass data = SCR_2DOpticsComponentClass.Cast(GetComponentData(owner));
+		return data && data.m_bMRADExcluded;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	bool MRAD_IsSniperOptic()
 	{
+		// Исключение статично для префаба и проверяется до кэша.
+		if (MRAD_IsExcluded())
+			return false;
+
 		BaseWeaponComponent weapon = MRAD_FindWeapon();
 		if (!weapon)
 			return false;

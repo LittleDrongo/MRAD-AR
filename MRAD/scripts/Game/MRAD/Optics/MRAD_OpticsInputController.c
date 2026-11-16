@@ -10,6 +10,7 @@ class MRAD_OpticsInputController
 	protected static ref ScriptInvoker s_OnChanged;
 
 	protected SCR_2DOpticsComponent m_Optic;
+	protected ref MRAD_WindHUD m_WindHUD;
 	protected bool m_bActive;
 	protected bool m_bListening;
 	protected int m_iHeldElevation;
@@ -46,6 +47,8 @@ class MRAD_OpticsInputController
 	{
 		m_bActive = false;
 		SetListening(false);
+		if (m_WindHUD)
+			m_WindHUD.Delete();
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -72,6 +75,27 @@ class MRAD_OpticsInputController
 		// The context lives for this frame only.
 		GetGame().GetInputManager().ActivateContext(INPUT_CONTEXT);
 		PollHeldActions(timeSlice);
+		UpdateWindHUD();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Wind indicator, drawn only in the scope post-frame. It reads no input and
+	//! creates no context: that is what keeps the character controls intact.
+	protected void UpdateWindHUD()
+	{
+		ChimeraCharacter character = ChimeraCharacter.Cast(SCR_PlayerController.GetLocalControlledEntity());
+		if (!character)
+		{
+			if (m_WindHUD)
+				m_WindHUD.Delete();
+
+			return;
+		}
+
+		if (!m_WindHUD)
+			m_WindHUD = new MRAD_WindHUD();
+
+		m_WindHUD.Update(character);
 	}
 
 	//------------------------------------------------------------------------------------------------

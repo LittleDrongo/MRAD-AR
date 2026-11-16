@@ -1,0 +1,173 @@
+FrameWidgetClass {
+ Name "MRAD_WindHUD"
+ Slot FrameWidgetSlot "{A7DE1002B62C4781}" {
+  Anchor 0 0 0 0
+  PositionX 20
+  OffsetLeft 20
+  PositionY 18
+  OffsetTop 18
+  SizeX 124
+  OffsetRight -144
+  SizeY 156
+  OffsetBottom -174
+ }
+ {
+  TextWidgetClass "{A7DE1002B62C4786}" {
+   Name "MRAD_WindDots"
+   Slot FrameWidgetSlot "{A7DE1002B62C4787}" {
+    OffsetLeft 0
+    OffsetTop 0
+    OffsetRight -124
+    OffsetBottom -26
+   }
+   Color 1 1 1 1
+   Text ""
+   "Font Size" 24
+   "Horizontal Alignment" Center
+   "Vertical Alignment" Center
+  }
+  ImageWidgetClass "{A7DE1002B62C47B0}" {
+   Name "MRAD_WindArrow0"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D0}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 1.0000 1.0000 1.0000 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B1}" {
+   Name "MRAD_WindArrow1"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D1}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.6824 0.9451 0.9765 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B2}" {
+   Name "MRAD_WindArrow2"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D2}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.5882 0.9686 0.8627 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B3}" {
+   Name "MRAD_WindArrow3"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D3}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.5882 0.9686 0.7059 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B4}" {
+   Name "MRAD_WindArrow4"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D4}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.4353 0.9569 0.4353 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B5}" {
+   Name "MRAD_WindArrow5"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D5}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.4510 0.9294 0.0706 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B6}" {
+   Name "MRAD_WindArrow6"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D6}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.6431 0.9294 0.0706 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B7}" {
+   Name "MRAD_WindArrow7"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D7}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.8549 0.9294 0.0706 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B8}" {
+   Name "MRAD_WindArrow8"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D8}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.9294 0.7608 0.0706 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47B9}" {
+   Name "MRAD_WindArrow9"
+   Slot FrameWidgetSlot "{A7DE1002B62C47D9}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.9294 0.5608 0.0706 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47BA}" {
+   Name "MRAD_WindArrow10"
+   Slot FrameWidgetSlot "{A7DE1002B62C47DA}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.9294 0.3882 0.0706 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47BB}" {
+   Name "MRAD_WindArrow11"
+   Slot FrameWidgetSlot "{A7DE1002B62C47DB}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.9294 0.1608 0.0706 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+  ImageWidgetClass "{A7DE1002B62C47BC}" {
+   Name "MRAD_WindArrow12"
+   Slot FrameWidgetSlot "{A7DE1002B62C47DC}" {
+    OffsetLeft 2
+    OffsetTop 26
+    OffsetRight -126
+    OffsetBottom -150
+   }
+   Color 0.8353 0.0627 0.1765 1
+   Texture "{48936236214E5E54}UI/layouts/MRAD/wind_arrow.edds"
+  }
+ }
+}
