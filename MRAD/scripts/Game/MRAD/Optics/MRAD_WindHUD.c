@@ -1,7 +1,8 @@
 // Small wind indicator in the top-left corner (Arma 3 style): an arrow that shows
 // where the wind blows relative to the view (12 o'clock = away from the viewer) and
 // one dot per Beaufort step. No panel, no exact speed in m/s.
-// Shown or hidden with MRAD_ToggleWindHUD (Shift+F by default) or the settings checkbox.
+// Drawn from MRAD_OpticsInputController in ADS and switched with the Settings checkbox;
+// it has no input context of its own on purpose (that broke camera, TAB and sprint).
 class MRAD_WindHUD
 {
 	protected const ResourceName LAYOUT = "{A7DE1002B62C4780}UI/layouts/MRAD/MRAD_WindHUD.layout";

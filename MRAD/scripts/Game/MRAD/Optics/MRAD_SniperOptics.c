@@ -11,17 +11,15 @@
 // scopes, the reticle and the misalignment all follow it. Windage adds the matching yaw.
 // Values are kept per scope item on the local machine: only the shooter's view changes,
 // the shot itself is the normal network-synced aim.
-// Scope class: a per-prefab switch that removes an optic from the MRAD system.
-// Needed for optics with their own reticle/range table (PSO-4 and similar):
-// their override prefab can simply tick "Exclude from MRAD".
+// Per-prefab switch: an optic with its own reticle/range table (PSO-4 and similar)
+// can be excluded from MRAD by ticking "Exclude from MRAD" on its sights component,
+// or by adding the empty MRAD_SightExclusionComponent marker.
 modded class SCR_2DOpticsComponentClass
 {
 	[Attribute("0", UIWidgets.CheckBox, "Exclude this optic from MRAD: keep its own reticle and range table", category: "MRAD")]
 	bool m_bMRADExcluded;
 }
 
-// Marker component: the same exclusion for prefabs where the attribute above is
-// not available (for example an optic that another mod already re-classed).
 [ComponentEditorProps(category: "GameScripted/MRAD", description: "Marks an optic prefab as excluded from MRAD")]
 class MRAD_SightExclusionComponentClass : ScriptComponentClass
 {
@@ -125,8 +123,8 @@ modded class SCR_2DOpticsComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Optic prefab opted out of MRAD (checkbox on the sights component or the
-	//! MRAD_SightExclusionComponent marker). Such a scope keeps its own zeroing.
+	//! Sniper-type scope on a hand-held weapon. Result is cached per weapon the scope is mounted on.
+	//! Optic prefab opted out of MRAD (checkbox on the sights component or the marker).
 	bool MRAD_IsExcluded()
 	{
 		IEntity owner = GetOwner();
@@ -141,7 +139,6 @@ modded class SCR_2DOpticsComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Sniper-type scope on a hand-held weapon. Result is cached per weapon the scope is mounted on.
 	bool MRAD_IsSniperOptic()
 	{
 		// Исключение статично для префаба и проверяется до кэша.
@@ -223,9 +220,9 @@ modded class SCR_2DOpticsComponent
 		if (!m_bMRADActive)
 			return;
 
-		// Клик по поправке уже мгновенно выставляет m_fCurrentCameraPitch в
-		// MRAD_SetTicks; здесь камеру каждый кадр не переписываем, иначе
-		// прицеливание начинает «бороться» с собственным питчем игрока.
+		// A turret click is instant: no interpolation towards the target angle.
+		m_fCurrentCameraPitch = GetCameraPitchTarget();
+
 		if (m_MRADInput)
 			m_MRADInput.Update(timeSlice);
 	}
