@@ -10,6 +10,7 @@ class MRAD_OpticsInputController
 	protected static ref ScriptInvoker s_OnChanged;
 
 	protected SCR_2DOpticsComponent m_Optic;
+	protected ref MRAD_WindHUD m_WindHUD;
 	protected bool m_bActive;
 	protected bool m_bListening;
 	protected int m_iHeldElevation;
@@ -47,6 +48,9 @@ class MRAD_OpticsInputController
 	{
 		m_bActive = false;
 		SetListening(false);
+		m_bWindToggleHeld = false;
+		if (m_WindHUD)
+			m_WindHUD.Delete();
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -82,6 +86,22 @@ class MRAD_OpticsInputController
 			MRAD_WindHUD.Toggle();
 
 		m_bWindToggleHeld = windHeld;
+
+		// Индикатор рисуется только здесь, в фазе пост-обработки прицела:
+		// работа с виджетами в фазе подготовки управления ломала ввод
+		// (переставали работать поворот камеры и TAB).
+		ChimeraCharacter character = ChimeraCharacter.Cast(SCR_PlayerController.GetLocalControlledEntity());
+		if (!character)
+		{
+			if (m_WindHUD)
+				m_WindHUD.Delete();
+			return;
+		}
+
+		if (!m_WindHUD)
+			m_WindHUD = new MRAD_WindHUD();
+
+		m_WindHUD.Update(character);
 	}
 
 	//------------------------------------------------------------------------------------------------

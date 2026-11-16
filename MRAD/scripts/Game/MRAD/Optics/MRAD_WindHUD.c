@@ -66,6 +66,10 @@ class MRAD_WindHUD
 			return false;
 		}
 
+		// Виджет индикатора не должен забирать фокус UI: иначе игра считает,
+		// что открыт интерфейс, и не отдаёт ввод персонажу.
+		GetGame().GetWorkspace().SetFocusedWidget(null);
+
 		return true;
 	}
 
