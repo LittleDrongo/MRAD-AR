@@ -1,0 +1,78 @@
+FrameWidgetClass {
+ Name "MRAD_WindHUD"
+ Slot FrameWidgetSlot "{A7DE1002B62C4781}" {
+  Anchor 0 0 1 1
+  OffsetLeft 0
+  OffsetTop 0
+  OffsetRight 0
+  OffsetBottom 0
+ }
+ {
+  FrameWidgetClass "{A7DE1002B62C4782}" {
+   Name "MRAD_WindPanel"
+   Slot FrameWidgetSlot "{A7DE1002B62C4783}" {
+    Anchor 0 0 0 0
+    PositionX 20
+    OffsetLeft 20
+    PositionY 20
+    OffsetTop 20
+    SizeX 104
+    OffsetRight -124
+    SizeY 108
+    OffsetBottom -128
+   }
+   {
+    PanelWidgetClass "{A7DE1002B62C4784}" {
+     Name "MRAD_WindBackground"
+     Slot FrameWidgetSlot "{A7DE1002B62C4785}" {
+      Anchor 0 0 1 1
+      OffsetLeft 0
+      OffsetTop 0
+      OffsetRight 0
+      OffsetBottom 0
+     }
+     Color 0.02 0.03 0.04 0.32
+    }
+    TextWidgetClass "{A7DE1002B62C4786}" {
+     Name "MRAD_WindDots"
+     Slot FrameWidgetSlot "{A7DE1002B62C4787}" {
+      OffsetLeft 4
+      OffsetTop 6
+      OffsetRight -100
+      OffsetBottom -30
+     }
+     Color 1 1 1 1
+     Text ""
+     "Font Size" 26
+     "Horizontal Alignment" Center
+     "Vertical Alignment" Center
+    }
+    ImageWidgetClass "{A7DE1002B62C4788}" {
+     Name "MRAD_WindArrow"
+     Slot FrameWidgetSlot "{A7DE1002B62C4789}" {
+      OffsetLeft 30
+      OffsetTop 32
+      OffsetRight -74
+      OffsetBottom -76
+     }
+     Color 0.72 0.96 0.78 1
+     Texture "{EE465326B1AEB26C}UI/Textures/RadialMenu/TrianglePointer.edds"
+    }
+    TextWidgetClass "{A7DE1002B62C478A}" {
+     Name "MRAD_WindSpeed"
+     Slot FrameWidgetSlot "{A7DE1002B62C478B}" {
+      OffsetLeft 4
+      OffsetTop 84
+      OffsetRight -100
+      OffsetBottom -102
+     }
+     Color 1 1 1 0.85
+     Text ""
+     "Font Size" 15
+     "Horizontal Alignment" Center
+     "Vertical Alignment" Center
+    }
+   }
+  }
+ }
+}

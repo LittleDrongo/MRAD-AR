@@ -10,6 +10,7 @@ class MRAD_OpticsInputController
 	protected static ref ScriptInvoker s_OnChanged;
 
 	protected SCR_2DOpticsComponent m_Optic;
+	protected ref MRAD_WindHUD m_WindHUD;
 	protected bool m_bActive;
 	protected bool m_bListening;
 	protected int m_iHeldElevation;
@@ -46,6 +47,8 @@ class MRAD_OpticsInputController
 	{
 		m_bActive = false;
 		SetListening(false);
+		if (m_WindHUD)
+			m_WindHUD.Delete();
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -70,8 +73,29 @@ class MRAD_OpticsInputController
 			return;
 
 		// The context lives for this frame only.
-		GetGame().GetInputManager().ActivateContext(INPUT_CONTEXT);
+		InputManager input = GetGame().GetInputManager();
+		input.ActivateContext(INPUT_CONTEXT);
 		PollHeldActions(timeSlice);
+		UpdateWindHUD(input);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Small top-left wind indicator: arrow (0 = downwind) and Beaufort dots.
+	protected void UpdateWindHUD(InputManager input)
+	{
+		ChimeraCharacter character = ChimeraCharacter.Cast(SCR_PlayerController.GetLocalControlledEntity());
+		if (!character)
+		{
+			if (m_WindHUD)
+				m_WindHUD.Delete();
+			return;
+		}
+
+		if (!m_WindHUD)
+			m_WindHUD = new MRAD_WindHUD();
+
+		bool toggleHeld = input.GetActionValue("MRAD_ToggleWindHUD") > 0.5;
+		m_WindHUD.Update(character, toggleHeld);
 	}
 
 	//------------------------------------------------------------------------------------------------

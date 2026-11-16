@@ -15,6 +15,7 @@ class MRAD_Settings
 	protected float m_fElevationLimitMrad = 50.0;
 	protected float m_fWindageLimitMrad = 50.0;
 	protected bool m_bShowHUD = true;
+	protected bool m_bShowWindHUD = true;
 	protected int m_iRevision = 1;
 
 	static MRAD_Settings Get()
@@ -36,10 +37,22 @@ class MRAD_Settings
 	float GetElevationLimitMrad() { return m_fElevationLimitMrad; }
 	float GetWindageLimitMrad() { return m_fWindageLimitMrad; }
 	bool GetShowHUD() { return m_bShowHUD; }
+	bool GetShowWindHUD() { return m_bShowWindHUD; }
 	int GetRevision() { return m_iRevision; }
 
+	//! Toggle of the wind indicator from the MRAD_ToggleWindHUD action; saved at once.
+	bool SetShowWindHUD(bool show)
+	{
+		if (m_bShowWindHUD == show)
+			return true;
+
+		m_bShowWindHUD = show;
+		m_iRevision++;
+		return Save();
+	}
+
 	// Изменения действуют сразу; false означает только ошибку сохранения профиля.
-	bool Apply(float referenceWindSpeed, bool useActualWind, int maxRange, int rowsPerPage, float fineStep, float coarseStep, float elevationLimit, float windageLimit, bool showHUD)
+	bool Apply(float referenceWindSpeed, bool useActualWind, int maxRange, int rowsPerPage, float fineStep, float coarseStep, float elevationLimit, float windageLimit, bool showHUD, bool showWindHUD)
 	{
 		m_fReferenceWindSpeed = referenceWindSpeed;
 		m_bUseActualWind = useActualWind;
@@ -50,6 +63,7 @@ class MRAD_Settings
 		m_fElevationLimitMrad = elevationLimit;
 		m_fWindageLimitMrad = windageLimit;
 		m_bShowHUD = showHUD;
+		m_bShowWindHUD = showWindHUD;
 		Sanitize();
 		m_iRevision++;
 		return Save();
@@ -57,7 +71,7 @@ class MRAD_Settings
 
 	bool RestoreDefaults()
 	{
-		return Apply(4.0, false, 1500, 15, 0.1, 1.0, 50.0, 50.0, true);
+		return Apply(4.0, false, 1500, 15, 0.1, 1.0, 50.0, 50.0, true, true);
 	}
 
 	protected void Sanitize()
@@ -95,6 +109,7 @@ class MRAD_Settings
 		context.ReadValueDefault("elevationLimitMrad", m_fElevationLimitMrad, 50.0);
 		context.ReadValueDefault("windageLimitMrad", m_fWindageLimitMrad, 50.0);
 		context.ReadValueDefault("showHUD", m_bShowHUD, true);
+		context.ReadValueDefault("showWindHUD", m_bShowWindHUD, true);
 		Sanitize();
 	}
 
@@ -113,6 +128,7 @@ class MRAD_Settings
 		context.WriteValue("elevationLimitMrad", m_fElevationLimitMrad);
 		context.WriteValue("windageLimitMrad", m_fWindageLimitMrad);
 		context.WriteValue("showHUD", m_bShowHUD);
+		context.WriteValue("showWindHUD", m_bShowWindHUD);
 		return context.SaveToFile(FILE_NAME);
 	}
 }

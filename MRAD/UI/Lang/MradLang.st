@@ -801,5 +801,53 @@ StringTable {
    Target_ko_kr "M21 — MRAD PIP"
    Target_zh_cn "M21 — MRAD PIP"
   }
+  CustomStringTableItem "{6D1E4C2A8F5B4B01}" {
+   Id "MRAD_ShowWindHUD"
+   Target_en_us "Show wind HUD"
+   Target_ru_ru "Показывать индикатор ветра"
+   Target_uk_ua "Показувати індикатор вітру"
+   Target_de_de "Wind-HUD anzeigen"
+   Target_fr_fr "Afficher l'indicateur de vent"
+   Target_it_it "Mostra indicatore vento"
+   Target_es_es "Mostrar indicador de viento"
+   Target_cs_cz "Zobrazit ukazatel větru"
+   Target_pl_pl "Pokaż wskaźnik wiatru"
+   Target_pt_br "Mostrar indicador de vento"
+   Target_ja_jp "風インジケーターを表示"
+   Target_ko_kr "바람 표시기 표시"
+   Target_zh_cn "显示风向指示"
+  }
+  CustomStringTableItem "{6D1E4C2A8F5B4B02}" {
+   Id "MRAD_BindToggleWindHUD"
+   Target_en_us "Toggle wind HUD"
+   Target_ru_ru "Индикатор ветра вкл/выкл"
+   Target_uk_ua "Індикатор вітру вкл/викл"
+   Target_de_de "Wind-HUD umschalten"
+   Target_fr_fr "Basculer l'indicateur de vent"
+   Target_it_it "Attiva/disattiva indicatore vento"
+   Target_es_es "Alternar indicador de viento"
+   Target_cs_cz "Přepnout ukazatel větru"
+   Target_pl_pl "Przełącz wskaźnik wiatru"
+   Target_pt_br "Alternar indicador de vento"
+   Target_ja_jp "風インジケーター切替"
+   Target_ko_kr "바람 표시기 전환"
+   Target_zh_cn "切换风向指示"
+  }
+  CustomStringTableItem "{6D1E4C2A8F5B4B03}" {
+   Id "MRAD_WindUnit"
+   Target_en_us "m/s"
+   Target_ru_ru "м/с"
+   Target_uk_ua "м/с"
+   Target_de_de "m/s"
+   Target_fr_fr "m/s"
+   Target_it_it "m/s"
+   Target_es_es "m/s"
+   Target_cs_cz "m/s"
+   Target_pl_pl "m/s"
+   Target_pt_br "m/s"
+   Target_ja_jp "m/s"
+   Target_ko_kr "m/s"
+   Target_zh_cn "m/s"
+  }
  }
 }

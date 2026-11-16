@@ -471,6 +471,44 @@ HorizontalLayoutWidgetClass {
         }
        }
       }
+      HorizontalLayoutWidgetClass "{A7DE1002B62C4795}" {
+       Name "MRAD_ShowWindHUD_Row"
+       Slot LayoutSlot "{A7DE1002B62C4796}" {
+        Padding 2 6 10 6
+       }
+       {
+        TextWidgetClass "{A7DE1002B62C4797}" {
+         Name "MRAD_ShowWindHUD_Label"
+         Slot LayoutSlot "{A7DE1002B62C4798}" {
+          SizeMode Fill
+          Padding 0 0 12 0
+         }
+         Text "#MRAD_ShowWindHUD"
+         "Font Size" 20
+         Color 0.92 0.93 0.94 1
+         "Vertical Alignment" Center
+         Wrap 1
+        }
+        SizeLayoutWidgetClass "{A7DE1002B62C4799}" {
+         Name "MRAD_ShowWindHUD_Box"
+         Slot LayoutSlot "{A7DE1002B62C479A}" {
+         }
+         AllowWidthOverride 1
+         WidthOverride 110
+         AllowHeightOverride 1
+         HeightOverride 44
+         {
+          CheckBoxWidgetClass "{A7DE1002B62C479B}" {
+           Name "MRAD_ShowWindHUD"
+           Slot AlignableSlot "{A7DE1002B62C479C}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+          }
+         }
+        }
+       }
+      }
       HorizontalLayoutWidgetClass "{3EA9C72E6402CDEE}" {
        Name "MRAD_Buttons"
        Slot LayoutSlot "{FABED0F43CA92C20}" {
