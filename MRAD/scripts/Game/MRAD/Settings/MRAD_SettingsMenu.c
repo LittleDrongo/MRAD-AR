@@ -17,7 +17,6 @@ class MRAD_SettingsMenu : SCR_SubMenuBase
 	protected EditBoxWidget m_Windage;
 	protected CheckBoxWidget m_ActualWind;
 	protected CheckBoxWidget m_ShowHUD;
-	protected CheckBoxWidget m_ShowWindHUD;
 	protected TextWidget m_Status;
 
 	override void OnTabCreate(Widget menuRoot, ResourceName buttonsLayout, int index)
@@ -32,7 +31,6 @@ class MRAD_SettingsMenu : SCR_SubMenuBase
 		m_Windage = EditBoxWidget.Cast(m_wRoot.FindAnyWidget("MRAD_Windage"));
 		m_ActualWind = CheckBoxWidget.Cast(m_wRoot.FindAnyWidget("MRAD_ActualWind"));
 		m_ShowHUD = CheckBoxWidget.Cast(m_wRoot.FindAnyWidget("MRAD_ShowHUD"));
-		m_ShowWindHUD = CheckBoxWidget.Cast(m_wRoot.FindAnyWidget("MRAD_ShowWindHUD"));
 		m_Status = TextWidget.Cast(m_wRoot.FindAnyWidget("MRAD_Status"));
 		LoadValues();
 	}
@@ -123,7 +121,7 @@ class MRAD_SettingsMenu : SCR_SubMenuBase
 
 	protected bool HasControls()
 	{
-		return m_Wind && m_Range && m_Rows && m_Fine && m_Coarse && m_Elevation && m_Windage && m_ActualWind && m_ShowHUD && m_ShowWindHUD;
+		return m_Wind && m_Range && m_Rows && m_Fine && m_Coarse && m_Elevation && m_Windage && m_ActualWind && m_ShowHUD;
 	}
 
 	protected void LoadValues()
@@ -141,7 +139,6 @@ class MRAD_SettingsMenu : SCR_SubMenuBase
 		m_Windage.SetText(settings.GetWindageLimitMrad().ToString(0, 1));
 		m_ActualWind.SetChecked(settings.GetUseActualWind());
 		m_ShowHUD.SetChecked(settings.GetShowHUD());
-		m_ShowWindHUD.SetChecked(settings.GetShowWindHUD());
 	}
 
 	// Неверный текст не превращается молча в ноль. Запятая поддерживается
@@ -193,7 +190,7 @@ class MRAD_SettingsMenu : SCR_SubMenuBase
 
 		int maxRange = distance;
 		int rowsPerPage = rows;
-		bool saved = MRAD_Settings.Get().Apply(wind, m_ActualWind.IsChecked(), maxRange, rowsPerPage, fine, coarse, elevation, windage, m_ShowHUD.IsChecked(), m_ShowWindHUD.IsChecked());
+		bool saved = MRAD_Settings.Get().Apply(wind, m_ActualWind.IsChecked(), maxRange, rowsPerPage, fine, coarse, elevation, windage, m_ShowHUD.IsChecked());
 		LoadValues();
 		ShowSaveResult(saved);
 	}
