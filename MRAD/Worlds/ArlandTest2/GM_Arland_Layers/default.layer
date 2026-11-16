@@ -2110,9 +2110,12 @@ GenericEntity : "{757FCCE8E756175C}Prefabs/Props/Furniture/MeetingTable_01.et" {
   GenericEntity : "{0CF54B9A85D8E0D4}Prefabs/Items/Equipment/Binoculars/Binoculars_M22/Binoculars_M22.et" {
    coords 0.966 0.906 -0.089
   }
-  GenericEntity : "{A7DE1002B62C4803}Prefabs/Weapons/MRAD/Rifles/MRAD_Rifle_M21_2D.et" {
+  GenericEntity : "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et" {
    coords -0.499 0.955 -0.133
    angles 3.354 -22.211 98.154
+  }
+  GenericEntity : "{A7DE1002B62C4801}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_2D.et" {
+   coords -0.6 0.905 -0.4
   }
   GenericEntity : "{A7DE1002B62C4802}Prefabs/Weapons/MRAD/Optics/MRAD_Optic_ARTII_PIP.et" {
    coords -0.755 0.905 -0.291
@@ -2126,7 +2129,7 @@ GameEntity : "{792F06155BEBD71D}Prefabs/Items/Equipment/BallisticTable/Ballistic
  coords 627.165 39.481 2565.875
  angles 0 81.622 0
 }
-GenericEntity : "{A7DE1002B62C4804}Prefabs/Weapons/MRAD/Rifles/MRAD_Rifle_M21_PIP.et" {
+GenericEntity : "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et" {
  coords 1462.819 54.091 1165.914
  angles 0 81.622 0
 }

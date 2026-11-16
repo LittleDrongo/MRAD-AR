@@ -283,7 +283,13 @@ class MRAD_SettingsProbe
 				row.Init(binding, entry);
 				Check(row.GetActionName() == entry.m_sActionName && row.GetActionPreset() == "click", "native row initializes its action and preset " + entry.m_sActionName);
 				rows++;
-				PrintFormat("MRAD_SETTINGS_NATIVE_BINDING action=%1 keyboardBindings=%2", entry.m_sActionName, binding.GetBindingsCount(entry.m_sActionName, EInputDeviceType.KEYBOARD, entry.m_sPreset));
+				int count = binding.GetBindingsCount(entry.m_sActionName, EInputDeviceType.KEYBOARD, entry.m_sPreset);
+				PrintFormat("MRAD_SETTINGS_NATIVE_BINDING action=%1 keyboardBindings=%2", entry.m_sActionName, count);
+				// A visible native keybinding row does NOT prove the action has
+				// any assigned key. The 2.0 regression shipped with all eight
+				// adjustment actions empty after removing their filter preset.
+				if (entry.m_sActionName != "MRAD_ResetZeroing")
+					Check(count > 0, "MRAD adjustment action has a real default key: " + entry.m_sActionName);
 			}
 		}
 		Check(categories == 1 && rows == 9 && seen.Count() == 9, "exactly one MRAD category creates all nine native keybind rows");
