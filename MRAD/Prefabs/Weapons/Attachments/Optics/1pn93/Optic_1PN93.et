@@ -1,0 +1,44 @@
+GameEntity : "{061785BDE2DB997E}Prefabs/Weapons/Attachments/Core/Optic_Scope_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{59B85A5862D5CBDC}" {
+     Name "#RHS-Item_1PN93-1AK_Name"
+     Description "#RHS-Item_1PN93-1AK_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59B85A5862D5CBD0}" {
+     Weight 0.58
+     SizeSetupStrategy Volume
+     ItemVolume 400
+     RestingUP Right
+    }
+    CustomAttributes {
+     WeaponAttachmentAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentOpticsDovetailAK "{59B85A5862D5CBCB}" {
+      }
+     }
+     PreviewRenderAttributes "{52D69389645B4E4D}" {
+      FOV 20
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MeshObject "{5D0CC83435B55858}" {
+   Object "{4C48B3FD9286EE8D}Assets/Weapons/Attachments/Optics/1pn93/1pn93.xob"
+  }
+  RHS_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   m_bMRADExcluded 1
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{5284E0EFF4E818E9}" {
+     Position PointInfo "{5284E0EFC526E6F0}" {
+      Offset 0.0101 0.072 -0.0527
+     }
+    }
+   }
+  }
+ }
+}

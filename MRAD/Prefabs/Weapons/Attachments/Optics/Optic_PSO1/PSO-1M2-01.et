@@ -1,0 +1,205 @@
+GameEntity {
+ ID "65FD4CC105CC5E8F"
+ components {
+  InventoryItemComponent "{65FD4CC102C19885}" {
+   Attributes SCR_ItemAttributeCollection "{65FD4CC102C1989E}" {
+    ItemDisplayName UIInfo "{65FD4CC102C19860}" {
+     Name "#AR-Item_PSO1_Name"
+     Description "#AR-Item_PSO1_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{65FD4CC102C1982E}" {
+     Weight 0.58
+     SizeSetupStrategy Manual
+     ItemVolume 400
+     RestingUP Right
+    }
+    CustomAttributes {
+     WeaponAttachmentAttributes "{65FD4CC102C19819}" {
+      AttachmentType AttachmentOpticsDovetailSVD "{65FD4CC102C1981B}" {
+      }
+     }
+     PreviewRenderAttributes "{65FD4CC102C198C9}" {
+      CameraPreset Right
+      CameraDistanceToItem 1
+      FOV 20
+     }
+     CharacterModifierAttributes "{65FD4CC102C198B1}" {
+      ADSSpeedLimit 1.5
+      SpeedLimitHighready 1.7
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MeshObject "{65FD4CC102C19BE3}" {
+   Object "{4EF7C9325481A367}Assets/Weapons/Attachments/Optics/PSO1/Optic_PSO1.xob"
+   Materials {
+    MaterialAssignClass "{65FD4CC102C19B7D}" {
+     SourceMaterial "Optic_PSO1"
+     AssignedMaterial "{76D24CC12F9279FF}Assets/Weapons/Attachments/Optics/PSO1M2/Data/Optic_PSO1M2.emat"
+    }
+   }
+   InheritVisibility 1
+  }
+  RigidBody "{65FD4CC102C19DCC}" {
+   ModelGeometry 1
+  }
+  SCR_2DPIPSightsComponent "{65FD4CC102C19DC6}" {
+   m_bMRADExcluded 1
+   SightsPosition PointInfo "{65FD4CC102C19BB9}" {
+    PivotID "eye"
+    Offset 0 0 -0.01
+   }
+   SightsRanges {
+    SightRangeInfo "{65FD4CC1617AA765}" {
+     Range 0.17245 50
+    }
+    SightRangeInfo "{65FD4CC102C19BA0}" {
+     Range 0.3304 100
+    }
+    SightRangeInfo "{65FD4CC102C19BAE}" {
+     Range 0.4891 150
+    }
+    SightRangeInfo "{65FD4CC102C19BAB}" {
+     Range 0.6645 200
+    }
+    SightRangeInfo "{65FD4CC102C19BA9}" {
+     Range 0.8414 250
+    }
+    SightRangeInfo "{65FD4CC102C19B96}" {
+     Range 1.0193 300
+    }
+    SightRangeInfo "{65FD4CC102C19B94}" {
+     Range 1.1984 350
+    }
+    SightRangeInfo "{65FD4CC102C19B92}" {
+     Range 1.3952 400
+    }
+   }
+   SightsFOVInfo SCR_SightsZoomFOVInfo "{65FD4CC102C19B8E}" {
+    m_fBaseZoom 4
+    m_fZoomMax 4
+    m_fInterpolationSpeed 50
+   }
+   SightsPointFront PointInfo "{65FD4CC102C19B88}" {
+    PivotID "sight_front"
+   }
+   SightsPointRear PointInfo "{65FD4CC102C19A73}" {
+    PivotID "sight_rear"
+   }
+   CameraRecoilAmount -0.8
+   SoundInt 10001
+   m_bIsConfiguratedForRHSNVG 1
+   m_sReticleTexture "{BFF63D0C26C3AF24}UI/Textures/Sights/PSO-1M2/186-1-1.edds"
+   m_sReticleGlowTexture "{BFF63D0C26C3AF24}UI/Textures/Sights/PSO-1M2/186-1-1.edds"
+   m_bHasIllumination 1
+   m_cReticleTextureIllumination 0.804 0.02 0.02 1
+   m_fMagnification 4
+   m_fReticleAngularSize 1.642
+   m_fReticlePortion 0.29687
+   m_fReticleBaseZoom 4
+   m_fObjectiveFov 6
+   m_fAnimationSpeedBlur 3
+   m_fVignetteMoveSpeed 2
+   m_eZeroingType EPZ_RETICLE_OFFSET
+   m_fReticleOffsetX 0.001
+   m_fReticleOffsetY -0.7
+   m_fReticleOffsetInterpSpeed 40
+   m_vCameraAngles -0.7 0 0
+   m_rScopeHDRMatrial "{191C9D32CE762B0D}Assets/Weapons/Attachments/Optics/PSO1M2/Data/Optic_PSO1M2_HDR.emat"
+   m_fCenterDistance 0.017
+   m_fDistanceMoveNear 0.6
+   m_fDistanceMoveFar 0.45
+   m_fBasicParallax 0.8
+   m_fMaxParallax 1.9
+   m_fScopeRadius 0.015
+  }
+  SCR_SoundDataComponent "{65FD4CC102C19C72}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{65FD4CC102C19DAF}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+     m_sSoundEventName "SOUND_PICK_UP"
+    }
+    SCR_AudioSourceConfiguration "{65FD4CC102C19D85}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+     m_sSoundEventName "SOUND_EQUIP"
+     m_eFlags 0
+    }
+    SCR_AudioSourceConfiguration "{65FD4CC102C19D80}" {
+     m_sSoundProject "{7F55C292FBA55048}Sounds/Items/_SharedData/Drop/Items_Drop_Generic_Metallic.acp"
+     m_sSoundEventName "SOUND_DROP"
+    }
+    SCR_AudioSourceConfiguration "{65FD4CC102C19D8D}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+     m_sSoundEventName "SOUND_UNEQUIP"
+    }
+    SCR_AudioSourceConfiguration "{65FD4CC102C19D8A}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+     m_sSoundEventName "SOUND_SWITCH"
+    }
+   }
+  }
+  ActionsManagerComponent "{65FD4CC102C19CB1}" {
+   ActionContexts {
+    UserActionContext "{65FD4CC102C19C39}" {
+     UIInfo SCR_ActionContextUIInfo "{65FD4CC102C19C56}" {
+     }
+     ContextName "user"
+     Position PointInfo "{65FD4CC102C19C59}" {
+      Offset 0 0.0797 0
+     }
+     Radius 0.1
+    }
+   }
+   additionalActions {
+    SCR_EquipWeaponAttachment "{65FD4CC102C19CF7}" {
+     ParentContextList {
+      "user"
+     }
+     UIInfo SCR_ActionUIInfo "{65FD4CC102C19C29}" {
+      Name "#AR-UserAction_AttachToWeapon"
+     }
+    }
+    SCR_PickUpItemAction "{65FD4CC102C19CE7}" {
+     ParentContextList {
+      "user"
+     }
+     UIInfo SCR_ActionUIInfo "{65FD4CC102C19CF9}" {
+      Name "#AR-Inventory_Pickup"
+     }
+    }
+    SCR_AttachItemFromInventoryAction "{65FD4CC102C19CD8}" {
+     ParentContextList {
+      "optic"
+     }
+     UIInfo SCR_ActionUIInfo "{65FD4CC102C19CED}" {
+      Name "#AR-UserAction_Attach"
+      m_sIconName "optics"
+     }
+     Duration 0.5
+     CanAggregate 1
+     "Inventory action" 1
+    }
+    SCR_AttachementAction "{65FD4CC102C19CCC}" {
+     ParentContextList {
+      "user"
+     }
+     UIInfo SCR_ActionUIInfo "{65FD4CC102C19CCD}" {
+      Name "#AR-UserAction_Detach"
+      m_sIconName "optics"
+     }
+     Duration 0.5
+     CanAggregate 1
+    }
+   }
+  }
+  RplComponent "{65FD4CC102C19CB9}" {
+   "Rpl State Override" Runtime
+   "Parent Node From Parent Entity" 0
+  }
+  Hierarchy "{65FD4CC102C19CA4}" {
+  }
+ }
+ Flags 4194307
+ coords 3.432 1 1.87
+}

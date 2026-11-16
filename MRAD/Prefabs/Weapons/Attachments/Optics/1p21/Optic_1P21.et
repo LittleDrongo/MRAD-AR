@@ -1,0 +1,8 @@
+GameEntity : "{061785BDE2DB997E}Prefabs/Weapons/Attachments/Core/Optic_Scope_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  RHS_2DPIPSights1P21Component "{5D0CC83435B55855}" {
+   m_bMRADExcluded 1
+  }
+ }
+}
