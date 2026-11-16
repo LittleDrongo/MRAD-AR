@@ -215,6 +215,22 @@ class MRAD_RangeCardWind
 		return m_GameModel.TryCorrection(distance, speed, angleRad, signedCrosswind, correctionMrad);
 	}
 
+	MRAD_GameShellWindModel GetGameModel()
+	{
+		return m_GameModel;
+	}
+
+	//! Muzzle speed of the round as the game launches it (prefab speed x muzzle x bullet coefficient).
+	float GetLaunchSpeed(MRAD_RangeCardInput input)
+	{
+		float speed = input.m_fInitSpeed * input.m_fSpeedCoef;
+		EnsureSimulation(input);
+		if (m_Movement)
+			speed *= m_Movement.GetBulletSpeedCoef();
+
+		return speed;
+	}
+
 	void Release()
 	{
 		m_Movement = null;

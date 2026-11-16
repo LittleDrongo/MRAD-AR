@@ -221,7 +221,7 @@ HorizontalLayoutWidgetClass {
          Slot LayoutSlot "{DB131EE05AC34BD0}" {
           Padding 12 0 0 0
          }
-         Text "5–12"
+         Text "5–15"
          "Font Size" 16
          Color 0.62 0.67 0.70 1
          "Vertical Alignment" Center

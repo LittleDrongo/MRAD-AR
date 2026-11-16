@@ -182,7 +182,7 @@ class MRAD_SettingsMenu : SCR_SubMenuBase
 			return;
 
 		float wind, distance, rows, fine, coarse, elevation, windage;
-		if (!ReadNumber(m_Wind, 0, 30, wind) || !ReadNumber(m_Range, 100, 5000, distance, true) || !ReadNumber(m_Rows, 5, 12, rows, true) || !ReadNumber(m_Fine, 0.1, 5, fine) || !ReadNumber(m_Coarse, 0.1, 10, coarse) || !ReadNumber(m_Elevation, 1, 50, elevation) || !ReadNumber(m_Windage, 1, 50, windage))
+		if (!ReadNumber(m_Wind, 0, 30, wind) || !ReadNumber(m_Range, 100, 5000, distance, true) || !ReadNumber(m_Rows, 5, 15, rows, true) || !ReadNumber(m_Fine, 0.1, 5, fine) || !ReadNumber(m_Coarse, 0.1, 10, coarse) || !ReadNumber(m_Elevation, 1, 50, elevation) || !ReadNumber(m_Windage, 1, 50, windage))
 		{
 			SetStatus("#MRAD_SettingsInvalid");
 			return;

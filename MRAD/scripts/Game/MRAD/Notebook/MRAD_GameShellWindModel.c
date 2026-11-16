@@ -5,11 +5,13 @@ class MRAD_GameShellWindModel
 {
 	protected bool m_bSupported;
 	protected float m_fDragPerMass;
-	// Native diagnostic comparisons identify a fixed 30 Hz velocity update
-	// with trapezoidal position integration. This is an engine convention,
-	// not an ammunition-specific adjustment (see the WorldEditor QA probe).
-	protected const float MODEL_STEP = 1.0 / 30.0;
-	protected const int MAX_STEPS = 1801;
+	// Trapezoidal integration. Lab 2026-11-16, M21/M118, real rounds launched by the engine and
+	// the native predictor (Diag build only; the retail build returns zero):
+	// - elevation: 60 Hz gives bore angles within 0.08 MRAD at 300/800/1500 m (30 Hz: 0.2-0.5 high);
+	// - wind: 30 Hz matches the real drift within 0.01 MRAD (60 Hz: 0.06 low).
+	static const float ELEVATION_STEP = 1.0 / 60.0;
+	static const float WIND_STEP = 1.0 / 30.0;
+	protected const int MAX_STEPS = 3601;
 	protected const float MAX_TIME = 60.0;
 
 	void Load(IEntitySource source)
@@ -37,6 +39,71 @@ class MRAD_GameShellWindModel
 		return Physics.VGravity - relative * (relative.Length() * m_fDragPerMass);
 	}
 
+	bool IsSupported()
+	{
+		return m_bSupported;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Bore angle (rad) that brings the round back onto a line of sight parallel to the bore
+	//! and sightHeight metres above it, at this distance. Same physics as the flight itself.
+	bool TryElevation(float distance, float initialSpeed, float guessRad, float sightHeight, out float angleRad)
+	{
+		angleRad = guessRad;
+		for (int iteration = 0; iteration < 6; iteration++)
+		{
+			vector at;
+			if (!TrySimulate(distance, initialSpeed, angleRad, 0, at, ELEVATION_STEP))
+				return false;
+
+			// Height error against the line of sight; d(height)/d(angle) is about the distance.
+			float error = at[1] - sightHeight;
+			angleRad -= error / distance;
+			if (Math.AbsFloat(error) < 0.001)
+				return true;
+		}
+
+		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Position of the round when it has flown this horizontal distance: x lateral, y height.
+	bool TrySimulate(float distance, float initialSpeed, float angleRad, float signedWind, out vector atDistance, float stepSeconds = WIND_STEP)
+	{
+		atDistance = vector.Zero;
+		if (!m_bSupported || distance <= 0 || distance > 5000 || initialSpeed <= 0 || Math.AbsFloat(angleRad) >= Math.PI * 0.5)
+			return false;
+		vector wind = Vector(-signedWind, 0, 0);
+		vector velocity = Vector(0, Math.Sin(angleRad) * initialSpeed, Math.Cos(angleRad) * initialSpeed);
+		vector position = vector.Zero;
+		float elapsed;
+		for (int step = 0; step < MAX_STEPS && elapsed < MAX_TIME; step++)
+		{
+			if (velocity[2] <= 0)
+				return false;
+			float dt = stepSeconds;
+			vector relative = velocity - wind;
+			if (m_fDragPerMass * relative.Length() * dt > 0.25)
+				return false;
+			dt = Math.Min(dt, MAX_TIME - elapsed);
+			if (dt <= 0)
+				return false;
+			vector nextVelocity = velocity + Acceleration(velocity, wind) * dt;
+			vector nextPosition = position + (velocity + nextVelocity) * (dt * 0.5);
+			if (nextPosition[2] >= distance)
+			{
+				float fraction = (distance - position[2]) / (nextPosition[2] - position[2]);
+				atDistance = vector.Lerp(position, nextPosition, fraction);
+				return true;
+			}
+			position = nextPosition;
+			velocity = nextVelocity;
+			elapsed += dt;
+		}
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	bool TryCorrection(float distance, float initialSpeed, float angleRad, float signedWind, out float correctionMrad)
 	{
 		correctionMrad = 0;
@@ -52,7 +119,7 @@ class MRAD_GameShellWindModel
 		{
 			if (velocity[2] <= 0)
 				return false;
-			float dt = MODEL_STEP;
+			float dt = WIND_STEP;
 			vector relative = velocity - wind;
 			float response = m_fDragPerMass * relative.Length();
 			// Reject numerically unstable exotic sources instead of returning

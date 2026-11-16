@@ -55,10 +55,18 @@ class Drg_NotepadRtComponent : ScriptComponent
 			return;
 		}
 
+		OnWidgetsCreated();
+
 		// Vanilla data-display pattern: the texture renders when enabled for a draw, then stays.
 		m_wRtTexture.SetRenderTarget(GetOwner());
 		m_wRtTexture.SetEnabled(false);
 		Draw();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Text widget adjustments of inherited notepads (size, position).
+	protected void OnWidgetsCreated()
+	{
 	}
 
 	//------------------------------------------------------------------------------------------------

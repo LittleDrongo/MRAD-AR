@@ -16,9 +16,66 @@ class Drg_AutoNotepadRtComponentClass : Drg_NotepadRtComponentClass
 class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 {
 	protected static const int RANGE_STEP = 100;
-	protected static const int MAX_ROWS_ON_SHEET = 12;
+	protected static const int MAX_ROWS_ON_SHEET = 15;
 	protected static const string ARROW_RIGHT = "→";
 	protected static const string ARROW_LEFT = "←";
+	// Text box over the whole sheet; 15 rows (100-1500 m) + header + page number at font 50.
+	protected static const int FONT_SIZE = 50;
+	// The font's own line height is ~1.25x its size: tighter lines so 19 lines fit the sheet.
+	protected static const float LINE_SPACING = -12;
+	protected static const float TEXT_X = 95;
+	protected static const float TEXT_Y = 30;
+	protected static const float TEXT_W = 570;
+	protected static const float TEXT_H = 960;
+
+	// Page number in the bottom right corner (RichText collapses a run of tabs).
+	protected static const float PAGE_X = 470;
+	protected static const float PAGE_Y = 920;
+	protected static const float PAGE_W = 180;
+	protected static const float PAGE_H = 65;
+	protected static const ResourceName PAGE_FONT = "{F2C89AF8C4C1FE43}UI/Fonts/Eskal_Font4You.fnt";
+
+	protected TextWidget m_wPage;
+
+	//------------------------------------------------------------------------------------------------
+	protected override void OnWidgetsCreated()
+	{
+		FrameSlot.SetPos(m_wRich, TEXT_X, TEXT_Y);
+		FrameSlot.SetSize(m_wRich, TEXT_W, TEXT_H);
+		m_wRich.SetExactFontSize(FONT_SIZE);
+		m_wRich.SetLineSpacing(LINE_SPACING);
+
+		m_wPage = TextWidget.Cast(GetGame().GetWorkspace().CreateWidget(WidgetType.TextWidgetTypeID, WidgetFlags.VISIBLE, m_wRich.GetColor(), 0, m_wRich.GetParent()));
+		if (!m_wPage)
+			return;
+
+		FrameSlot.SetPos(m_wPage, PAGE_X, PAGE_Y);
+		FrameSlot.SetSize(m_wPage, PAGE_W, PAGE_H);
+		m_wPage.SetFont(PAGE_FONT);
+		m_wPage.SetBold(true);
+		m_wPage.SetExactFontSize(FONT_SIZE);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void Draw()
+	{
+		if (!m_wRich || !m_wRtTexture)
+			return;
+
+		m_wRtTexture.SetEnabled(true);
+		m_wRich.SetText(BuildText());
+		if (m_wPage)
+		{
+			string page;
+			int pages = GetNumberOfPages();
+			if (m_Holder && m_sError.IsEmpty() && pages > 1)
+				page = string.Format("%1/%2", m_iPage + 1, pages);
+
+			m_wPage.SetText(page);
+		}
+
+		m_wRtTexture.SetEnabled(false);
+	}
 
 	protected ChimeraCharacter m_Holder;
 	protected string m_sWeaponName;
@@ -154,6 +211,20 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		if (hasInput)
 			wind.Load(input.m_Source);
 
+		// The engine's aim table (GetAimHeightOfNextProjectile) is off by up to ~0.7 MRAD at 800 m
+		// against a real M21 round (lab 2026-11-16): the flight itself is simulated instead
+		// (ShellMove physics, the same as the launched round), from the sight line above the bore.
+		MRAD_GameShellWindModel model;
+		float launchSpeed;
+		if (hasInput)
+		{
+			model = wind.GetGameModel();
+			launchSpeed = wind.GetLaunchSpeed(input);
+		}
+
+		bool useModel = model && model.IsSupported() && launchSpeed > 0;
+		float sightHeight = GetSightHeight(weapon);
+
 		int maxRange = Math.ClampInt(settings.GetMaxRange(), RANGE_STEP, 5000);
 		for (int distance = RANGE_STEP; distance <= maxRange; distance += RANGE_STEP)
 		{
@@ -164,21 +235,26 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 				break;
 
 			float angle = Math.Atan2(aimHeight, distance);
-			m_aRanges.Insert(distance);
-			m_aMrad.Insert(SCR_Math.ConvertFromRadians(angle, SCR_EOpticsAngleUnits.MILLIRADIANS));
-
-			// Game wind table -> projectile simulation -> ShellMove model (MRAD 2.0 code).
 			float windMrad;
 			bool windValid;
-			if (hasInput)
+			vector at;
+			float simulatedAngle;
+			if (useModel && model.TryElevation(distance, launchSpeed, angle, sightHeight, simulatedAngle) && model.TrySimulate(distance, launchSpeed, simulatedAngle, signedWind, at))
 			{
+				angle = simulatedAngle;
+				windValid = true;
+				windMrad = -SCR_Math.ConvertFromRadians(Math.Atan2(at[0], distance), SCR_EOpticsAngleUnits.MILLIRADIANS);
+			}
+			else if (hasInput)
+			{
+				// Other projectile movement types: game wind table -> native prediction.
 				windValid = wind.TryTable(angle, input.m_fSpeedCoef, signedWind, windMrad);
 				if (!windValid)
 					windValid = wind.TrySimulation(input, distance, angle, travelTime, signedWind, windMrad);
-				if (!windValid)
-					windValid = wind.TryGameModel(input, distance, angle, signedWind, windMrad);
 			}
 
+			m_aRanges.Insert(distance);
+			m_aMrad.Insert(SCR_Math.ConvertFromRadians(angle, SCR_EOpticsAngleUnits.MILLIRADIANS));
 			m_aWind.Insert(windMrad);
 			m_aWindValid.Insert(windValid);
 		}
@@ -211,11 +287,54 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		if (horizontal <= 0.0001)
 			return 0;
 
-		// Weather direction is where the wind comes FROM, degrees.
+		// Measured in the lab (2026-11-16): direction 270 drifts a round flying north to the west (-X),
+		// so (sin, cos) of the direction is where the wind blows TO. Drift left = correction right (+).
 		vector right = Vector(forward[2] / horizontal, 0, -forward[0] / horizontal);
 		float azimuth = weather.GetWindDirection() * Math.DEG2RAD;
-		vector windFrom = Vector(Math.Sin(azimuth), 0, Math.Cos(azimuth)) * Math.Max(0.0, weather.GetWindSpeed());
-		return windFrom[0] * right[0] + windFrom[2] * right[2];
+		vector windTo = Vector(Math.Sin(azimuth), 0, Math.Cos(azimuth)) * Math.Max(0.0, weather.GetWindSpeed());
+		return -(windTo[0] * right[0] + windTo[2] * right[2]);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Height of the scope's line of sight above the bore axis (m), 0 when unknown.
+	protected float GetSightHeight(BaseWeaponComponent weapon)
+	{
+		if (!m_Holder || !weapon)
+			return 0;
+
+		BaseWeaponManagerComponent manager = BaseWeaponManagerComponent.Cast(m_Holder.FindComponent(BaseWeaponManagerComponent));
+		if (!manager || manager.GetCurrentWeapon() != weapon)
+			return 0;
+
+		vector muzzle[4];
+		if (!manager.GetCurrentMuzzleTransform(muzzle))
+			return 0;
+
+		vector sightPosition;
+		SCR_2DOpticsComponent optic = SCR_2DOpticsComponent.Cast(weapon.GetSights());
+		if (optic)
+		{
+			vector local[4];
+			IEntity parent = optic.GetCameraLocalTransform(local);
+			if (!parent)
+				return 0;
+
+			vector parentWorld[4];
+			parent.GetWorldTransform(parentWorld);
+			sightPosition = local[3].Multiply4(parentWorld);
+		}
+		else
+		{
+			BaseSightsComponent sights = weapon.GetSights();
+			vector sightsWorld[4];
+			if (!sights || !sights.GetSightsTransform(sightsWorld, false))
+				return 0;
+
+			sightPosition = sightsWorld[3];
+		}
+
+		float height = vector.Dot(sightPosition - muzzle[3], muzzle[1].Normalized());
+		return Math.Clamp(height, 0, 0.3);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -283,25 +402,31 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		if (!m_Holder)
 			return m_sText;
 
-		string text = "\t" + m_sWeaponName + "\n";
-		text += "\t" + m_sAmmoName;
+		string text = m_sWeaponName + "\n";
+		text += m_sAmmoName;
 
 		if (!m_sError.IsEmpty())
-			return text + "\n\n\t" + WidgetManager.Translate(m_sError);
+			return text + "\n\n" + WidgetManager.Translate(m_sError);
 
-		text += string.Format("\n\tMeters\t|\tup\t|\twind %1", FormatMrad(m_fWindSpeed));
+		// Wind column header = wind speed it is calculated for ("4 m/s"); "wind 4,0" did not fit at 50.
+		string windSpeed = FormatMrad(m_fWindSpeed);
+		if (windSpeed.EndsWith(",0"))
+			windSpeed = windSpeed.Substring(0, windSpeed.Length() - 2);
 
-		int pages = GetNumberOfPages();
-		if (pages > 1)
-			text += string.Format("\t%1/%2", m_iPage + 1, pages);
+		// "Meters" spans two tab cells: "up" and the wind speed stay over their columns.
+		text += string.Format("\nMeters\tup\t|\t%1 m/s", windSpeed);
 
 		int rows = GetRowsPerPage();
 		int first = m_iPage * rows;
-		int last = Math.Min(first + rows, m_aRanges.Count());
-		for (int i = first; i < last; i++)
+		for (int i = first; i < first + rows; i++)
 		{
-			text += string.Format("\n\t%1\t-\t%2\t-\t%3", m_aRanges[i], FormatMrad(m_aMrad[i]), FormatWind(i));
+			// Empty lines on a short last page keep the page number at the bottom.
+			if (i < m_aRanges.Count())
+				text += string.Format("\n%1\t-\t%2\t-\t%3", m_aRanges[i], FormatMrad(m_aMrad[i]), FormatWind(i));
+			else
+				text += "\n";
 		}
+
 
 		return text;
 	}

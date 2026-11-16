@@ -9,7 +9,7 @@ class MRAD_Settings
 	protected float m_fReferenceWindSpeed = 4.0;
 	protected bool m_bUseActualWind;
 	protected int m_iMaxRange = 1500;
-	protected int m_iRowsPerPage = 12;
+	protected int m_iRowsPerPage = 15;
 	protected float m_fFineStepMrad = 0.1;
 	protected float m_fCoarseStepMrad = 1.0;
 	protected float m_fElevationLimitMrad = 50.0;
@@ -57,7 +57,7 @@ class MRAD_Settings
 
 	bool RestoreDefaults()
 	{
-		return Apply(4.0, false, 1500, 12, 0.1, 1.0, 50.0, 50.0, true);
+		return Apply(4.0, false, 1500, 15, 0.1, 1.0, 50.0, 50.0, true);
 	}
 
 	protected void Sanitize()
@@ -65,7 +65,7 @@ class MRAD_Settings
 		m_fReferenceWindSpeed = Math.Round(Math.Clamp(m_fReferenceWindSpeed, 0.0, 30.0) * 10.0) / 10.0;
 		m_iMaxRange = Math.ClampInt(m_iMaxRange, 100, 5000);
 		m_iMaxRange = (m_iMaxRange / 100) * 100;
-		m_iRowsPerPage = Math.ClampInt(m_iRowsPerPage, 5, 12);
+		m_iRowsPerPage = Math.ClampInt(m_iRowsPerPage, 5, 15);
 		// Состояние оптики хранится целыми десятыми MRAD; другие шаги запрещены.
 		m_fFineStepMrad = Math.Round(Math.Clamp(m_fFineStepMrad, 0.1, 5.0) * 10.0) / 10.0;
 		m_fCoarseStepMrad = Math.Round(Math.Clamp(m_fCoarseStepMrad, 0.1, 10.0) * 10.0) / 10.0;
@@ -89,7 +89,7 @@ class MRAD_Settings
 		context.ReadValueDefault("referenceWindSpeed", m_fReferenceWindSpeed, 4.0);
 		context.ReadValueDefault("useActualWind", m_bUseActualWind, false);
 		context.ReadValueDefault("maxRange", m_iMaxRange, 1500);
-		context.ReadValueDefault("rowsPerPage", m_iRowsPerPage, 12);
+		context.ReadValueDefault("rowsPerPage", m_iRowsPerPage, 15);
 		context.ReadValueDefault("fineStepMrad", m_fFineStepMrad, 0.1);
 		context.ReadValueDefault("coarseStepMrad", m_fCoarseStepMrad, 1.0);
 		context.ReadValueDefault("elevationLimitMrad", m_fElevationLimitMrad, 50.0);
