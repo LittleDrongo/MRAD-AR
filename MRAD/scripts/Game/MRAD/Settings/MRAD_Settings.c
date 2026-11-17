@@ -8,8 +8,8 @@ class MRAD_Settings
 	// 2.4.0: the card is calculated per 1 m/s, so the spotter can multiply by his wind.
 	protected const float DEFAULT_REFERENCE_WIND = 1.0;
 	// 2.5.1: 2000 m table is applied to profiles that were already saved with 1500.
-	// 2.7.1: the Beaufort scale is on by default, also for profiles that saved it off.
-	protected const int SAVE_VERSION = 4;
+	// 2.7.3: the Beaufort scale is hidden until the player asks for it with Shift+K.
+	protected const int SAVE_VERSION = 5;
 
 	protected float m_fReferenceWindSpeed = 1.0;
 	protected bool m_bUseActualWind;
@@ -20,7 +20,7 @@ class MRAD_Settings
 	protected float m_fElevationLimitMrad = 50.0;
 	protected float m_fWindageLimitMrad = 50.0;
 	protected bool m_bShowHUD = true;
-	protected bool m_bShowWindHUD = true;
+	protected bool m_bShowWindHUD;
 	protected int m_iRevision = 1;
 
 	static MRAD_Settings Get()
@@ -112,7 +112,7 @@ class MRAD_Settings
 		context.ReadValueDefault("elevationLimitMrad", m_fElevationLimitMrad, 50.0);
 		context.ReadValueDefault("windageLimitMrad", m_fWindageLimitMrad, 50.0);
 		context.ReadValueDefault("showHUD", m_bShowHUD, true);
-		context.ReadValueDefault("showWindHUD", m_bShowWindHUD, true);
+		context.ReadValueDefault("showWindHUD", m_bShowWindHUD, false);
 		Sanitize();
 
 		// Старый профиль хранит 4 м/с. Новый опорный ветер — 1 м/с; переносим один раз,
@@ -127,10 +127,10 @@ class MRAD_Settings
 			m_iRowsPerPage = 20;
 		}
 
-		// 2.7.1: индикатор Бофорта включён по умолчанию; старые профили с showWindHUD=false
-		// один раз включаем, дальше Shift+K снова управляет им.
-		if (version < 4)
-			m_bShowWindHUD = true;
+		// 2.7.3: индикатор Бофорта по умолчанию скрыт; игрок вызывает его через Shift+K.
+		// Профили, где он был включён по умолчанию, один раз выключаем.
+		if (version < 5)
+			m_bShowWindHUD = false;
 
 		if (version < SAVE_VERSION)
 			Save();
