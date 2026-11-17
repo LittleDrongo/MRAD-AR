@@ -801,5 +801,37 @@ StringTable {
    Target_ko_kr "M21 — MRAD PIP"
    Target_zh_cn "M21 — MRAD PIP"
   }
+  CustomStringTableItem "{B1A2C3D4E5F60721}" {
+   Id "MRAD_BindToggleWindHUD"
+   Target_cs_cz "Zobrazit/skrýt Beaufortovu stupnici"
+   Target_de_de "Beaufort-Skala ein-/ausblenden"
+   Target_en_us "Show/hide Beaufort scale"
+   Target_es_es "Mostrar/ocultar la escala de Beaufort"
+   Target_fr_fr "Afficher/masquer l'échelle de Beaufort"
+   Target_it_it "Mostra/nascondi la scala Beaufort"
+   Target_ja_jp "ビューフォート階級の表示/非表示"
+   Target_ko_kr "보퍼트 등급 표시/숨기기"
+   Target_pl_pl "Pokaż/ukryj skalę Beauforta"
+   Target_pt_br "Mostrar/ocultar a escala Beaufort"
+   Target_ru_ru "Показать/скрыть шкалу Бофорта"
+   Target_uk_ua "Показати/сховати шкалу Бофорта"
+   Target_zh_cn "显示/隐藏蒲福风级"
+  }
+  CustomStringTableItem "{B1A2C3D4E5F60722}" {
+   Id "MRAD_BindHoldBreath"
+   Target_cs_cz "Zadržet dech"
+   Target_de_de "Atem anhalten"
+   Target_en_us "Hold breath"
+   Target_es_es "Contener la respiración"
+   Target_fr_fr "Retenir son souffle"
+   Target_it_it "Trattieni il respiro"
+   Target_ja_jp "息を止める"
+   Target_ko_kr "숨 참기"
+   Target_pl_pl "Wstrzymaj oddech"
+   Target_pt_br "Prender a respiração"
+   Target_ru_ru "Задержать дыхание"
+   Target_uk_ua "Затримати дихання"
+   Target_zh_cn "屏住呼吸"
+  }
  }
 }

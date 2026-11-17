@@ -1,12 +1,13 @@
 // Range card filled from the weapon of the player who holds the notepad.
-// Same data and format as the 1.x card (author's example in NotepadSheet.layout):
-//	M40A5
-//	Ball: M61
-//
-//	Meters	|	up mrad
-//	100	-	1,3
-// plus a wind column (2.0 spec): correction for the reference crosswind (Settings, 4 m/s)
-// or, with "actual wind", for the current crosswind with an arrow to the side to turn.
+//	M21 SWS
+//	7.62x51mm M118
+//	wind 1 m/s
+//	Meters	up	side	head
+//	100	1,3	0,06	0,00
+// "side" is the crosswind correction for the reference wind (1 m/s by default, multiply
+// by the actual wind); "head" is the extra elevation for a headwind of the same speed
+// (+ headwind: add, - tailwind: subtract). Both are in MRAD. With "actual wind" the
+// line above the header reads "actual wind" and the columns hold the current corrections.
 // Calculated locally on the holder's machine, nothing is replicated.
 [ComponentEditorProps(category: "GameScripted/MRAD", description: "Range card of the holder's weapon")]
 class Drg_AutoNotepadRtComponentClass : Drg_NotepadRtComponentClass
@@ -16,11 +17,28 @@ class Drg_AutoNotepadRtComponentClass : Drg_NotepadRtComponentClass
 class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 {
 	protected static const int RANGE_STEP = 100;
-	protected static const int MAX_ROWS_ON_SHEET = 15;
+	protected static const int MAX_ROWS_ON_SHEET = 20;
 	protected static const string ARROW_RIGHT = "→";
 	protected static const string ARROW_LEFT = "←";
-	// Text box over the whole sheet; 15 rows (100-1500 m) + header + page number at font 50.
-	protected static const int FONT_SIZE = 50;
+	// The title (weapon, round, wind speed) stays a single rich text; the table itself
+	// is four separate rich texts with explicit x positions, so the columns can breathe
+	// (the tab stops of the handwritten font are too narrow and could not be widened).
+	protected static const float TITLE_HEIGHT = 115;
+	protected static const float COLUMN_Y = 140;
+	protected static const float COLUMN_HEIGHT = 780;
+	protected static const int COLUMN_COUNT = 4;
+	protected static const float COLUMN_X_0 = 0;
+	protected static const float COLUMN_X_1 = 150;
+	protected static const float COLUMN_X_2 = 290;
+	protected static const float COLUMN_X_3 = 420;
+	protected static const float COLUMN_W_0 = 145;
+	protected static const float COLUMN_W_1 = 135;
+	protected static const float COLUMN_W_2 = 125;
+	protected static const float COLUMN_W_3 = 150;
+	// Text box over the whole sheet; 20 rows (100-2000 m) + wind line + header.
+	// 39 fits all 24 lines on one page; the wind column is split into side and head,
+	// and both keep two decimals (a 1 m/s reference is too small for one decimal).
+	protected static const int FONT_SIZE = 39;
 	// The font's own line height is ~1.25x its size: tighter lines so 19 lines fit the sheet.
 	protected static const float LINE_SPACING = -12;
 	protected static const float TEXT_X = 95;
@@ -36,14 +54,21 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	protected static const ResourceName PAGE_FONT = "{F2C89AF8C4C1FE43}UI/Fonts/Eskal_Font4You.fnt";
 
 	protected TextWidget m_wPage;
+	protected ref array<RichTextWidget> m_aColumns = {};
 
 	//------------------------------------------------------------------------------------------------
 	protected override void OnWidgetsCreated()
 	{
 		FrameSlot.SetPos(m_wRich, TEXT_X, TEXT_Y);
-		FrameSlot.SetSize(m_wRich, TEXT_W, TEXT_H);
+		FrameSlot.SetSize(m_wRich, TEXT_W, TITLE_HEIGHT);
 		m_wRich.SetExactFontSize(FONT_SIZE);
 		m_wRich.SetLineSpacing(LINE_SPACING);
+
+		m_aColumns.Clear();
+		CreateColumn(COLUMN_X_0, COLUMN_W_0);
+		CreateColumn(COLUMN_X_1, COLUMN_W_1);
+		CreateColumn(COLUMN_X_2, COLUMN_W_2);
+		CreateColumn(COLUMN_X_3, COLUMN_W_3);
 
 		m_wPage = TextWidget.Cast(GetGame().GetWorkspace().CreateWidget(WidgetType.TextWidgetTypeID, WidgetFlags.VISIBLE, m_wRich.GetColor(), 0, m_wRich.GetParent()));
 		if (!m_wPage)
@@ -57,13 +82,56 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
+	protected void CreateColumn(float x, float width)
+	{
+		RichTextWidget column = RichTextWidget.Cast(GetGame().GetWorkspace().CreateWidget(WidgetType.RichTextWidgetTypeID, WidgetFlags.VISIBLE, m_wRich.GetColor(), 0, m_wRich.GetParent()));
+		if (!column)
+			return;
+
+		FrameSlot.SetPos(column, TEXT_X + x, COLUMN_Y);
+		FrameSlot.SetSize(column, width, COLUMN_HEIGHT);
+		column.SetFont(PAGE_FONT);
+		column.SetExactFontSize(FONT_SIZE);
+		column.SetLineSpacing(LINE_SPACING);
+		m_aColumns.Insert(column);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected override void ClearRenderTarget()
+	{
+		m_aColumns.Clear();
+		super.ClearRenderTarget();
+	}
+
+	//------------------------------------------------------------------------------------------------
 	override void Draw()
 	{
 		if (!m_wRich || !m_wRtTexture)
 			return;
 
 		m_wRtTexture.SetEnabled(true);
-		m_wRich.SetText(BuildText());
+
+		bool table = m_Holder && m_sError.IsEmpty() && m_aColumns.Count() == COLUMN_COUNT;
+		if (table)
+		{
+			FrameSlot.SetSize(m_wRich, TEXT_W, TITLE_HEIGHT);
+			m_wRich.SetText(BuildTitle());
+		}
+		else
+		{
+			// Error/static page: the whole sheet is one text box again.
+			FrameSlot.SetSize(m_wRich, TEXT_W, TEXT_H);
+			m_wRich.SetText(BuildText());
+		}
+
+		for (int index = 0; index < m_aColumns.Count(); index++)
+		{
+			RichTextWidget column = m_aColumns[index];
+			column.SetVisible(table);
+			if (table)
+				column.SetText(BuildColumn(index));
+		}
+
 		if (m_wPage)
 		{
 			string page;
@@ -85,6 +153,8 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	protected ref array<float> m_aMrad = {};
 	protected ref array<float> m_aWind = {};
 	protected ref array<bool> m_aWindValid = {};
+	protected ref array<float> m_aHead = {};
+	protected ref array<bool> m_aHeadValid = {};
 	protected float m_fWindSpeed;
 	protected bool m_bActualWind;
 	protected int m_iPage;
@@ -157,6 +227,8 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 		m_aMrad.Clear();
 		m_aWind.Clear();
 		m_aWindValid.Clear();
+		m_aHead.Clear();
+		m_aHeadValid.Clear();
 		m_sWeaponName = string.Empty;
 		m_sAmmoName = string.Empty;
 		m_sError = string.Empty;
@@ -200,10 +272,19 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 
 		MRAD_Settings settings = MRAD_Settings.Get();
 		m_bActualWind = settings.GetUseActualWind();
-		float signedWind = GetSignedCrosswind(settings);
-		m_fWindSpeed = Math.AbsFloat(signedWind);
-		if (!m_bActualWind)
-			m_fWindSpeed = settings.GetReferenceWindSpeed();
+		float signedWind;
+		float signedHead;
+		if (m_bActualWind)
+		{
+			GetSignedWind(signedWind, signedHead);
+		}
+		else
+		{
+			// Reference columns: the speed itself (1 m/s by default), the spotter multiplies.
+			m_fWindSpeed = Math.Max(0.0, settings.GetReferenceWindSpeed());
+			signedWind = m_fWindSpeed;
+			signedHead = m_fWindSpeed;
+		}
 
 		MRAD_RangeCardInput input = MRAD_RangeCardInputResolver.ResolveWeapon(weapon);
 		bool hasInput = input.m_sError.IsEmpty();
@@ -235,17 +316,19 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 				break;
 
 			float angle = Math.Atan2(aimHeight, distance);
-			float windMrad;
-			bool windValid;
-			vector at;
+			float windMrad = 0;
+			float headMrad = 0;
+			bool windValid = false;
+			bool headValid = false;
 			float simulatedAngle;
-			if (useModel && model.TryElevation(distance, launchSpeed, angle, sightHeight, simulatedAngle) && model.TrySimulate(distance, launchSpeed, simulatedAngle, signedWind, at))
+			bool modelAngle = useModel && model.TryElevation(distance, launchSpeed, angle, sightHeight, simulatedAngle);
+			if (modelAngle)
 			{
 				angle = simulatedAngle;
-				windValid = true;
-				windMrad = -SCR_Math.ConvertFromRadians(Math.Atan2(at[0], distance), SCR_EOpticsAngleUnits.MILLIRADIANS);
+				windValid = model.TryCross(distance, launchSpeed, angle, signedWind, windMrad);
 			}
-			else if (hasInput)
+
+			if (!windValid && hasInput)
 			{
 				// Other projectile movement types: game wind table -> native prediction.
 				windValid = wind.TryTable(angle, input.m_fSpeedCoef, signedWind, windMrad);
@@ -253,10 +336,19 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 					windValid = wind.TrySimulation(input, distance, angle, travelTime, signedWind, windMrad);
 			}
 
+			// Headwind/tailwind changes the flight time and therefore the drop. Only the
+			// simulated flight is accurate enough for this column; other movements show "-".
+			if (modelAngle)
+			{
+				headValid = model.TryHead(distance, launchSpeed, angle, signedHead, headMrad);
+			}
+
 			m_aRanges.Insert(distance);
 			m_aMrad.Insert(SCR_Math.ConvertFromRadians(angle, SCR_EOpticsAngleUnits.MILLIRADIANS));
 			m_aWind.Insert(windMrad);
 			m_aWindValid.Insert(windValid);
+			m_aHead.Insert(headMrad);
+			m_aHeadValid.Insert(headValid);
 		}
 
 		wind.Release();
@@ -268,31 +360,34 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! + = turn the correction right. Reference mode: +reference speed.
-	protected float GetSignedCrosswind(MRAD_Settings settings)
+	//! Current wind split along the view: + crosswind = correction right,
+	//! + headwind = wind blows towards the shooter (slows the round down).
+	protected void GetSignedWind(out float signedCrosswind, out float signedHeadwind)
 	{
-		if (!settings.GetUseActualWind())
-			return Math.Max(0.0, settings.GetReferenceWindSpeed());
+		signedCrosswind = 0;
+		signedHeadwind = 0;
 
 		ChimeraWorld world = GetGame().GetWorld();
 		if (!world || !m_Holder)
-			return 0;
+			return;
 
 		TimeAndWeatherManagerEntity weather = world.GetTimeAndWeatherManager();
 		if (!weather)
-			return 0;
+			return;
 
 		vector forward = m_Holder.GetWorldTransformAxis(2);
 		float horizontal = Math.Sqrt(forward[0] * forward[0] + forward[2] * forward[2]);
 		if (horizontal <= 0.0001)
-			return 0;
+			return;
 
 		// Measured in the lab (2026-11-16): direction 270 drifts a round flying north to the west (-X),
 		// so (sin, cos) of the direction is where the wind blows TO. Drift left = correction right (+).
-		vector right = Vector(forward[2] / horizontal, 0, -forward[0] / horizontal);
+		vector view = Vector(forward[0] / horizontal, 0, forward[2] / horizontal);
+		vector right = Vector(view[2], 0, -view[0]);
 		float azimuth = weather.GetWindDirection() * Math.DEG2RAD;
 		vector windTo = Vector(Math.Sin(azimuth), 0, Math.Cos(azimuth)) * Math.Max(0.0, weather.GetWindSpeed());
-		return -(windTo[0] * right[0] + windTo[2] * right[2]);
+		signedCrosswind = -(windTo[0] * right[0] + windTo[2] * right[2]);
+		signedHeadwind = -(windTo[0] * view[0] + windTo[2] * view[2]);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -344,8 +439,8 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 			return "-";
 
 		float value = m_aWind[index];
-		string text = FormatMrad(Math.AbsFloat(value));
-		if (!m_bActualWind || Math.AbsFloat(value) < 0.05)
+		string text = FormatHundredths(value);
+		if (!m_bActualWind || Math.AbsFloat(value) < 0.005)
 			return text;
 
 		// Arrows exist in the handwritten font (U+2192 / U+2190).
@@ -353,6 +448,38 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 			return ARROW_RIGHT + text;
 
 		return ARROW_LEFT + text;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! + headwind: the round lands low, add elevation. - tailwind: it lands high, take some off.
+	protected string FormatHead(int index)
+	{
+		if (!m_aHeadValid[index])
+			return "-";
+
+		float value = m_aHead[index];
+		if (Math.AbsFloat(value) < 0.005)
+			return "0,00";
+
+		string text = FormatHundredths(value);
+		if (value > 0)
+			return "+" + text;
+
+		return "-" + text;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Two decimals with a comma, without relying on float formatting details.
+	static string FormatHundredths(float value)
+	{
+		int hundredths = Math.Round(Math.AbsFloat(value) * 100.0);
+		int whole = hundredths / 100;
+		int fraction = hundredths % 100;
+		string tail = fraction.ToString();
+		if (fraction < 10)
+			tail = "0" + tail;
+
+		return string.Format("%1,%2", whole, tail);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -397,37 +524,79 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
+	protected string BuildTitle()
+	{
+		string text = m_sWeaponName + "\n";
+		text += m_sAmmoName;
+
+		// Both wind columns are for the same speed; the spotter multiplies by the actual wind.
+		if (m_bActualWind)
+			return text + "\nactual wind";
+
+		string windSpeed = FormatMrad(m_fWindSpeed);
+		if (windSpeed.EndsWith(",0"))
+			windSpeed = windSpeed.Substring(0, windSpeed.Length() - 2);
+
+		return text + string.Format("\nwind %1 m/s", windSpeed);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected string BuildColumn(int index)
+	{
+		string header = "Meters";
+		switch (index)
+		{
+			case 1:
+				header = "up";
+				break;
+			case 2:
+				header = "side";
+				break;
+			case 3:
+				header = "head";
+				break;
+		}
+
+		string text = header;
+		int rows = GetRowsPerPage();
+		int first = m_iPage * rows;
+		for (int i = first; i < first + rows; i++)
+		{
+			if (i >= m_aRanges.Count())
+			{
+				text += "\n";
+				continue;
+			}
+
+			switch (index)
+			{
+				case 0:
+					text += "\n" + m_aRanges[i].ToString();
+					break;
+				case 1:
+					text += "\n" + FormatMrad(m_aMrad[i]);
+					break;
+				case 2:
+					text += "\n" + FormatWind(i);
+					break;
+				default:
+					text += "\n" + FormatHead(i);
+					break;
+			}
+		}
+
+		return text;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	protected override string BuildText()
 	{
 		if (!m_Holder)
 			return m_sText;
 
-		string text = m_sWeaponName + "\n";
-		text += m_sAmmoName;
-
 		if (!m_sError.IsEmpty())
-			return text + "\n\n" + WidgetManager.Translate(m_sError);
+			return BuildTitle() + "\n\n" + WidgetManager.Translate(m_sError);
 
-		// Wind column header = wind speed it is calculated for ("4 m/s"); "wind 4,0" did not fit at 50.
-		string windSpeed = FormatMrad(m_fWindSpeed);
-		if (windSpeed.EndsWith(",0"))
-			windSpeed = windSpeed.Substring(0, windSpeed.Length() - 2);
-
-		// "Meters" spans two tab cells: "up" and the wind speed stay over their columns.
-		text += string.Format("\nMeters\tup\t|\t%1 m/s", windSpeed);
-
-		int rows = GetRowsPerPage();
-		int first = m_iPage * rows;
-		for (int i = first; i < first + rows; i++)
-		{
-			// Empty lines on a short last page keep the page number at the bottom.
-			if (i < m_aRanges.Count())
-				text += string.Format("\n%1\t-\t%2\t-\t%3", m_aRanges[i], FormatMrad(m_aMrad[i]), FormatWind(i));
-			else
-				text += "\n";
-		}
-
-
-		return text;
+		return BuildTitle();
 	}
 }

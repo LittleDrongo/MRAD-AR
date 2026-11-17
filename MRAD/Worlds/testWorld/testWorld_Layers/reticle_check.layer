@@ -1,3 +1,18 @@
+GameEntity : "{10DEE0CBAB258B0D}Prefabs/Weapons/Attachments/Optics/1pn93/Optic_1PN93-3SVD.et" {
+ coords 0.302 1 6.078
+}
+GameEntity : "{333A794F0B55C019}Prefabs/Weapons/Attachments/Optics/m8541/Optic_M8541.et" {
+ coords 2.222 1 4.693
+}
+GenericEntity : "{455E257F80BE6C1B}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_1pn93.et" {
+ coords 0.78 1.906 2.646
+}
+GameEntity : "{4572378B75A039EC}Prefabs/Weapons/Attachments/Optics/1pn93/Optic_1PN93.et" {
+ coords 1.458 1 7.116
+}
+GenericEntity : "{597378E657C7290A}Prefabs/Weapons/Rifles/SR25/Rifle_M110_base.et" {
+ coords 1.855 1 5.014
+}
 $grp GenericEntity : "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" {
  {
   coords 4.317 1.906 3.09
@@ -33,9 +48,64 @@ $grp GenericEntity : "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x5
   coords 4.179 1.906 2.579
  }
 }
+GameEntity : "{695AAA77F84EB238}Prefabs/Weapons/Attachments/Optics/1p21/Optic_1P21.et" {
+ coords 1.572 1 6.553
+}
+GenericEntity : "{896DDA7B352187EF}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_1P21_TGPV.et" {
+ coords 1.497 1 4.015
+}
+GenericEntity : "{9793014B3640A504}Prefabs/Weapons/Attachments/Optics/Vortex/Optic_Vortex_GE.et" {
+ coords 2.139 1 5.149
+}
 GenericEntity : "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et" {
  coords 4.463 1.906 2.911
 }
-GenericEntity : "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et" {
+GenericEntity : "{C828F6D563E1A9BE}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_PSO_7N14.et" {
+ coords 0.266 1.906 2.975
+}
+GenericEntity : "{CA319F8F1AEF84F0}Prefabs/Weapons/Rifles/M107A1/Barret_M107A1.et" {
+ coords 2.469 1 5.869
+}
+$grp GenericEntity : "{CDA8C59B712B6B90}Prefabs/Weapons/Magazines/KAC_SR25/Magazine_762x51_SR25_20rnd_m80.et" {
+ {
+  coords 1.955 1 4.396
+ }
+ {
+  coords 2.098 1 4.209
+ }
+ {
+  coords 1.944 1.046 4.388
+ }
+ {
+  coords 1.91 1 4.254
+ }
+ {
+  coords 2.085 1.03 4.173
+ }
+ {
+  coords 2.154 1 4.272
+ }
+ {
+  coords 2.029 1 4.42
+ }
+}
+GameEntity : "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et" {
  coords 4.65 1.906 2.911
+}
+$grp GenericEntity : "{E492E22BD825BBA9}Prefabs/Weapons/Magazines/M107A1/Magazine_127x99_M107A1_10rnd_M20.et" {
+ {
+  coords 2.068 1 6.017
+ }
+ {
+  coords 2.14 1 6.158
+ }
+ {
+  coords 2.121 1.003 6.207
+ }
+ {
+  coords 1.888 1 6.211
+ }
+ {
+  coords 1.983 1 6.274
+ }
 }

@@ -167,6 +167,9 @@ $grp GenericEntity : "{0A84AA5A3884176F}Prefabs/Weapons/Magazines/Magazine_545x3
   coords 3.546 1.906 2.629
  }
 }
+Projectile : "{1D9DDE1632F33A9E}Prefabs/Weapons/Ammo/SmallArms/Ammo_545x39_Ball_7N6.et" {
+ coords 4.105 1.906 2.731
+}
 $grp GenericEntity : "{2A7C01B93CC92ACE}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_AUTO.et" {
  {
   coords 2.402 1 1.794
@@ -186,17 +189,17 @@ $grp GenericEntity : "{2A7C01B93CC92ACE}Prefabs/Items/Equipment/RangeCard/RangeC
  {
   coords 8.268 1.906 2.541
  }
+ {
+  coords 1.408 1.906 2.258
+ }
+ {
+  coords 2.223 1.906 2.61
+ }
+ {
+  coords 1.742 1.906 2.172
+ }
 }
-GenericEntity : "{2A7C01B93CC92ACE}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_AUTO.et" {
- coords 1.408 1.906 2.258
-}
-Projectile : "{1D9DDE1632F33A9E}Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et" {
- coords 4.105 1.906 2.731
-}
-GenericEntity : "{2A7C01B93CC92ACE}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_AUTO.et" {
- coords 2.223 1.906 2.61
-}
-$grp Projectile : "{2F007929B7F8399F}Prefabs/Weapons/Ammo/Ammo_9x39_AP_SP6.et" {
+$grp Projectile : "{2F007929B7F8399F}Prefabs/Weapons/Ammo/SmallArms/Ammo_9x39_AP_SP6.et" {
  {
   coords 1.479 1.906 2.142
  }
@@ -207,19 +210,13 @@ $grp Projectile : "{2F007929B7F8399F}Prefabs/Weapons/Ammo/Ammo_9x39_AP_SP6.et" {
   coords 1.368 1.906 2.128
  }
 }
-Projectile : "{2FBCA0A7CEDDE7B0}Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et" {
+Projectile : "{2FBCA0A7CEDDE7B0}Prefabs/Weapons/Ammo/SmallArms/Ammo_762x39_Ball_57N231.et" {
  coords 4.189 1.906 2.289
-}
-GenericEntity : "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et" {
- coords 1.198 1.001 35.253
-}
-SCR_ChimeraCharacter : "{37578B1666981FCE}Prefabs/Characters/Core/Character_Base.et" {
- coords 4.066 1 4.122
 }
 GenericEntity : "{3E413771E1834D2F}Prefabs/Weapons/Rifles/M16/Rifle_M16A2.et" {
  coords 2.471 1.906 2.498
 }
-$grp Projectile : "{43544DC90B3CB6B1}Prefabs/Weapons/Ammo/Ammo_9x39_Ball_SP5.et" {
+$grp Projectile : "{43544DC90B3CB6B1}Prefabs/Weapons/Ammo/SmallArms/Ammo_9x39_Ball_SP5.et" {
  {
   coords 1.513 1.906 2.488
  }
@@ -268,8 +265,8 @@ GenericEntity : "{BFEA719491610A45}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U.et
 GenericEntity : "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et" {
  coords 2.276 1.906 2.313
 }
-GenericEntity : "{2A7C01B93CC92ACE}Prefabs/Items/Equipment/RangeCard/RangeCard_Notepad_AUTO.et" {
- coords 1.742 1.906 2.172
+GameEntity : "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et" {
+ coords 1.198 1.001 35.253
 }
 $grp GenericEntity : "{FA5C25BF66A53DCF}Prefabs/Weapons/Rifles/AK74/Rifle_AK74.et" {
  {

@@ -53,7 +53,7 @@ class MRAD_GameShellWindModel
 		for (int iteration = 0; iteration < 6; iteration++)
 		{
 			vector at;
-			if (!TrySimulate(distance, initialSpeed, angleRad, 0, at, ELEVATION_STEP))
+			if (!TrySimulate(distance, initialSpeed, angleRad, 0, 0, at, ELEVATION_STEP))
 				return false;
 
 			// Height error against the line of sight; d(height)/d(angle) is about the distance.
@@ -68,12 +68,14 @@ class MRAD_GameShellWindModel
 
 	//------------------------------------------------------------------------------------------------
 	//! Position of the round when it has flown this horizontal distance: x lateral, y height.
-	bool TrySimulate(float distance, float initialSpeed, float angleRad, float signedWind, out vector atDistance, float stepSeconds = WIND_STEP)
+	//! signedCrosswind: + blows the round to the left of the line of sight (turn right to correct);
+	//! signedHeadwind: + blows towards the shooter and slows the round down.
+	bool TrySimulate(float distance, float initialSpeed, float angleRad, float signedCrosswind, float signedHeadwind, out vector atDistance, float stepSeconds = WIND_STEP)
 	{
 		atDistance = vector.Zero;
 		if (!m_bSupported || distance <= 0 || distance > 5000 || initialSpeed <= 0 || Math.AbsFloat(angleRad) >= Math.PI * 0.5)
 			return false;
-		vector wind = Vector(-signedWind, 0, 0);
+		vector wind = Vector(-signedCrosswind, 0, -signedHeadwind);
 		vector velocity = Vector(0, Math.Sin(angleRad) * initialSpeed, Math.Cos(angleRad) * initialSpeed);
 		vector position = vector.Zero;
 		float elapsed;
@@ -104,6 +106,52 @@ class MRAD_GameShellWindModel
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Lateral correction for a crosswind at the no-wind bore angle, in MRAD: + turn right.
+	//! The lateral drift is linear in the wind, so the lateral step of the wind run is enough
+	//! (the lab matched a launched round within 0.01 MRAD at 30 Hz).
+	bool TryCross(float distance, float initialSpeed, float angleRad, float signedCrosswind, out float crossMrad)
+	{
+		crossMrad = 0;
+		if (Math.AbsFloat(signedCrosswind) <= 0.0001)
+			return true;
+
+		vector at;
+		if (!TrySimulate(distance, initialSpeed, angleRad, signedCrosswind, 0, at, WIND_STEP))
+			return false;
+
+		crossMrad = -SCR_Math.ConvertFromRadians(Math.Atan2(at[0], distance), SCR_EOpticsAngleUnits.MILLIRADIANS);
+		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Headwind/tailwind correction alone. The vertical is integrated at the finer elevation
+	//! step because a 1 m/s wind moves the impact by only centimetres, and one Newton step
+	//! removes the quadratic part of the wind's effect (it matters for strong wind).
+	bool TryHead(float distance, float initialSpeed, float angleRad, float signedHeadwind, out float headMrad)
+	{
+		headMrad = 0;
+		if (Math.AbsFloat(signedHeadwind) <= 0.0001)
+			return true;
+
+		vector calm;
+		if (!TrySimulate(distance, initialSpeed, angleRad, 0, 0, calm, ELEVATION_STEP))
+			return false;
+
+		vector at;
+		if (!TrySimulate(distance, initialSpeed, angleRad, 0, signedHeadwind, at, ELEVATION_STEP))
+			return false;
+
+		// Reference height is the calm flight at the same distance: it is the sight line height.
+		float correction = (calm[1] - at[1]) / distance;
+		if (!TrySimulate(distance, initialSpeed, angleRad + correction, 0, signedHeadwind, at, ELEVATION_STEP))
+			return false;
+
+		correction += (calm[1] - at[1]) / distance;
+		headMrad = SCR_Math.ConvertFromRadians(correction, SCR_EOpticsAngleUnits.MILLIRADIANS);
+		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	bool TryCorrection(float distance, float initialSpeed, float angleRad, float signedWind, out float correctionMrad)
 	{
 		correctionMrad = 0;
@@ -111,38 +159,11 @@ class MRAD_GameShellWindModel
 			return false;
 		if (Math.AbsFloat(signedWind) <= 0.0001 || m_fDragPerMass == 0)
 			return true;
-		vector wind = Vector(-signedWind, 0, 0);
-		vector velocity = Vector(0, Math.Sin(angleRad) * initialSpeed, Math.Cos(angleRad) * initialSpeed);
-		vector position = vector.Zero;
-		float elapsed;
-		for (int step = 0; step < MAX_STEPS && elapsed < MAX_TIME; step++)
-		{
-			if (velocity[2] <= 0)
-				return false;
-			float dt = WIND_STEP;
-			vector relative = velocity - wind;
-			float response = m_fDragPerMass * relative.Length();
-			// Reject numerically unstable exotic sources instead of returning
-			// a plausible value from an unsupported movement configuration.
-			if (response * dt > 0.25)
-				return false;
-			dt = Math.Min(dt, MAX_TIME - elapsed);
-			if (dt <= 0)
-				return false;
-			// Nothing is applied to a live projectile or weapon.
-			vector nextVelocity = velocity + Acceleration(velocity, wind) * dt;
-			vector nextPosition = position + (velocity + nextVelocity) * (dt * 0.5);
-			if (nextPosition[2] >= distance)
-			{
-				float fraction = (distance - position[2]) / (nextPosition[2] - position[2]);
-				vector atDistance = vector.Lerp(position, nextPosition, fraction);
-				correctionMrad = -SCR_Math.ConvertFromRadians(Math.Atan2(atDistance[0], distance), SCR_EOpticsAngleUnits.MILLIRADIANS);
-				return true;
-			}
-			position = nextPosition;
-			velocity = nextVelocity;
-			elapsed += dt;
-		}
-		return false;
+
+		float crossMrad;
+		if (!TryCross(distance, initialSpeed, angleRad, signedWind, crossMrad))
+			return false;
+		correctionMrad = crossMrad;
+		return true;
 	}
 }
