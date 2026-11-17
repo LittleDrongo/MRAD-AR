@@ -1,15 +1,14 @@
 // Hold breath for any sight (vanilla or MRAD), driven from the HUD manager phase.
 // Timeline: 0.0-1.5 s stabilising, 1.5-3.5 s stable, 3.5-5.0 s smoothly back to the
 // normal sway, exhale at 5 s. The sway is switched by the stamina system (public
-// hold-breath lever); both transitions blend the system off/on with a duty cycle,
-// so the aim settles in and comes back without a one-frame snap.
+// hold-breath lever); both transitions spread the off frames over consecutive frames
+// instead of toggling in blocks, so the aim settles in and comes back without a snap.
 class MRAD_BreathController
 {
 	protected const float STABILIZE_TIME = 1.5;
 	protected const float STABLE_END = 3.5;
 	protected const float HOLD_MAX = 5.0;
 	protected const float RELEASE_TIME = 0.5;
-	protected const float PWM_PERIOD = 0.15;
 	protected const float BREATH_MIN_STAMINA = 0.35;
 	protected const int BREATH_COOLDOWN_MS = 3000;
 	protected const ResourceName BREATH_INHALE = "{A64C816333C70CBF}Sounds/MRAD/mrad_inhale.wav";
@@ -21,7 +20,7 @@ class MRAD_BreathController
 	protected static bool s_bSystemEnabled;
 	protected static float s_fElapsed;
 	protected static float s_fReleaseEnd;
-	protected static float s_fPwmPhase;
+	protected static float s_fPwmAccum;
 	protected static float s_fReadyTime;
 	protected static StaminaSystem s_StaminaSystem;
 
@@ -85,31 +84,29 @@ class MRAD_BreathController
 			return;
 		}
 
-		s_fPwmPhase += dt;
-		if (s_fPwmPhase >= PWM_PERIOD)
-			s_fPwmPhase -= PWM_PERIOD;
-		float phase = s_fPwmPhase / PWM_PERIOD;
-
+		// Off share of the stamina system: grows 0 -> 1 while stabilising, shrinks
+		// 1 -> 0 while returning to the normal sway.
+		float offFraction;
 		if (s_fElapsed < STABILIZE_TIME)
-		{
-			// The share of the frame where the stamina system is off grows 0 -> 1.
-			float ramp = Math.Clamp(s_fElapsed / STABILIZE_TIME, 0, 1);
-			SetStaminaEnabled(phase >= ramp);
-		}
+			offFraction = Math.Clamp(s_fElapsed / STABILIZE_TIME, 0, 1);
 		else if (s_fElapsed < STABLE_END)
-		{
-			SetStaminaEnabled(false);
-		}
+			offFraction = 1.0;
 		else if (s_fElapsed < HOLD_MAX)
-		{
-			// The share where it is off shrinks 1 -> 0: the sway comes back gradually.
-			float ramp = Math.Clamp((s_fElapsed - STABLE_END) / (HOLD_MAX - STABLE_END), 0, 1);
-			SetStaminaEnabled(phase >= 1.0 - ramp);
-		}
+			offFraction = 1.0 - Math.Clamp((s_fElapsed - STABLE_END) / (HOLD_MAX - STABLE_END), 0, 1);
 		else
+			offFraction = 0.0;
+
+		// Frame-rate dither instead of 0.15 s blocks: the off frames are spread evenly
+		// over consecutive frames, so the transition is not visible as frame switching.
+		s_fPwmAccum += offFraction;
+		bool off = false;
+		if (s_fPwmAccum >= 1.0)
 		{
-			SetStaminaEnabled(true);
+			s_fPwmAccum -= 1.0;
+			off = true;
 		}
+
+		SetStaminaEnabled(!off);
 
 		// Five seconds is the limit: forced exhale.
 		if (s_fElapsed >= HOLD_MAX)
@@ -144,7 +141,7 @@ class MRAD_BreathController
 		s_bActive = true;
 		s_bReleasing = false;
 		s_fElapsed = 0;
-		s_fPwmPhase = 0;
+		s_fPwmAccum = 0;
 
 		// The system starts enabled; the onset blends it off.
 		if (!s_StaminaSystem)
@@ -225,7 +222,7 @@ class MRAD_BreathController
 		s_bActive = false;
 		s_bReleasing = false;
 		s_fElapsed = 0;
-		s_fPwmPhase = 0;
+		s_fPwmAccum = 0;
 		s_fReadyTime = BreathNow() + BREATH_COOLDOWN_MS;
 	}
 
