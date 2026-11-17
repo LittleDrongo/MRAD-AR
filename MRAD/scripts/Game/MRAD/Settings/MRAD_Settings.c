@@ -8,7 +8,8 @@ class MRAD_Settings
 	// 2.4.0: the card is calculated per 1 m/s, so the spotter can multiply by his wind.
 	protected const float DEFAULT_REFERENCE_WIND = 1.0;
 	// 2.5.1: 2000 m table is applied to profiles that were already saved with 1500.
-	protected const int SAVE_VERSION = 3;
+	// 2.7.1: the Beaufort scale is on by default, also for profiles that saved it off.
+	protected const int SAVE_VERSION = 4;
 
 	protected float m_fReferenceWindSpeed = 1.0;
 	protected bool m_bUseActualWind;
@@ -125,6 +126,11 @@ class MRAD_Settings
 			m_iMaxRange = 2000;
 			m_iRowsPerPage = 20;
 		}
+
+		// 2.7.1: индикатор Бофорта включён по умолчанию; старые профили с showWindHUD=false
+		// один раз включаем, дальше Shift+K снова управляет им.
+		if (version < 4)
+			m_bShowWindHUD = true;
 
 		if (version < SAVE_VERSION)
 			Save();

@@ -3,6 +3,7 @@
 class MRAD_OpticsInputController
 {
 	protected const string INPUT_CONTEXT = "MRAD_OpticsContext";
+	protected const string NOTEPAD_CONTEXT = "MRAD_NotepadContext";
 	protected const string SOUND_PROJECT = "{D8F675F3468362E2}Sounds/Weapons/_SharedData/Weapons_Sights_Actions.acp";
 	protected const float FIRST_REPEAT_DELAY = 0.32;
 	protected const float REPEAT_INTERVAL = 0.13;
@@ -101,6 +102,38 @@ class MRAD_OpticsInputController
 		}
 
 		m_bListening = enable;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Zeroing input while the optic is not in ADS (weapon in hands or the range card held).
+	void UpdatePassive(float timeSlice)
+	{
+		if (m_bActive || !m_Optic || !m_Optic.MRAD_IsSniperOptic() || IsMenuOpen())
+			return;
+
+		InputManager input = GetGame().GetInputManager();
+		if (!input)
+			return;
+
+		input.ActivateContext(NOTEPAD_CONTEXT);
+		PollHeldActions(timeSlice);
+
+		if (input.GetActionValue("MRAD_ResetZeroing") > 0.5)
+			ResetZeroingPassive();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void ResetZeroingPassive()
+	{
+		if (!m_Optic)
+			return;
+
+		if (m_Optic.MRAD_GetElevationTicks() == 0 && m_Optic.MRAD_GetWindageTicks() == 0)
+			return;
+
+		m_Optic.MRAD_SetTicks(0, 0);
+		PlayClick(false);
+		GetOnChanged().Invoke(m_Optic);
 	}
 
 	//------------------------------------------------------------------------------------------------

@@ -73,5 +73,6 @@ modded class SCR_HUDManagerComponent
 		super.OnUpdate(owner);
 		MRAD_WindHUDController.Update();
 		MRAD_BreathController.Update();
+		MRAD_NotepadInputController.Update();
 	}
 }

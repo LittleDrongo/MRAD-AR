@@ -139,6 +139,17 @@ modded class SCR_2DOpticsComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Input controller of this scope; created on demand so zeroing also works while the
+	//! range card is in hands (outside ADS).
+	MRAD_OpticsInputController MRAD_GetInput()
+	{
+		if (!m_MRADInput)
+			m_MRADInput = new MRAD_OpticsInputController(this);
+
+		return m_MRADInput;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	bool MRAD_IsSniperOptic()
 	{
 		// Исключение статично для префаба и проверяется до кэша.

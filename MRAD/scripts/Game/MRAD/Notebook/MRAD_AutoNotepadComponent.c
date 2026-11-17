@@ -163,8 +163,23 @@ class Drg_AutoNotepadRtComponent : Drg_NotepadRtComponent
 	override void OnTakenInHand(ChimeraCharacter character)
 	{
 		m_Holder = character;
+		MRAD_NotepadInputController.SetHeld(true);
 		Recalculate();
 		super.OnTakenInHand(character);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void OnPutAway()
+	{
+		MRAD_NotepadInputController.SetHeld(false);
+		super.OnPutAway();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void OnDelete(IEntity owner)
+	{
+		MRAD_NotepadInputController.SetHeld(false);
+		super.OnDelete(owner);
 	}
 
 	//------------------------------------------------------------------------------------------------
